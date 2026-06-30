@@ -277,6 +277,38 @@ footer{background:var(--ink);color:rgba(255,255,255,.7);padding:40px 40px 24px;}
 }
 @media(max-width:480px){.brands-grid{grid-template-columns:1fr;}}
 
+
+/* ===== CONTACT ===== */
+.contact-section{background:var(--bg);padding:80px 40px;}
+.contact-inner{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;}
+.contact-info{padding-top:8px;}
+.contact-info-title{font-family:"Playfair Display",serif;font-size:26px;font-weight:600;margin-bottom:14px;}
+.contact-info-sub{font-size:13px;color:var(--ink2);line-height:1.8;margin-bottom:32px;}
+.contact-detail{display:flex;align-items:flex-start;gap:14px;margin-bottom:22px;}
+.contact-detail-icon{width:40px;height:40px;background:var(--bg2);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+.contact-detail-body{}
+.contact-detail-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:3px;}
+.contact-detail-val{font-size:13px;color:var(--ink);font-weight:500;}
+.contact-detail-note{font-size:11px;color:var(--ink3);margin-top:2px;}
+.contact-form{background:#fff;border:1px solid var(--border);border-radius:12px;padding:36px 32px;}
+.form-row{margin-bottom:18px;}
+.form-label{font-size:11px;letter-spacing:.5px;font-weight:600;color:var(--ink2);margin-bottom:7px;display:block;}
+.form-input,.form-select,.form-textarea{width:100%;padding:12px 14px;border:1px solid var(--border);border-radius:6px;font-size:13px;font-family:inherit;color:var(--ink);background:#fff;outline:none;transition:border-color .18s;}
+.form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--blue);}
+.form-textarea{resize:vertical;min-height:120px;line-height:1.6;}
+.form-select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888' fill='none' stroke-width='1.5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px;}
+.form-row-2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.form-submit{width:100%;padding:14px;background:var(--ink);color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;transition:background .18s;margin-top:6px;}
+.form-submit:hover{background:var(--red);}
+.form-success{display:none;text-align:center;padding:20px;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;color:#166534;font-size:13px;margin-top:12px;}
+.form-success.show{display:block;}
+@media(max-width:768px){
+  .contact-inner{grid-template-columns:1fr;gap:36px;}
+  .form-row-2{grid-template-columns:1fr;}
+  .contact-section{padding:56px 20px;}
+  .contact-form{padding:24px 20px;}
+}
+
 </style>
 <!-- PayPal SDK loaded dynamically based on language -->
 </head>
@@ -527,6 +559,75 @@ footer{background:var(--ink);color:rgba(255,255,255,.7);padding:40px 40px 24px;}
   </div>
 </section>
 
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="section-header">
+    <div class="section-eyebrow" data-i="contact_eyebrow">Contact Us</div>
+    <h2 class="section-title" data-i="contact_title">Get in Touch</h2>
+    <p class="section-sub" data-i="contact_sub">Questions about your order, shipping, or our products? We reply within 24 hours.</p>
+  </div>
+  <div class="contact-inner">
+    <div class="contact-info">
+      <h3 class="contact-info-title" data-i="contact_info_title">We're here to help</h3>
+      <p class="contact-info-sub" data-i="contact_info_sub">Whether you have a question about a product, need help tracking your order, or want to arrange a bulk gift order — just get in touch and we'll take care of you.</p>
+      <div class="contact-detail">
+        <div class="contact-detail-icon">✉</div>
+        <div class="contact-detail-body">
+          <div class="contact-detail-label" data-i="contact_email_label">Email</div>
+          <div class="contact-detail-val">hello@yukigift.hk</div>
+          <div class="contact-detail-note" data-i="contact_email_note">Reply within 24 hours</div>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-detail-icon">🕐</div>
+        <div class="contact-detail-body">
+          <div class="contact-detail-label" data-i="contact_hours_label">Support Hours</div>
+          <div class="contact-detail-val" data-i="contact_hours_val">Mon – Fri, 10:00 – 18:00 (HKT)</div>
+          <div class="contact-detail-note" data-i="contact_hours_note">Japanese & English supported</div>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-detail-icon">📦</div>
+        <div class="contact-detail-body">
+          <div class="contact-detail-label" data-i="contact_order_label">Order Enquiries</div>
+          <div class="contact-detail-val" data-i="contact_order_val">Quote your PayPal Order ID</div>
+          <div class="contact-detail-note" data-i="contact_order_note">Found in your PayPal confirmation email</div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-form">
+      <form id="contactForm" onsubmit="submitContact(event)">
+        <div class="form-row-2">
+          <div class="form-row">
+            <label class="form-label" data-i="form_name_label">Your Name</label>
+            <input class="form-input" type="text" id="cName" placeholder="Chan Tai Man" required>
+          </div>
+          <div class="form-row">
+            <label class="form-label" data-i="form_email_label">Email Address</label>
+            <input class="form-input" type="email" id="cEmail" placeholder="you@email.com" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <label class="form-label" data-i="form_topic_label">Topic</label>
+          <select class="form-select" id="cTopic">
+            <option value="order" data-i="form_topic_order">Order / Shipping enquiry</option>
+            <option value="product" data-i="form_topic_product">Product question</option>
+            <option value="bulk" data-i="form_topic_bulk">Bulk / Gift order</option>
+            <option value="other" data-i="form_topic_other">Other</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label class="form-label" data-i="form_msg_label">Message</label>
+          <textarea class="form-textarea" id="cMsg" placeholder="Please describe your enquiry..." required></textarea>
+        </div>
+        <button class="form-submit" type="submit" data-i="form_submit">Send Message →</button>
+      </form>
+      <div class="form-success" id="formSuccess" data-i="form_success">✓ Message sent! We'll reply to your email within 24 hours.</div>
+    </div>
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer>
   <div class="foot-inner">
@@ -540,7 +641,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.7);padding:40px 40px 24px;}
         <a href="#shop" data-i="foot_shop">Shop</a>
         <a href="#" data-i="foot_shipping">Shipping Policy</a>
         <a href="#" data-i="foot_refund">Refund Policy</a>
-        <a href="#" data-i="foot_contact">Contact Us</a>
+        <a href="#contact" data-i="foot_contact">Contact Us</a>
         <a href="#" data-i="foot_privacy">Privacy Policy</a>
       </div>
     </div>
@@ -626,6 +727,19 @@ en: {
   faq6_q:"How much is the shipping fee?",faq6_a:"Shipping is calculated by order weight and communicated after purchase. We combine items into a single shipment to minimise cost.",
   nl_title:"Stay in the Loop",nl_sub:"New arrivals, seasonal specials and exclusive Hokkaido finds — delivered to your inbox first.",
   nl_btn:"Subscribe",nl_note:"No spam. Unsubscribe anytime.",
+
+  contact_eyebrow:"Contact Us",contact_title:"Get in Touch",
+  contact_sub:"Questions about your order, shipping, or products? We reply within 24 hours.",
+  contact_info_title:"We're here to help",
+  contact_info_sub:"Whether you have a question about a product, need help tracking your order, or want to arrange a bulk gift order — just get in touch.",
+  contact_email_label:"Email",contact_email_note:"Reply within 24 hours",
+  contact_hours_label:"Support Hours",contact_hours_val:"Mon – Fri, 10:00 – 18:00 (HKT)",contact_hours_note:"Japanese & English supported",
+  contact_order_label:"Order Enquiries",contact_order_val:"Quote your PayPal Order ID",contact_order_note:"Found in your PayPal confirmation email",
+  form_name_label:"Your Name",form_email_label:"Email Address",form_topic_label:"Topic",
+  form_topic_order:"Order / Shipping enquiry",form_topic_product:"Product question",
+  form_topic_bulk:"Bulk / Gift order",form_topic_other:"Other",
+  form_msg_label:"Message",form_submit:"Send Message →",
+  form_success:"✓ Message sent! We'll reply within 24 hours.",
 },
 zh: {
   hero_eyebrow:"直送自北海道札幌",
@@ -707,6 +821,19 @@ ja: {
   faq6_q:"送料はいくらですか？",faq6_a:"送料は注文の重量に応じて計算し、ご注文後にお知らせします。できるだけ1梱包にまとめて送料を抑えます。",
   nl_title:"最新情報をお届け",nl_sub:"新商品・季節限定品・北海道限定アイテムをいち早くメールでお知らせします。",
   nl_btn:"登録する",nl_note:"迷惑メールは送りません。いつでも配信解除できます。",
+
+  contact_eyebrow:"お問い合わせ",contact_title:"お気軽にご連絡ください",
+  contact_sub:"ご注文・配送・商品についてのご質問は、24時間以内にお返事いたします。",
+  contact_info_title:"お気軽にお問い合わせください",
+  contact_info_sub:"商品についてのご質問、注文状況の確認、まとめ買いギフトのご相談など、どんなことでもお気軽にどうぞ。",
+  contact_email_label:"メールアドレス",contact_email_note:"24時間以内にご返信",
+  contact_hours_label:"サポート時間",contact_hours_val:"月〜金、10:00 – 18:00（香港時間）",contact_hours_note:"日本語・英語対応",
+  contact_order_label:"注文に関するお問い合わせ",contact_order_val:"PayPal注文IDをご記載ください",contact_order_note:"PayPal確認メールに記載されています",
+  form_name_label:"お名前",form_email_label:"メールアドレス",form_topic_label:"お問い合わせ内容",
+  form_topic_order:"注文 / 配送について",form_topic_product:"商品について",
+  form_topic_bulk:"まとめ買い / ギフト注文",form_topic_other:"その他",
+  form_msg_label:"メッセージ",form_submit:"送信する →",
+  form_success:"✓ 送信完了！24時間以内にご返信いたします。",
 }
 };
 
@@ -947,6 +1074,23 @@ function renderProducts(){
   }).join("");
 }
 
+
+
+// ===== CONTACT FORM =====
+function submitContact(e){
+  e.preventDefault();
+  const name  = document.getElementById('cName').value;
+  const email = document.getElementById('cEmail').value;
+  const topic = document.getElementById('cTopic').value;
+  const msg   = document.getElementById('cMsg').value;
+  const subject = encodeURIComponent('[Yuki Gift] ' + topic + ' — ' + name);
+  const body    = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\nTopic: ' + topic + '\n\n' + msg);
+  window.location.href = 'mailto:hello@yukigift.hk?subject=' + subject + '&body=' + body;
+  document.getElementById('contactForm').reset();
+  const s = document.getElementById('formSuccess');
+  s.classList.add('show');
+  setTimeout(()=>s.classList.remove('show'), 5000);
+}
 
 // ===== FAQ =====
 function toggleFaq(btn){
