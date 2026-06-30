@@ -321,6 +321,24 @@ footer{background:#080810;color:rgba(255,255,255,.6);padding:48px 48px 28px;bord
   background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
   opacity:.025;background-size:200px 200px;mix-blend-mode:overlay;}
 .has-grain > *{position:relative;z-index:1;}
+
+/* ===== POLICY MODAL ===== */
+.policy-overlay{position:fixed;inset:0;background:rgba(14,13,18,.7);z-index:700;display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;pointer-events:none;transition:opacity .25s;}
+.policy-overlay.show{opacity:1;pointer-events:all;}
+.policy-modal{background:var(--card);border-radius:2px;width:100%;max-width:640px;max-height:85vh;display:flex;flex-direction:column;box-shadow:0 24px 80px rgba(0,0,0,.3);}
+.pm-head{padding:24px 32px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-shrink:0;}
+.pm-title{font-family:"Playfair Display",serif;font-size:20px;font-weight:600;color:var(--ink);}
+.pm-close{width:32px;height:32px;background:var(--bg2);border:none;border-radius:50%;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;font-family:inherit;color:var(--ink2);transition:background .18s;}
+.pm-close:hover{background:var(--bg3);}
+.pm-body{padding:28px 32px;overflow-y:auto;flex:1;}
+.pm-body h3{font-size:13px;font-weight:700;color:var(--ink);margin:20px 0 8px;letter-spacing:.3px;text-transform:uppercase;font-size:10px;letter-spacing:2px;}
+.pm-body h3:first-child{margin-top:0;}
+.pm-body p{font-size:13px;color:var(--ink2);line-height:1.85;margin-bottom:10px;}
+.pm-body ul{margin:0 0 12px 18px;}
+.pm-body ul li{font-size:13px;color:var(--ink2);line-height:1.8;margin-bottom:4px;}
+.pm-updated{font-size:11px;color:var(--ink3);margin-top:20px;padding-top:16px;border-top:1px solid var(--border);}
+@media(max-width:680px){.pm-head{padding:20px 20px 16px;}.pm-body{padding:20px;}}
+
 </style>
 <!-- PayPal SDK loaded dynamically based on language -->
 </head>
@@ -644,10 +662,10 @@ footer{background:#080810;color:rgba(255,255,255,.6);padding:48px 48px 28px;bord
     <div>
       <div class="foot-links">
         <a href="#shop" data-i="foot_shop">Shop</a>
-        <a href="#" data-i="foot_shipping">Shipping Policy</a>
-        <a href="#" data-i="foot_refund">Refund Policy</a>
+        <a href="#" onclick="event.preventDefault();openPM('poShipping')" data-i="foot_shipping">Shipping Policy</a>
+        <a href="#" onclick="event.preventDefault();openPM('poRefund')" data-i="foot_refund">Refund Policy</a>
         <a href="#contact" data-i="foot_contact">Contact Us</a>
-        <a href="#" data-i="foot_privacy">Privacy Policy</a>
+        <a href="#" onclick="event.preventDefault();openPM('poPrivacy')" data-i="foot_privacy">Privacy Policy</a>
       </div>
     </div>
   </div>
@@ -1100,6 +1118,12 @@ function submitContact(e){
   setTimeout(()=>s.classList.remove('show'), 6000);
 }
 
+
+// ===== POLICY MODALS =====
+function openPM(id){ document.getElementById(id).classList.add('show'); document.body.style.overflow='hidden'; }
+function closePM(id){ document.getElementById(id).classList.remove('show'); document.body.style.overflow=''; }
+document.addEventListener('keydown',e=>{ if(e.key==='Escape') document.querySelectorAll('.policy-overlay.show').forEach(el=>{ el.classList.remove('show'); document.body.style.overflow=''; }); });
+
 // ===== FAQ =====
 function toggleFaq(btn){
   const item = btn.closest('.faq-item');
@@ -1158,6 +1182,78 @@ loadPayPalSDK("en");
         送料はお客様に別途ご連絡ください。
       </div>
       <button class="om-close" onclick="document.getElementById('orderOverlay').classList.remove('show')">閉じる / Close</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- POLICY MODALS -->
+<div class="policy-overlay" id="poShipping" onclick="if(event.target===this)closePM('poShipping')">
+  <div class="policy-modal">
+    <div class="pm-head">
+      <div class="pm-title" data-i="pm_ship_title">Shipping Policy</div>
+      <button class="pm-close" onclick="closePM('poShipping')">✕</button>
+    </div>
+    <div class="pm-body">
+      <h3 data-i="pm_ship_h1">Shipping Method</h3>
+      <p data-i="pm_ship_p1">All orders are shipped from Sapporo, Hokkaido, Japan via EMS (Japan Post Express Mail Service) or international air express courier. Estimated delivery to Hong Kong is <strong>5–8 business days</strong> from dispatch.</p>
+      <h3 data-i="pm_ship_h2">Tracking</h3>
+      <p data-i="pm_ship_p2">A tracking number will be sent to your PayPal email address once your order has been dispatched. You can track your parcel via Japan Post's website or the courier's tracking system.</p>
+      <h3 data-i="pm_ship_h3">Shipping Fee</h3>
+      <p data-i="pm_ship_p3">Shipping fees are calculated based on the total weight of your order and will be communicated to you after purchase. We consolidate all items into a single shipment to minimise cost.</p>
+      <h3 data-i="pm_ship_h4">Temperature-Sensitive Items</h3>
+      <p data-i="pm_ship_p4">Royce' Nama Chocolate requires refrigeration. It is packed with insulated materials and ice packs and dispatched via the fastest available service. Please refrigerate immediately upon receipt.</p>
+      <h3 data-i="pm_ship_h5">Customs & Import</h3>
+      <p data-i="pm_ship_p5">Hong Kong does not impose import duties on most food products from Japan. All items are declared accurately on customs documentation. Any applicable inspection fees are the responsibility of the recipient.</p>
+      <div class="pm-updated" data-i="pm_updated">Last updated: July 2026</div>
+    </div>
+  </div>
+</div>
+
+<div class="policy-overlay" id="poRefund" onclick="if(event.target===this)closePM('poRefund')">
+  <div class="policy-modal">
+    <div class="pm-head">
+      <div class="pm-title" data-i="pm_refund_title">Refund & Return Policy</div>
+      <button class="pm-close" onclick="closePM('poRefund')">✕</button>
+    </div>
+    <div class="pm-body">
+      <h3 data-i="pm_refund_h1">Damaged or Incorrect Items</h3>
+      <p data-i="pm_refund_p1">If your order arrives damaged or you receive the wrong item, please contact us within <strong>48 hours of receipt</strong> with your PayPal Order ID and clear photographs of the damage. We will arrange a replacement or full refund at no cost to you.</p>
+      <h3 data-i="pm_refund_h2">Non-Perishable Items</h3>
+      <p data-i="pm_refund_p2">Unopened non-perishable items may be returned within 7 days of receipt. Return shipping costs are the responsibility of the customer unless the item is faulty or incorrectly sent.</p>
+      <h3 data-i="pm_refund_h3">Perishable & Opened Items</h3>
+      <p data-i="pm_refund_p3">For hygiene and safety reasons, perishable items (including Royce' Nama Chocolate) and any opened products cannot be returned or exchanged, unless they arrive in a damaged or unacceptable condition.</p>
+      <h3 data-i="pm_refund_h4">Refund Processing</h3>
+      <p data-i="pm_refund_p4">Approved refunds are processed via PayPal to your original payment method within 3–5 business days of approval.</p>
+      <h3 data-i="pm_refund_h5">How to Contact Us</h3>
+      <p data-i="pm_refund_p5">To initiate a return or refund, please use the Contact form on this page or reach us directly via PayPal order message.</p>
+      <div class="pm-updated" data-i="pm_updated2">Last updated: July 2026</div>
+    </div>
+  </div>
+</div>
+
+<div class="policy-overlay" id="poPrivacy" onclick="if(event.target===this)closePM('poPrivacy')">
+  <div class="policy-modal">
+    <div class="pm-head">
+      <div class="pm-title" data-i="pm_priv_title">Privacy Policy</div>
+      <button class="pm-close" onclick="closePM('poPrivacy')">✕</button>
+    </div>
+    <div class="pm-body">
+      <h3 data-i="pm_priv_h1">Information We Collect</h3>
+      <p data-i="pm_priv_p1">When you place an order, PayPal shares with us the information necessary to fulfil it: your name, email address, and shipping address. We do not collect or store your payment card details — all payment processing is handled securely by PayPal.</p>
+      <h3 data-i="pm_priv_h2">How We Use Your Information</h3>
+      <ul>
+        <li data-i="pm_priv_li1">To process and dispatch your order</li>
+        <li data-i="pm_priv_li2">To send you shipping and tracking updates</li>
+        <li data-i="pm_priv_li3">To respond to customer service enquiries</li>
+      </ul>
+      <h3 data-i="pm_priv_h3">Data Sharing</h3>
+      <p data-i="pm_priv_p3">We do not sell, trade or share your personal information with third parties, except where required to fulfil your order (e.g. shipping carrier) or as required by law.</p>
+      <h3 data-i="pm_priv_h4">Newsletter</h3>
+      <p data-i="pm_priv_p4">If you subscribe to our newsletter, your email address is used solely to send you updates about new products and promotions. You may unsubscribe at any time.</p>
+      <h3 data-i="pm_priv_h5">Contact</h3>
+      <p data-i="pm_priv_p5">For any privacy-related enquiries, please use the Contact form on this page.</p>
+      <div class="pm-updated" data-i="pm_updated3">Last updated: July 2026</div>
     </div>
   </div>
 </div>
