@@ -339,6 +339,54 @@ footer{background:#080810;color:rgba(255,255,255,.6);padding:48px 48px 28px;bord
 .pm-updated{font-size:11px;color:var(--ink3);margin-top:20px;padding-top:16px;border-top:1px solid var(--border);}
 @media(max-width:680px){.pm-head{padding:20px 20px 16px;}.pm-body{padding:20px;}}
 
+
+/* ===== DETAIL MODAL ===== */
+.dm-overlay{position:fixed;inset:0;background:rgba(10,10,20,.72);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);z-index:2000;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .28s ease;}
+.dm-overlay.open{opacity:1;pointer-events:all;}
+.dm-box{background:var(--bg);border-radius:20px;max-width:860px;width:100%;max-height:90vh;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;position:relative;box-shadow:0 32px 80px rgba(0,0,0,.35);transform:translateY(20px) scale(.97);transition:transform .3s cubic-bezier(.34,1.56,.64,1);}
+.dm-overlay.open .dm-box{transform:translateY(0) scale(1);}
+.dm-left{background:var(--bg2);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:36px 28px;gap:16px;min-height:400px;}
+.dm-left img{width:100%;max-width:260px;object-fit:contain;border-radius:12px;}
+.dm-tags{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;}
+.dm-tag{font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;padding:4px 10px;border-radius:20px;background:rgba(255,92,92,.12);color:#e05;}
+.dm-tag.blue{background:rgba(80,120,255,.12);color:#47f;}
+.dm-tag.green{background:rgba(50,180,100,.12);color:#2a8;}
+.dm-right{overflow-y:auto;padding:36px 32px 28px;display:flex;flex-direction:column;gap:0;}
+.dm-close{position:absolute;top:16px;right:16px;width:34px;height:34px;background:var(--bg2);border:none;border-radius:50%;cursor:pointer;font-size:17px;display:flex;align-items:center;justify-content:center;color:var(--ink2);transition:background .18s,color .18s;z-index:10;}
+.dm-close:hover{background:var(--accent);color:#fff;}
+.dm-brand{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:6px;}
+.dm-name{font-family:"Playfair Display",serif;font-size:22px;font-weight:700;color:var(--ink);line-height:1.3;margin-bottom:4px;}
+.dm-namejp{font-size:13px;color:var(--ink3);margin-bottom:16px;}
+.dm-story{font-size:13px;color:var(--ink2);line-height:1.85;margin-bottom:18px;padding-bottom:18px;border-bottom:1px solid var(--border);}
+.dm-spec-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px 16px;margin-bottom:20px;}
+.dm-spec{display:flex;flex-direction:column;gap:2px;}
+.dm-spec-label{font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink3);}
+.dm-spec-val{font-size:12px;color:var(--ink);font-weight:500;}
+.dm-variants-title{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink3);margin-bottom:8px;}
+.dm-variants{display:flex;flex-direction:column;gap:6px;margin-bottom:22px;}
+.dm-var{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;border-radius:10px;border:1.5px solid var(--border);cursor:pointer;transition:border-color .18s,background .18s;}
+.dm-var:hover{border-color:var(--accent);background:rgba(255,92,92,.04);}
+.dm-var.selected{border-color:var(--accent);background:rgba(255,92,92,.07);}
+.dm-var-left{display:flex;flex-direction:column;gap:2px;}
+.dm-var-label{font-size:13px;font-weight:600;color:var(--ink);}
+.dm-var-weight{font-size:11px;color:var(--ink3);}
+.dm-var-price{font-size:14px;font-weight:700;color:var(--accent);}
+.dm-cta{display:flex;align-items:center;gap:14px;margin-top:auto;padding-top:4px;}
+.dm-price-big{display:flex;flex-direction:column;}
+.dm-price-hkd{font-size:22px;font-weight:800;color:var(--ink);}
+.dm-price-jpy{font-size:12px;color:var(--ink3);}
+.dm-add-btn{flex:1;height:46px;background:var(--accent);color:#fff;border:none;border-radius:12px;font-size:14px;font-weight:700;cursor:pointer;letter-spacing:.5px;transition:background .18s,transform .1s;}
+.dm-add-btn:hover{background:#e03;}
+.dm-add-btn:active{transform:scale(.97);}
+@media(max-width:700px){
+  .dm-box{grid-template-columns:1fr;max-height:92vh;}
+  .dm-left{min-height:200px;padding:24px 20px;}
+  .dm-left img{max-width:160px;}
+  .dm-right{padding:24px 20px 20px;}
+  .dm-name{font-size:18px;}
+  .dm-spec-grid{grid-template-columns:1fr;}
+}
+
 </style>
 <!-- PayPal SDK loaded dynamically based on language -->
 </head>
@@ -694,6 +742,37 @@ footer{background:#080810;color:rgba(255,255,255,.6);padding:48px 48px 28px;bord
 
 const NOTIFY_URL = "YOUR_APPS_SCRIPT_URL"; // ← Google Apps Script deployment URL
 const PRODUCTS = [{"id": 1, "cat": "snacks", "badge": "hot", "img": "https://www.calbee.co.jp/jagapokkuru/assets/img/products_jagapokkuru-pkg.png", "nameJp": "じゃがポックル（カルビー）", "hkd": 127, "jpy": 2333, "link": "https://www.calbee.co.jp/jagapokkuru/", "name": {"en": "Jaga Pokkuru Original (Calbee)", "zh": "薯片棒 原味（Calbee）", "ja": "じゃがポックル オリジナル（カルビー）"}, "desc": {"en": "The most wanted Hokkaido snack — sold exclusively inside Hokkaido and almost never found in Hong Kong. Crispy potato sticks with Shiretoko sea salt.", "zh": "北海道最搶手手信，香港幾乎買唔到，只在北海道限定發售。知床海鹽調味薯條棒，酥脆過癮。", "ja": "北海道限定販売のじゃがポックル。道外ではほぼ手に入らない。知床産の塩とじゃがいもの旨みが詰まった一品。"}}, {"id": 2, "cat": "snacks", "badge": "new", "img": "https://www.calbee.co.jp/jagapokkuru/assets/img/products_jagapokkuru-hokkaidobutter-pkg.png", "nameJp": "じゃがポックル 北海道バター（カルビー）", "hkd": 133, "jpy": 2489, "link": "https://www.calbee.co.jp/jagapokkuru/", "name": {"en": "Jaga Pokkuru Hokkaido Butter (Calbee)", "zh": "薯片棒 北海道牛油味（Calbee）", "ja": "じゃがポックル 北海道バター（カルビー）"}, "desc": {"en": "Jaga Pokkuru's richest variant — Hokkaido butter flavour, sold only within Hokkaido. Impossible to source in Hong Kong without a direct flight.", "zh": "じゃがポックル最濃郁口味，北海道限定，香港完全無法購買。北海道牛油香味濃到停唔到口。", "ja": "じゃがポックルの北海道バター風味。販売は北海道内限定。濃厚なバターの香りが口いっぱいに広がる。"}}, {"id": 3, "cat": "snacks", "badge": "local", "img": "https://www.calbee.co.jp/jagapokkuru/assets/img/products_jagapokkuru-hotate-pkg.png", "nameJp": "じゃがポックル ホタテミックス（カルビー）", "hkd": 130, "jpy": 2400, "link": "https://www.calbee.co.jp/jagapokkuru/", "name": {"en": "Jaga Pokkuru Scallop Mix (Calbee)", "zh": "薯片棒 北海道帆立貝味（Calbee）", "ja": "じゃがポックル ホタテミックス（カルビー）"}, "desc": {"en": "Exclusive Hokkaido combination: potato sticks blended with Hokkaido scallop chips. A uniquely local pairing you will never find outside Hokkaido.", "zh": "北海道限定創意組合：薯條棒混入北海道帆立貝薯片，獨一無二的在地風味，香港完全無售。", "ja": "じゃがポックルと北海道産ほたてポテトを合わせた限定コラボ。道外では手に入らない北海道ならではの組み合わせ。"}}, {"id": 4, "cat": "snacks", "badge": "local", "img": "https://www.calbee.co.jp/jagapokkuru/assets/img/products_jagapokkuru-tokibi-pkg.png", "nameJp": "じゃがポックル とうきびミックス（カルビー）", "hkd": 126, "jpy": 2333, "link": "https://www.calbee.co.jp/jagapokkuru/", "name": {"en": "Jaga Pokkuru Corn Mix (Calbee)", "zh": "薯片棒 北海道粟米味（Calbee）", "ja": "じゃがポックル とうきびミックス（カルビー）"}, "desc": {"en": "'Tokibi' is Hokkaido dialect for corn — this mix blends potato sticks with Hokkaido sweet corn snacks. A local favourite, exclusive to Hokkaido.", "zh": "「とうきび」是北海道方言粟米，薯條棒配北海道甜粟米脆片，當地人至愛，全港無售。", "ja": "とうきびは北海道の言葉でとうもろこし。北海道産コーンスナックとのミックスが絶品の道内限定品。"}}, {"id": 5, "cat": "snacks", "badge": null, "img": "https://www.calbee.co.jp/jagapokkuru/assets/img/products_jagapirika-pkg.png", "nameJp": "じゃがピリカ（カルビー）", "hkd": 113, "jpy": 2100, "link": "https://www.calbee.co.jp/jagapokkuru/", "name": {"en": "Jaga Pirika (Calbee)", "zh": "薯片棒 薄脆款（Calbee）", "ja": "じゃがピリカ（カルビー）"}, "desc": {"en": "Calbee Hokkaido's thin, extra-crispy potato chips in stick form. Made from 100% Hokkaido potatoes with light sea salt. Hokkaido-only, unavailable in Hong Kong.", "zh": "卡樂B北海道限定薄脆薯片棒，以100%北海道薯仔製作，海鹽調味，清爽可口，香港無售。", "ja": "北海道産じゃがいも100%使用の薄焼きポテトチップス。道外では手に入らないカルビー北海道限定品。"}}, {"id": 6, "cat": "snacks", "badge": "new", "img": "https://www.calbee.co.jp/jagapokkuru/assets/img/products_potekotan-pkg.png", "nameJp": "ポテコたん（カルビー）", "hkd": 106, "jpy": 1944, "link": "https://www.calbee.co.jp/jagapokkuru/", "name": {"en": "Potekotan (Calbee)", "zh": "ポテコたん 北海道（Calbee）", "ja": "ポテコたん（カルビー）"}, "desc": {"en": "Calbee Hokkaido's beloved ring-shaped potato snack with a mascot character. Light, crispy, and utterly moreish — a Hokkaido factory exclusive.", "zh": "Calbee北海道出品的環形薯仔脆脆，有可愛卡通人物，口感輕盈酥脆，北海道工廠直賣限定。", "ja": "北海道のカルビー直売で人気のリング状ポテトスナック。サクサクとした食感と個性的なキャラクターが目印。"}}, {"id": 7, "cat": "snacks", "badge": "local", "img": "https://www.calbee.co.jp/jagapokkuru/assets/img/products_inkanomezame-pkg.png", "nameJp": "インカの目覚め（カルビー）", "hkd": 114, "jpy": 2100, "link": "https://www.calbee.co.jp/jagapokkuru/", "name": {"en": "Inca no Mezame (Calbee)", "zh": "印加覺醒薯片（Calbee）", "ja": "インカの目覚め（カルビー）"}, "desc": {"en": "Made from the rare 'Inca no Mezame' golden potato — a Hokkaido-exclusive heirloom variety with natural sweetness. Impossible to source outside Hokkaido.", "zh": "以北海道珍稀黃金薯仔「インカの目覚め」製作，天然香甜，全球僅在北海道種植，香港完全買唔到。", "ja": "北海道でしか育たない希少なインカの目覚めを使用したカルビーの逸品。自然な甘さと濃厚な旨みが特徴。"}}, {"id": 8, "cat": "sweets", "badge": "hot", "img": "https://www.rokkatei.co.jp/assets/images/en/img_03.jpg", "nameJp": "マルセイバターサンド（六花亭）", "hkd": 185, "jpy": 3422, "link": "https://www.rokkatei-eshop.com/", "name": {"en": "Marusei Butter Sand (Rokkatei)", "zh": "牛油忌廉三文治餅（六花亭）", "ja": "マルセイバターサンド（六花亭）"}, "desc": {"en": "Rokkatei's legendary creation: crispy biscuit filled with Hokkaido butter cream, raisins and white chocolate. A true Hokkaido classic since 1977.", "zh": "六花亭鎮店之寶，自1977年起的北海道傳奇手信。酥脆餅乾夾入牛油忌廉、提子乾及白朱古力，層次豐富。", "ja": "六花亭の代名詞。ビスケットに北海道産バタークリーム・レーズン・ホワイトチョコをサンドした1977年来の名品。"}}, {"id": 9, "cat": "sweets", "badge": "hot", "img": "https://www.rokkatei.co.jp/assets/images/en/img_02.jpg", "nameJp": "六花亭 ホワイトチョコレート", "hkd": 166, "jpy": 3110, "link": "https://www.rokkatei-eshop.com/", "name": {"en": "Rokkatei White Chocolate", "zh": "六花亭 白朱古力", "ja": "六花亭 ホワイトチョコレート"}, "desc": {"en": "Rokkatei introduced white chocolate to Japan in 1968. Smooth, milky and distinctly Hokkaido — a piece of confectionery history. Not available in Hong Kong.", "zh": "六花亭於1968年將白朱古力引入日本。香濃幼滑，充滿北海道風味，香港無售的甜點史里程碑。", "ja": "1968年、六花亭が日本で初めてホワイトチョコレートを発売。まろやかで濃厚な乳の旨味が楽しめる歴史的銘菓。"}}, {"id": 10, "cat": "sweets", "badge": null, "img": "https://www.rokkatei.co.jp/assets/images/en/img_04.jpg", "nameJp": "ひとつ鍋（六花亭）", "hkd": 228, "jpy": 4200, "link": "https://www.rokkatei-eshop.com/", "name": {"en": "Hitotsu-nabe Monaka (Rokkatei)", "zh": "一口鍋最中（六花亭）", "ja": "ひとつ鍋（六花亭）"}, "desc": {"en": "Charming Rokkatei monaka wafer cakes shaped like iron pots, filled with sweet bean paste. A beloved Hokkaido classic that delights young and old alike.", "zh": "六花亭出品的可愛鐵鍋形狀最中餅，內餡紅豆蓉香甜細滑，老少皆宜的北海道手信精品。", "ja": "鉄鍋の形をした六花亭のもなか。上品なあんがたっぷり入った可愛らしい北海道らしい一品。"}}, {"id": 11, "cat": "sweets", "badge": "new", "img": "https://www.ishiya.co.jp/images/img_lineup_mifuyu.png", "nameJp": "石屋製菓 美冬（みふゆ）", "hkd": 234, "jpy": 4320, "link": "https://www.ishiya.co.jp/", "name": {"en": "Ishiya Mifuyu Chocolate", "zh": "石屋製菓 美冬朱古力", "ja": "石屋製菓 美冬（みふゆ）"}, "desc": {"en": "Ishiya's elegant 'Mifuyu' collection — crispy wafers coated in premium Hokkaido chocolate with layered fillings. A Sapporo factory exclusive, unavailable in Hong Kong.", "zh": "石屋製菓精緻美冬系列，酥脆威化餅配北海道頂級朱古力及多層夾餡，札幌工廠限定，香港無售。", "ja": "石屋製菓の「美冬」は、サクサクのウエハースに北海道の上質なチョコレートを重ねた札幌限定の銘菓。"}}, {"id": 12, "cat": "sweets", "badge": "hot", "img": "https://www.ishiya.co.jp/images/img_lineup_tsumugi_white.png", "nameJp": "石屋製菓 紬ホワイト", "hkd": 194, "jpy": 3586, "link": "https://www.ishiya.co.jp/", "name": {"en": "Ishiya Tsumugi White Chocolate", "zh": "石屋製菓 紬白朱古力", "ja": "石屋製菓 紬ホワイト"}, "desc": {"en": "Ishiya's artisan 'Tsumugi' white chocolate — smooth and milky, crafted using Hokkaido dairy. A delicate gift from Sapporo, exclusive to the Ishiya factory shop.", "zh": "石屋製菓手工紬白朱古力，以北海道乳製品精製，細膩香滑，僅在札幌石屋工廠店發售。", "ja": "北海道産乳製品を使ったしなやかで上品な石屋製菓の紬ホワイトチョコレート。工場直売限定品。"}}];
+
+const VARIANTS = {
+  1:[{l:"8袋入り",g:"70g×8袋",hkd:127,jpy:2333},{l:"2箱（16袋）",g:"70g×16袋",hkd:241,jpy:4444},{l:"3箱（24袋）",g:"70g×24袋",hkd:352,jpy:6488}],
+  2:[{l:"8袋入り",g:"70g×8袋",hkd:133,jpy:2489},{l:"2箱（16袋）",g:"70g×16袋",hkd:252,jpy:4730},{l:"3箱（24袋）",g:"70g×24袋",hkd:368,jpy:6804}],
+  3:[{l:"8袋入り",g:"各70g×8袋",hkd:130,jpy:2400},{l:"2箱（16袋）",g:"各70g×16袋",hkd:247,jpy:4560}],
+  4:[{l:"8袋入り",g:"各70g×8袋",hkd:126,jpy:2333},{l:"2箱（16袋）",g:"各70g×16袋",hkd:240,jpy:4427}],
+  5:[{l:"1袋",g:"58g",hkd:113,jpy:2100},{l:"3袋セット",g:"58g×3",hkd:322,jpy:5985},{l:"5袋セット",g:"58g×5",hkd:508,jpy:9375}],
+  6:[{l:"1袋",g:"60g",hkd:106,jpy:1944},{l:"3袋セット",g:"60g×3",hkd:300,jpy:5544},{l:"5袋セット",g:"60g×5",hkd:492,jpy:9072}],
+  7:[{l:"1袋",g:"55g",hkd:114,jpy:2100},{l:"3袋セット",g:"55g×3",hkd:326,jpy:6006},{l:"5袋セット",g:"55g×5",hkd:540,jpy:9975}],
+  8:[{l:"6個入り",g:"270g",hkd:142,jpy:2613},{l:"9個入り",g:"405g",hkd:185,jpy:3422},{l:"12個入り",g:"540g",hkd:243,jpy:4479},{l:"18個入り",g:"810g",hkd:356,jpy:6570}],
+  9:[{l:"10枚入り",g:"50g",hkd:110,jpy:2030},{l:"20枚入り",g:"100g",hkd:166,jpy:3110},{l:"35枚入り",g:"175g",hkd:258,jpy:4760}],
+  10:[{l:"8個入り",g:"200g",hkd:190,jpy:3500},{l:"12個入り",g:"300g",hkd:228,jpy:4200},{l:"16個入り",g:"400g",hkd:293,jpy:5400}],
+  11:[{l:"5個入り",g:"125g",hkd:148,jpy:2730},{l:"9個入り",g:"225g",hkd:234,jpy:4320},{l:"12個入り",g:"300g",hkd:302,jpy:5576}],
+  12:[{l:"6枚入り",g:"78g",hkd:130,jpy:2400},{l:"9枚入り",g:"117g",hkd:194,jpy:3586},{l:"12枚入り",g:"156g",hkd:250,jpy:4615}]
+};
+
+const DETAILS = {
+  1:{brand:"Calbee",origin:"北海道（道内限定）",shelf:"製造日より180日",tags:["hokkaido only","potato","sea salt"],specs:{w:"原材料",v:"じゃがいも（北海道産）・植物油・オホーツクの塩"}},
+  2:{brand:"Calbee",origin:"北海道（道内限定）",shelf:"製造日より180日",tags:["hokkaido only","butter"],specs:{w:"原材料",v:"じゃがいも（北海道産）・植物油・北海道バター・塩"}},
+  3:{brand:"Calbee",origin:"北海道（道内限定）",shelf:"製造日より180日",tags:["hokkaido only","scallop mix"],specs:{w:"内容",v:"じゃがポックル＋ほたてポテト 各70g"}},
+  4:{brand:"Calbee",origin:"北海道（道内限定）",shelf:"製造日より180日",tags:["hokkaido only","corn mix"],specs:{w:"内容",v:"じゃがポックル＋とうきびポテト 各70g"}},
+  5:{brand:"Calbee",origin:"北海道（道内限定）",shelf:"製造日より180日",tags:["hokkaido only","thin crispy"],specs:{w:"原材料",v:"北海道産じゃがいも・植物油・海塩"}},
+  6:{brand:"Calbee",origin:"北海道（工場直売）",shelf:"製造日より90日",tags:["factory only","ring shape"],specs:{w:"原材料",v:"北海道産じゃがいも・植物油・調味料"}},
+  7:{brand:"Calbee",origin:"北海道（道内限定）",shelf:"製造日より180日",tags:["hokkaido only","rare variety"],specs:{w:"原材料",v:"インカの目覚め（北海道産）・植物油・塩"}},
+  8:{brand:"六花亭",origin:"北海道・帯広",shelf:"製造日より20日",tags:["classic","butter cream","since 1977"],specs:{w:"原材料",v:"ビスケット・北海道バタークリーム・レーズン・ホワイトチョコ"}},
+  9:{brand:"六花亭",origin:"北海道・帯広",shelf:"製造日より60日",tags:["classic","white choco","since 1968"],specs:{w:"特徴",v:"1968年、六花亭が日本で初めてホワイトチョコを販売"}},
+  10:{brand:"六花亭",origin:"北海道・帯広",shelf:"製造日より30日",tags:["monaka","classic","bean paste"],specs:{w:"原材料",v:"求肥入り餡・最中の皮（もち米・砂糖）"}},
+  11:{brand:"石屋製菓",origin:"北海道・札幌（工場限定）",shelf:"製造日より90日",tags:["sapporo only","wafer","chocolate"],specs:{w:"原材料",v:"ウエハース・北海道産チョコレート・クリーム"}},
+  12:{brand:"石屋製菓",origin:"北海道・札幌（工場限定）",shelf:"製造日より60日",tags:["sapporo only","white choco"],specs:{w:"原材料",v:"北海道乳製品使用ホワイトチョコレート"}},
+};
+
 
 const LANG = {
 en: {
@@ -1075,7 +1154,7 @@ function renderProducts(){
     const desc = p.desc[currentLang] || p.desc.en;
     const bdg = p.badge ? `<span class="card-badge ${badgeCls[p.badge]}">${t("badge_"+p.badge)}</span>` : "";
     const catLabel = {sweets:"cat_sweets",beauty:"cat_beauty",craft:"cat_craft"}[p.cat];
-    return `<div class="card" onclick="addToCart(${p.id})">
+    return `<div class="card" onclick="openDetail(${p.id})">
       <div class="card-img">
         <img src="${p.img}" alt="${name}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1607344645866-009c320b63e0?w=600&h=450&fit=crop'">
         ${bdg}
@@ -1257,6 +1336,116 @@ loadPayPalSDK("en");
     </div>
   </div>
 </div>
+
+
+<div id="dm-overlay" class="dm-overlay" onclick="closeDetail()"></div>
+<script>
+// ===== DETAIL MODAL =====
+let dmActiveId = null;
+let dmVariantIdx = 0;
+
+function openDetail(id){
+  dmActiveId = id;
+  const p = PRODUCTS.find(x=>x.id===id);
+  const d = DETAILS[id] || {};
+  const vars = VARIANTS[id] || [];
+  const defaultIdx = vars.findIndex(v => v.hkd === p.hkd);
+  dmVariantIdx = defaultIdx >= 0 ? defaultIdx : 0;
+
+  const lang = currentLang;
+  const name = p.name[lang] || p.name.en;
+  const desc = p.desc[lang] || p.desc.en;
+
+  const tagColors = {"hokkaido only":"","factory only":"blue","sapporo only":"blue","classic":"green","since 1977":"green","since 1968":"green","rare variety":"blue","scallop mix":"blue","corn mix":"blue","ring shape":"blue","white choco":"blue","bean paste":"green","butter":"","butter cream":"","sea salt":"","thin crispy":"","wafer":"","chocolate":""};
+  const tagsHtml = (d.tags||[]).map(tg=>{
+    const cls = tagColors[tg] !== undefined ? tagColors[tg] : "";
+    return `<span class="dm-tag ${cls}">${tg}</span>`;
+  }).join("");
+
+  const vars2 = vars.map((v,i)=>`
+    <div class="dm-var${i===dmVariantIdx?" selected":""}" onclick="selectVariant(${i})" id="dmv-${i}">
+      <div class="dm-var-left">
+        <span class="dm-var-label">${v.l}</span>
+        <span class="dm-var-weight">${v.g}</span>
+      </div>
+      <span class="dm-var-price">HK$${v.hkd}</span>
+    </div>`).join("");
+
+  const specHtml = `
+    <div class="dm-spec"><span class="dm-spec-label">ブランド</span><span class="dm-spec-val">${d.brand||""}</span></div>
+    <div class="dm-spec"><span class="dm-spec-label">産地</span><span class="dm-spec-val">${d.origin||""}</span></div>
+    <div class="dm-spec"><span class="dm-spec-label">賞味期限</span><span class="dm-spec-val">${d.shelf||""}</span></div>
+    ${d.specs ? `<div class="dm-spec" style="grid-column:1/-1"><span class="dm-spec-label">${d.specs.w}</span><span class="dm-spec-val">${d.specs.v}</span></div>` : ""}
+  `;
+
+  const selVar = vars[dmVariantIdx] || {hkd:p.hkd,jpy:p.jpy};
+
+  document.getElementById("dm-overlay").innerHTML = `
+    <div class="dm-box" onclick="event.stopPropagation()">
+      <button class="dm-close" onclick="closeDetail()">&#x2715;</button>
+      <div class="dm-left">
+        <img src="${p.img}" alt="${name}" onerror="this.src='https://images.unsplash.com/photo-1607344645866-009c320b63e0?w=600&h=450&fit=crop'">
+        <div class="dm-tags">${tagsHtml}</div>
+      </div>
+      <div class="dm-right">
+        <div class="dm-brand">${d.brand||""}</div>
+        <div class="dm-name">${name}</div>
+        <div class="dm-namejp">${p.nameJp}</div>
+        <div class="dm-story">${desc}</div>
+        <div class="dm-spec-grid">${specHtml}</div>
+        <div class="dm-variants-title">&#x6570;&#x91CF;&#x30FB;&#x30B5;&#x30A4;&#x30BA;&#x3092;&#x9078;&#x3076;</div>
+        <div class="dm-variants" id="dm-vars">${vars2}</div>
+        <div class="dm-cta">
+          <div class="dm-price-big">
+            <span class="dm-price-hkd" id="dm-price-hkd">HK$${selVar.hkd}</span>
+            <span class="dm-price-jpy" id="dm-price-jpy">&#x2248; \xc2\xa5${selVar.jpy.toLocaleString()}</span>
+          </div>
+          <button class="dm-add-btn" onclick="addFromModal()">&#x1F6D2; &#x30AB;&#x30FC;&#x30C8;&#x306B;&#x8FFD;&#x52A0;</button>
+        </div>
+      </div>
+    </div>`;
+
+  document.getElementById("dm-overlay").classList.add("open");
+  document.body.style.overflow = "hidden";
+}
+
+function closeDetail(){
+  document.getElementById("dm-overlay").classList.remove("open");
+  document.body.style.overflow = "";
+  dmActiveId = null;
+}
+
+function selectVariant(idx){
+  const vars = VARIANTS[dmActiveId] || [];
+  dmVariantIdx = idx;
+  vars.forEach((_,i)=>{
+    const el = document.getElementById("dmv-"+i);
+    if(el) el.classList.toggle("selected", i===idx);
+  });
+  const v = vars[idx];
+  if(v){
+    document.getElementById("dm-price-hkd").textContent = "HK$"+v.hkd;
+    document.getElementById("dm-price-jpy").textContent = "\u2248 \u00a5"+v.jpy.toLocaleString();
+  }
+}
+
+function addFromModal(){
+  if(!dmActiveId) return;
+  const vars = VARIANTS[dmActiveId] || [];
+  const v = vars[dmVariantIdx];
+  const p = PRODUCTS.find(x=>x.id===dmActiveId);
+  if(!p) return;
+  const cartHkd = v ? v.hkd : p.hkd;
+  const cartJpy = v ? v.jpy : p.jpy;
+  const cartLabel = v ? v.l : "";
+  const ex = cart.find(c=>c.id===dmActiveId && c.variantLabel===cartLabel);
+  if(ex){ ex.qty++; } else { cart.push({id:dmActiveId, qty:1, hkd:cartHkd, jpy:cartJpy, variantLabel:cartLabel}); }
+  saveCart();
+  updateCartUI();
+  openCart();
+  closeDetail();
+}
+</script>
 
 </body>
 </html>
