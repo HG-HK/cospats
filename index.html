@@ -1,484 +1,562 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="コスプレスパッツ専門サイト。Leohex・REALISE・Wolfordなどニッチブランドを素材・スタイル・コス度で徹底比較。光沢系・バレエ系・全身タイツなど豊富なカテゴリ。">
-<meta name="keywords" content="コスプレ,スパッツ,タイツ,Leohex,REALISE,リアライズ,光沢,コスプレ衣装,ボディスーツ,全身タイツ">
-<meta property="og:title" content="CosPATS — コスプレスパッツ専門比較サイト">
-<meta property="og:description" content="ニッチブランドのコスプレスパッツ・タイツを徹底比較。コス度・素材・スタイルで第一の一個を見つけよう。">
+<meta name="description" content="Authentic Hokkaido & Sapporo specialty goods. Direct from Japan. Ships to Hong Kong. White Lover, Jaga Pokkuru, Royce and more.">
+<meta property="og:title" content="Yuki Gift — Hokkaido Specialty Shop for Hong Kong">
+<meta property="og:description" content="Authentic Hokkaido products delivered to Hong Kong. Sweets, snacks, beauty and crafts.">
 <meta property="og:type" content="website">
-<title>CosPATS — コスプレスパッツ専門比較サイト</title>
+<title>Yuki Gift — 北海道から香港へ</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,600;0,9..40,700;1,9..40,300&family=Space+Mono&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Noto+Serif+JP:wght@300;400;600&family=Noto+Sans+TC:wght@300;400;500&family=Noto+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#030208;--bg2:#080614;--bg3:#100e1c;--ink:#f5f0ff;--muted:#6a6390;--dim:#3a3558;--border:rgba(255,255,255,0.07);--pink:#ff0060;--violet:#7700ff;--cyan:#00e5ff;--gold:#f5c400;--teal:#00d4a0;--holo:linear-gradient(135deg,#ff0060 0%,#7700ff 35%,#00e5ff 70%,#f5c400 100%);--holo2:linear-gradient(90deg,#ff0060,#7700ff,#00e5ff);--r:0px;}
+:root{
+  --bg:#FAFAF7;--bg2:#F3F1EC;--bg3:#EAE7DF;
+  --ink:#1A1A2E;--ink2:#4A4A5A;--ink3:#888898;
+  --red:#C8373A;--gold:#B07D2C;--blue:#2E5D87;
+  --border:#E0DDD5;--card:#FFFFFF;
+  --r:4px;
+}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
-body{font-family:"DM Sans","Hiragino Sans",sans-serif;background:var(--bg);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:60px;background:rgba(3,2,8,0.8);backdrop-filter:blur(32px);border-bottom:1px solid var(--border);transition:background .3s;}
-.nav-logo{font-family:"DM Serif Display",serif;font-size:18px;font-style:italic;background:var(--holo);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;background-size:200%;animation:hshift 6s linear infinite;letter-spacing:1px;}
-@keyframes hshift{0%{background-position:0%}100%{background-position:200%}}
-.nav-links{display:flex;gap:32px;list-style:none;}
-.nav-links a{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted);text-decoration:none;font-weight:600;transition:color .2s;}
-.nav-links a:hover{color:var(--ink);}
-.nav-cta{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--pink);border:1px solid rgba(255,0,96,.3);padding:8px 18px;border-radius:99px;cursor:pointer;transition:all .2s;font-weight:700;background:none;font-family:inherit;}
-.nav-cta:hover{background:rgba(255,0,96,.08);border-color:var(--pink);}
-/* HERO */
-.hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;padding:0 48px 80px;overflow:hidden;}
+body{font-family:"Noto Sans","Hiragino Sans",sans-serif;background:var(--bg);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+img{max-width:100%;display:block;}
+a{text-decoration:none;color:inherit;}
+
+/* ===== NAV ===== */
+nav{position:sticky;top:0;z-index:300;background:var(--bg);border-bottom:1px solid var(--border);padding:0 40px;height:64px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{font-family:"Playfair Display",serif;font-size:20px;font-weight:600;color:var(--ink);letter-spacing:.5px;}
+.nav-logo span{color:var(--red);}
+.nav-right{display:flex;align-items:center;gap:20px;}
+.lang-sw{display:flex;gap:2px;background:var(--bg2);border-radius:6px;padding:3px;}
+.lang-btn{font-size:11px;font-weight:500;padding:5px 11px;border:none;background:none;cursor:pointer;border-radius:4px;color:var(--ink2);font-family:inherit;transition:all .18s;letter-spacing:.3px;}
+.lang-btn.active{background:#fff;color:var(--ink);box-shadow:0 1px 4px rgba(0,0,0,.1);}
+.cart-btn{position:relative;width:42px;height:42px;display:flex;align-items:center;justify-content:center;cursor:pointer;border:1px solid var(--border);border-radius:8px;background:#fff;transition:border-color .2s;}
+.cart-btn:hover{border-color:var(--ink3);}
+.cart-icon{font-size:18px;}
+.cart-count{position:absolute;top:3px;right:3px;min-width:16px;height:16px;background:var(--red);color:#fff;font-size:9px;font-weight:700;border-radius:99px;display:flex;align-items:center;justify-content:center;padding:0 3px;display:none;}
+.cart-count.show{display:flex;}
+
+/* ===== HERO ===== */
+.hero{position:relative;height:92vh;min-height:500px;display:flex;align-items:flex-end;overflow:hidden;}
 .hero-bg{position:absolute;inset:0;z-index:0;}
-.orb{position:absolute;border-radius:50%;filter:blur(100px);pointer-events:none;}
-.o1{width:800px;height:800px;background:rgba(119,0,255,.15);top:-200px;right:-100px;animation:pulse1 10s ease-in-out infinite alternate;}
-.o2{width:600px;height:600px;background:rgba(255,0,96,.12);bottom:-100px;left:-150px;animation:pulse2 13s ease-in-out infinite alternate;}
-.o3{width:400px;height:400px;background:rgba(0,229,255,.08);top:40%;left:40%;animation:pulse3 8s ease-in-out infinite alternate;}
-@keyframes pulse1{from{transform:scale(1) translate(0,0)}to{transform:scale(1.2) translate(30px,-20px)}}
-@keyframes pulse2{from{transform:scale(1) translate(0,0)}to{transform:scale(1.15) translate(-20px,30px)}}
-@keyframes pulse3{from{transform:scale(1)}to{transform:scale(1.3)}}
-.hero-grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:80px 80px;opacity:.5;}
-.hero-content{position:relative;z-index:1;width:100%;}
-.hero-eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:10px;letter-spacing:5px;text-transform:uppercase;color:var(--pink);font-weight:700;margin-bottom:24px;}
-.hero-eyebrow::before{content:"";width:32px;height:1px;background:var(--pink);}
-.hero-title{font-family:"DM Serif Display",serif;font-size:clamp(64px,11vw,160px);line-height:.88;letter-spacing:-4px;margin-bottom:32px;}
-.ht1{display:block;color:rgba(255,255,255,.12);-webkit-text-stroke:1px rgba(255,255,255,.2);}
-.ht2{display:block;color:#fff;}
-.ht3{display:block;font-style:italic;background:var(--holo);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;background-size:300%;animation:hshift 4s linear infinite;}
-.hero-row{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:40px;}
-.hero-left{max-width:480px;}
-.hero-sub{font-size:15px;color:var(--muted);line-height:1.9;margin-bottom:28px;}
-.hero-stats{display:flex;gap:32px;margin-bottom:36px;}
-.hstat{}
-.hstat-n{font-family:"DM Serif Display",serif;font-size:36px;color:#fff;line-height:1;}
-.hstat-l{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-top:3px;}
-.hero-search{position:relative;width:100%;max-width:420px;}
-.hero-search input{width:100%;padding:16px 50px 16px 20px;background:rgba(255,255,255,.04);border:1px solid rgba(255,0,96,.25);border-radius:12px;color:#fff;font-size:14px;font-family:inherit;outline:none;transition:all .3s;}
-.hero-search input::placeholder{color:var(--muted);}
-.hero-search input:focus{border-color:var(--violet);box-shadow:0 0 0 3px rgba(119,0,255,.15),0 0 40px rgba(119,0,255,.1);}
-.hs-btn{position:absolute;right:6px;top:50%;transform:translateY(-50%);width:36px;height:36px;background:linear-gradient(135deg,var(--pink),var(--violet));border:none;border-radius:8px;color:#fff;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;}
-.hero-right{display:flex;flex-direction:column;align-items:flex-end;gap:12px;}
-.hero-tags{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;max-width:340px;}
-.htag{font-size:11px;padding:7px 16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:99px;color:var(--muted);cursor:pointer;transition:all .2s;white-space:nowrap;font-weight:600;}
-.htag:hover,.htag.on{background:var(--pink);border-color:var(--pink);color:#fff;}
-.scroll-down{display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--muted);font-size:9px;letter-spacing:4px;text-transform:uppercase;margin-top:20px;cursor:pointer;}
-.scroll-down::after{content:"";width:1px;height:40px;background:linear-gradient(to bottom,var(--muted),transparent);}
-@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
-.scroll-down{animation:bounce 3s ease-in-out infinite;}
-/* STYLE PICKER */
-.style-section{position:relative;z-index:1;padding:40px 48px;background:var(--bg2);border-bottom:1px solid var(--border);}
-.ss-label{font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--muted);margin-bottom:16px;}
-.style-scroll{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding-bottom:4px;}
-.style-scroll::-webkit-scrollbar{display:none;}
-.spill{padding:10px 20px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:99px;font-size:12px;font-weight:700;color:var(--muted);cursor:pointer;transition:all .2s;white-space:nowrap;letter-spacing:.5px;}
-.spill:hover{border-color:var(--pink);color:var(--ink);}
-.spill.on{background:linear-gradient(135deg,var(--pink),var(--violet));border-color:transparent;color:#fff;box-shadow:0 4px 20px rgba(119,0,255,.3);}
-/* ADS */
-.ad-slot{margin:0;padding:20px 48px;background:var(--bg2);border-bottom:1px solid var(--border);}
-.ad-slot-inner{max-width:1400px;margin:0 auto;min-height:90px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.02);border:1px dashed rgba(255,255,255,.07);border-radius:8px;}
-.ad-slot-label{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--dim);}
-/* CATALOG */
-.catalog{position:relative;z-index:1;padding:0 48px 80px;max-width:1440px;margin:0 auto;}
-.filter-bar{display:flex;align-items:center;gap:14px;padding:20px 0;border-bottom:1px solid var(--border);margin-bottom:32px;position:sticky;top:60px;z-index:100;background:rgba(3,2,8,.95);backdrop-filter:blur(24px);}
-.fl{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);flex-shrink:0;}
-.fscroll{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;flex:1;}
-.fscroll::-webkit-scrollbar{display:none;}
-.fbtn{padding:6px 16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:99px;font-size:11px;font-weight:700;color:var(--muted);cursor:pointer;transition:all .18s;white-space:nowrap;font-family:inherit;letter-spacing:.5px;}
-.fbtn:hover{color:var(--ink);border-color:rgba(255,255,255,.2);}
-.fbtn.on{background:linear-gradient(135deg,var(--pink),var(--violet));border-color:transparent;color:#fff;box-shadow:0 2px 12px rgba(255,0,96,.3);}
-.fdiv{width:1px;height:24px;background:var(--border);flex-shrink:0;}
-.sort-wrap{display:flex;align-items:center;gap:8px;flex-shrink:0;}
-.sort-wrap select{background:rgba(255,255,255,.04);border:1px solid var(--border);color:var(--ink);font-size:11px;font-weight:700;padding:6px 12px;border-radius:8px;font-family:inherit;outline:none;cursor:pointer;}
-.rmeta{display:flex;align-items:center;gap:14px;margin-bottom:24px;}
-.rcount{font-size:13px;color:var(--muted);flex-shrink:0;}
-.rcount b{color:var(--ink);font-size:17px;}
-.achips{display:flex;gap:6px;flex-wrap:wrap;}
-.achip{font-size:11px;padding:5px 12px 5px 14px;background:rgba(255,0,96,.08);border:1px solid rgba(255,0,96,.25);border-radius:99px;color:var(--pink);cursor:pointer;display:flex;align-items:center;gap:6px;font-weight:700;}
-.achip:after{content:"×";font-size:13px;}
-/* GRID */
-.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;}
-.card{position:relative;overflow:hidden;cursor:pointer;background:var(--bg3);}
-.card.feat{grid-column:span 2;grid-row:span 2;}
-.cimg-wrap{position:relative;width:100%;height:100%;min-height:320px;overflow:hidden;}
-.card.feat .cimg-wrap{min-height:640px;}
-.cimg-wrap img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.25,.46,.45,.94);display:block;}
-.card:hover .cimg-wrap img{transform:scale(1.06);}
-.cinfo{position:absolute;bottom:0;left:0;right:0;padding:24px 18px 18px;background:linear-gradient(to top,rgba(3,2,8,.98) 0%,rgba(3,2,8,.75) 50%,transparent 100%);transform:translateY(35%);transition:transform .35s cubic-bezier(.25,.46,.45,.94);}
-.card:hover .cinfo{transform:translateY(0);}
-.c-brand{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--pink);font-weight:700;margin-bottom:5px;}
-.c-name{font-size:14px;font-weight:700;line-height:1.3;margin-bottom:0;color:#fff;}
-.card.feat .c-name{font-size:18px;}
-.c-reveal{margin-top:12px;}
-.c-styles{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:10px;}
-.c-style-tag{font-size:10px;padding:2px 8px;background:rgba(119,0,255,.2);border:1px solid rgba(119,0,255,.3);border-radius:4px;color:#b088ff;}
-.c-price-row{display:flex;align-items:center;justify-content:space-between;}
-.c-price{font-family:"Space Mono",monospace;font-size:16px;color:#fff;}
-.card.feat .c-price{font-size:18px;}
-.c-stars{font-size:11px;color:var(--gold);}
-.cos-track{height:2px;background:rgba(255,255,255,.08);border-radius:2px;margin-top:8px;overflow:hidden;}
-.cos-fill{height:100%;background:linear-gradient(90deg,var(--teal),var(--cyan));border-radius:2px;transition:width .5s ease;}
-.cbadge{position:absolute;top:14px;left:14px;display:flex;flex-direction:column;gap:5px;z-index:2;}
-.badge-tag{font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:5px;font-weight:700;line-height:1;}
-.badge-tag.hot{background:var(--pink);color:#fff;box-shadow:0 2px 12px rgba(255,0,96,.4);}
-.badge-tag.cos{background:rgba(0,229,255,.1);border:1px solid rgba(0,229,255,.3);color:var(--cyan);}
-/* IN-GRID AD */
-.grid-ad{background:rgba(255,255,255,.02);border:1px dashed rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;min-height:320px;}
-.grid-ad span{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--dim);}
-/* MODAL */
-.overlay{position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:500;display:none;align-items:center;justify-content:center;padding:24px;backdrop-filter:blur(12px);}
-.overlay.open{display:flex;}
-.modal{background:var(--bg2);border:1px solid rgba(255,255,255,.08);border-radius:20px;max-width:860px;width:100%;max-height:92vh;overflow:hidden;display:flex;box-shadow:0 60px 160px rgba(0,0,0,.9),0 0 0 1px rgba(119,0,255,.08);}
-.modal-img{width:42%;flex-shrink:0;position:relative;overflow:hidden;}
-.modal-img img{width:100%;height:100%;object-fit:cover;}
-.modal-img-ov{position:absolute;inset:0;background:linear-gradient(135deg,rgba(119,0,255,.15),rgba(255,0,96,.1));}
-.modal-body{flex:1;overflow-y:auto;padding:32px;scrollbar-width:thin;scrollbar-color:var(--dim) transparent;}
-.modal-close{position:absolute;top:14px;right:14px;width:34px;height:34px;background:rgba(0,0,0,.6);border:1px solid rgba(255,255,255,.1);border-radius:99px;color:#fff;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10;transition:background .2s;}
-.modal-close:hover{background:rgba(255,0,96,.2);}
-.m-brand{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--pink);font-weight:700;margin-bottom:8px;}
-.m-name{font-family:"DM Serif Display",serif;font-size:22px;font-style:italic;margin-bottom:18px;line-height:1.2;}
-.m-row{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:20px;}
-.m-cell{}
-.m-cell-l{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:2px;}
-.m-cell-v{font-size:15px;font-weight:700;}
-.m-cell-v.price{font-family:"Space Mono",monospace;color:var(--pink);}
-.m-cos{margin-bottom:22px;padding:16px;background:rgba(0,229,255,.04);border:1px solid rgba(0,229,255,.1);border-radius:12px;}
-.m-cos-lbl{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--cyan);margin-bottom:8px;}
-.m-cos-score{font-family:"DM Serif Display",serif;font-size:40px;color:#fff;line-height:1;margin-bottom:8px;}
-.m-cos-bar{height:5px;background:rgba(255,255,255,.06);border-radius:4px;overflow:hidden;}
-.m-cos-bar-fill{height:100%;background:linear-gradient(90deg,var(--teal),var(--cyan));border-radius:4px;}
-.m-desc{font-size:14px;line-height:1.9;color:rgba(255,255,255,.6);margin-bottom:20px;}
-.m-specs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:20px;}
-.m-spec{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:10px;padding:12px 14px;}
-.ms-l{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:3px;}
-.ms-v{font-size:13px;font-weight:600;}
-.m-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px;}
-.m-tag{font-size:11px;padding:5px 12px;border-radius:6px;background:rgba(119,0,255,.1);border:1px solid rgba(119,0,255,.2);color:#b088ff;}
-.m-tag.st{background:rgba(255,0,96,.1);border-color:rgba(255,0,96,.2);color:#ff88aa;}
-.m-affnote{font-size:11px;color:var(--muted);margin-bottom:20px;padding:10px 14px;background:rgba(245,196,0,.04);border:1px solid rgba(245,196,0,.1);border-radius:8px;line-height:1.7;}
-.m-affnote b{color:var(--gold);}
-.m-actions{display:flex;gap:10px;flex-wrap:wrap;}
-.btn-primary{flex:1;min-width:130px;padding:14px 20px;background:linear-gradient(135deg,var(--pink),var(--violet));border:none;border-radius:12px;color:#fff;font-size:13px;font-weight:700;font-family:inherit;cursor:pointer;transition:transform .15s,box-shadow .15s;box-shadow:0 6px 24px rgba(119,0,255,.3);}
-.btn-primary:hover{transform:translateY(-1px);box-shadow:0 10px 32px rgba(119,0,255,.4);}
-.btn-ghost{padding:14px 18px;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:12px;color:var(--muted);font-size:13px;font-family:inherit;cursor:pointer;transition:all .2s;}
-.btn-ghost:hover{color:#fff;border-color:rgba(255,255,255,.2);}
-/* FOOTER */
-footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:48px 48px 32px;margin-top:80px;}
-.foot-inner{max-width:1440px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:28px;margin-bottom:24px;}
-.foot-brand{font-family:"DM Serif Display",serif;font-size:15px;font-style:italic;background:var(--holo);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;background-size:200%;animation:hshift 6s linear infinite;margin-bottom:6px;}
-.foot-tag{font-size:12px;color:var(--muted);}
-.foot-links{display:flex;gap:24px;flex-wrap:wrap;}
-.foot-links a{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s;}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 40%;}
+.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(26,26,46,.85) 0%,rgba(26,26,46,.4) 50%,rgba(26,26,46,.1) 100%);}
+.hero-content{position:relative;z-index:1;padding:0 60px 72px;max-width:760px;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:10px;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:20px;font-weight:400;}
+.hero-eyebrow::before{content:"";width:28px;height:1px;background:rgba(255,255,255,.5);}
+.hero-title{font-family:"Playfair Display",serif;font-size:clamp(42px,6vw,72px);font-weight:600;color:#fff;line-height:1.1;letter-spacing:-1px;margin-bottom:18px;}
+.hero-sub{font-size:15px;color:rgba(255,255,255,.75);line-height:1.8;margin-bottom:32px;max-width:480px;font-weight:300;}
+.hero-cta{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;background:var(--red);color:#fff;font-size:13px;font-weight:500;letter-spacing:.5px;border-radius:6px;cursor:pointer;transition:background .18s;border:none;font-family:inherit;}
+.hero-cta:hover{background:#a82d30;}
+
+/* ===== TRUST BAR ===== */
+.trust-bar{background:var(--ink);padding:14px 40px;display:flex;justify-content:center;gap:48px;flex-wrap:wrap;}
+.trust-item{display:flex;align-items:center;gap:9px;color:rgba(255,255,255,.8);font-size:12px;letter-spacing:.3px;font-weight:300;}
+.trust-icon{font-size:16px;}
+
+/* ===== SECTION ===== */
+.section{padding:64px 40px;}
+.section-header{text-align:center;margin-bottom:48px;}
+.section-eyebrow{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:12px;}
+.section-title{font-family:"Playfair Display",serif;font-size:32px;font-weight:600;color:var(--ink);}
+.section-sub{font-size:14px;color:var(--ink2);margin-top:10px;line-height:1.7;}
+
+/* ===== CATEGORY TABS ===== */
+.cat-tabs{display:flex;justify-content:center;gap:6px;margin-bottom:40px;flex-wrap:wrap;}
+.cat-tab{padding:8px 22px;border:1px solid var(--border);border-radius:99px;font-size:12px;font-weight:500;color:var(--ink2);cursor:pointer;transition:all .18s;background:#fff;font-family:inherit;}
+.cat-tab:hover{border-color:var(--ink);color:var(--ink);}
+.cat-tab.active{background:var(--ink);border-color:var(--ink);color:#fff;}
+
+/* ===== PRODUCT GRID ===== */
+.products{max-width:1280px;margin:0 auto;padding:0 40px;}
+.pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+.card{background:var(--card);border:1px solid var(--border);border-radius:8px;overflow:hidden;cursor:pointer;transition:box-shadow .22s,transform .22s;}
+.card:hover{box-shadow:0 8px 32px rgba(0,0,0,.1);transform:translateY(-3px);}
+.card-img{aspect-ratio:4/3;overflow:hidden;position:relative;}
+.card-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;}
+.card:hover .card-img img{transform:scale(1.04);}
+.card-badge{position:absolute;top:10px;left:10px;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;border-radius:4px;font-weight:600;}
+.badge-hot{background:var(--red);color:#fff;}
+.badge-new{background:var(--blue);color:#fff;}
+.badge-local{background:var(--gold);color:#fff;}
+.card-body{padding:16px 18px 20px;}
+.card-cat{font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:6px;}
+.card-name{font-size:14px;font-weight:600;color:var(--ink);line-height:1.4;margin-bottom:4px;}
+.card-name-jp{font-size:11px;color:var(--ink3);margin-bottom:10px;font-weight:300;}
+.card-desc{font-size:12px;color:var(--ink2);line-height:1.6;margin-bottom:14px;}
+.card-foot{display:flex;align-items:center;justify-content:space-between;}
+.card-price{display:flex;flex-direction:column;gap:1px;}
+.price-hkd{font-size:18px;font-weight:600;color:var(--red);}
+.price-jpy{font-size:10px;color:var(--ink3);}
+.add-btn{width:36px;height:36px;background:var(--ink);border:none;border-radius:6px;color:#fff;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .18s;font-family:inherit;}
+.add-btn:hover{background:var(--red);}
+.ship-tag{display:inline-flex;align-items:center;gap:4px;font-size:10px;color:var(--blue);background:rgba(46,93,135,.07);padding:3px 8px;border-radius:4px;margin-bottom:10px;font-weight:500;}
+
+/* ===== CART DRAWER ===== */
+.cart-overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:400;opacity:0;pointer-events:none;transition:opacity .25s;}
+.cart-overlay.open{opacity:1;pointer-events:all;}
+.cart-drawer{position:fixed;top:0;right:-420px;width:420px;max-width:100vw;height:100%;background:#fff;z-index:401;box-shadow:-8px 0 40px rgba(0,0,0,.12);display:flex;flex-direction:column;transition:right .3s cubic-bezier(.25,.46,.45,.94);}
+.cart-drawer.open{right:0;}
+.cart-head{padding:20px 24px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;}
+.cart-title{font-family:"Playfair Display",serif;font-size:18px;font-weight:600;}
+.cart-close{width:32px;height:32px;background:var(--bg2);border:none;border-radius:6px;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;font-family:inherit;}
+.cart-items{flex:1;overflow-y:auto;padding:16px 24px;}
+.cart-empty{display:flex;flex-direction:column;align-items:center;justify-content:center;height:200px;color:var(--ink3);font-size:14px;gap:12px;}
+.cart-empty-icon{font-size:40px;}
+.cart-item{display:flex;gap:12px;padding:14px 0;border-bottom:1px solid var(--border);}
+.ci-img{width:64px;height:64px;border-radius:6px;overflow:hidden;flex-shrink:0;}
+.ci-img img{width:100%;height:100%;object-fit:cover;}
+.ci-body{flex:1;min-width:0;}
+.ci-name{font-size:13px;font-weight:600;margin-bottom:3px;line-height:1.3;}
+.ci-price{font-size:12px;color:var(--red);font-weight:600;}
+.ci-qty{display:flex;align-items:center;gap:8px;margin-top:8px;}
+.qty-btn{width:26px;height:26px;border:1px solid var(--border);background:#fff;border-radius:4px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;font-family:inherit;}
+.qty-n{font-size:13px;font-weight:600;min-width:20px;text-align:center;}
+.ci-del{color:var(--ink3);background:none;border:none;cursor:pointer;font-size:14px;padding:2px;font-family:inherit;}
+.cart-foot{padding:20px 24px;border-top:1px solid var(--border);}
+.cart-total-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;}
+.cart-total-label{font-size:13px;color:var(--ink2);}
+.cart-total-val{font-size:22px;font-weight:700;color:var(--ink);}
+.cart-total-val small{font-size:11px;color:var(--ink3);margin-left:4px;font-weight:400;}
+#paypal-button-container{margin-top:0;}
+.checkout-note{font-size:10px;color:var(--ink3);text-align:center;margin-top:10px;line-height:1.6;}
+
+/* ===== SHIPPING SECTION ===== */
+.shipping-section{background:var(--bg2);padding:56px 40px;}
+.ship-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:960px;margin:0 auto;}
+.ship-card{background:#fff;border:1px solid var(--border);border-radius:8px;padding:28px 24px;text-align:center;}
+.ship-card-icon{font-size:32px;margin-bottom:14px;}
+.ship-card-title{font-size:15px;font-weight:600;margin-bottom:8px;}
+.ship-card-text{font-size:12px;color:var(--ink2);line-height:1.7;}
+
+/* ===== FOOTER ===== */
+footer{background:var(--ink);color:rgba(255,255,255,.7);padding:40px 40px 24px;}
+.foot-inner{display:flex;justify-content:space-between;flex-wrap:wrap;gap:28px;margin-bottom:28px;}
+.foot-logo{font-family:"Playfair Display",serif;font-size:18px;color:#fff;margin-bottom:8px;}
+.foot-tagline{font-size:11px;line-height:1.7;}
+.foot-links{display:flex;flex-direction:column;gap:8px;}
+.foot-links a{font-size:12px;color:rgba(255,255,255,.6);transition:color .18s;}
 .foot-links a:hover{color:#fff;}
-.foot-copy{font-size:10px;color:var(--dim);text-align:center;border-top:1px solid var(--border);padding-top:20px;line-height:1.8;}
-/* RESPONSIVE */
-@media(max-width:1100px){.grid{grid-template-columns:repeat(3,1fr);}}
-@media(max-width:900px){nav{padding:0 24px;}.nav-links{display:none;}.hero{padding:0 24px 60px;}.hero-title{font-size:clamp(48px,10vw,100px);letter-spacing:-2px;}.style-section,.ad-slot,.catalog{padding-left:16px;padding-right:16px;}.grid{grid-template-columns:repeat(2,1fr);}.card.feat{grid-column:span 2;grid-row:span 1;}.card.feat .cimg-wrap{min-height:360px;}.modal{flex-direction:column;max-height:95vh;}.modal-img{width:100%;height:220px;}footer{padding:32px 24px;}}
-@media(max-width:500px){.grid{grid-template-columns:repeat(2,1fr);gap:1px;}.m-specs{grid-template-columns:1fr;}.hero-stats{gap:20px;}.hero-row{flex-direction:column;align-items:flex-start;}}
+.foot-copy{font-size:11px;text-align:center;border-top:1px solid rgba(255,255,255,.1);padding-top:20px;line-height:1.8;}
+.paypal-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.08);padding:6px 14px;border-radius:4px;font-size:11px;color:rgba(255,255,255,.6);margin-top:12px;}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:1024px){.pgrid{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:768px){
+  nav{padding:0 20px;}
+  .hero-content{padding:0 24px 60px;}
+  .section{padding:48px 20px;}
+  .products{padding:0 20px;}
+  .pgrid{grid-template-columns:repeat(2,1fr);gap:14px;}
+  .trust-bar{padding:14px 20px;gap:20px;}
+  .ship-grid{grid-template-columns:1fr;}
+  footer{padding:32px 20px 20px;}
+}
+@media(max-width:400px){
+  .pgrid{grid-template-columns:1fr;}
+  .trust-bar{flex-direction:column;gap:12px;text-align:center;}
+  .cart-drawer{width:100vw;}
+  .hero-title{font-size:38px;}
+}
+/* Lang-specific fonts */
+[lang="zh"] .hero-title,[lang="zh"] .section-title,[lang="zh"] .card-name{font-family:"Noto Sans TC",sans-serif;}
+[lang="ja"] .hero-title,[lang="ja"] .section-title,[lang="ja"] .card-name{font-family:"Noto Serif JP",serif;}
 </style>
-<!-- Google AdSense -->
-<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
-<style>
-/* --- Extra: JS-generated card & modal classes --- */
-.card-img{position:relative;width:100%;overflow:hidden;aspect-ratio:2/3;}
-.card-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s cubic-bezier(.25,.46,.45,.94);}
-.card:hover .card-img img{transform:scale(1.07);}
-.card-overlay{position:absolute;bottom:0;left:0;right:0;padding:20px 14px 14px;background:linear-gradient(to top,rgba(3,2,8,.98),rgba(3,2,8,.7) 60%,transparent);transform:translateY(40%);transition:transform .35s cubic-bezier(.25,.46,.45,.94);}
-.card:hover .card-overlay{transform:translateY(0);}
-.card-tag{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--pink);font-weight:700;margin-bottom:4px;}
-.card-name{font-size:13px;font-weight:700;color:#fff;line-height:1.3;margin-bottom:2px;}
-.card-price{font-family:"Space Mono",monospace;font-size:14px;color:rgba(255,255,255,.7);}
-.badge{position:absolute;top:12px;left:12px;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;border-radius:5px;font-weight:700;z-index:2;}
-.badge-premium{background:linear-gradient(135deg,#f5c400,#ff8800);color:#000;box-shadow:0 2px 10px rgba(245,196,0,.4);}
-.badge-new{background:linear-gradient(135deg,var(--cyan),var(--teal));color:#000;box-shadow:0 2px 10px rgba(0,229,255,.3);}
-.badge-popular{background:var(--pink);color:#fff;box-shadow:0 2px 10px rgba(255,0,96,.4);}
-.card-foot{display:flex;justify-content:space-between;align-items:center;padding:10px 12px 12px;background:var(--bg3);}
-.card-brand{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--pink);font-weight:700;}
-.card-origin{font-size:10px;color:var(--muted);font-family:"Space Mono",monospace;}
-/* Pill filters in filter bar */
-.pill{padding:6px 16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:99px;font-size:11px;font-weight:700;color:var(--muted);cursor:pointer;transition:all .18s;white-space:nowrap;font-family:inherit;letter-spacing:.5px;}
-.pill:hover{color:var(--ink);border-color:rgba(255,255,255,.2);}
-.pill.active{background:linear-gradient(135deg,var(--pink),var(--violet));border-color:transparent;color:#fff;box-shadow:0 2px 12px rgba(255,0,96,.3);}
-/* Nav active link */
-.nav-links a.active{color:var(--ink);}
-/* Modal inner - extra */
-.modal-header{margin-bottom:20px;}
-.modal-brand{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--pink);font-weight:700;margin-bottom:6px;}
-.modal-title{font-family:"DM Serif Display",serif;font-size:22px;font-style:italic;line-height:1.2;margin:8px 0;}
-.modal-price{font-family:"Space Mono",monospace;font-size:20px;color:#fff;margin-bottom:12px;}
-.modal-cats{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px;}
-.cat-pill{font-size:11px;padding:4px 12px;border-radius:6px;background:rgba(119,0,255,.1);border:1px solid rgba(119,0,255,.25);color:#b088ff;font-weight:600;}
-.modal-desc{font-size:14px;line-height:1.9;color:rgba(255,255,255,.6);margin-bottom:22px;}
-.modal-section{margin-bottom:16px;padding:14px;background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:10px;}
-.modal-section-label{font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted);margin-bottom:8px;font-weight:700;}
-.modal-section p{font-size:13px;color:rgba(255,255,255,.7);}
-.modal-features{list-style:none;display:flex;flex-direction:column;gap:6px;}
-.modal-features li{font-size:13px;color:rgba(255,255,255,.75);padding-left:16px;position:relative;line-height:1.6;}
-.modal-features li::before{content:"›";position:absolute;left:0;color:var(--cyan);font-weight:700;}
-.modal-cta{display:block;margin-top:24px;padding:15px 24px;background:linear-gradient(135deg,var(--pink),var(--violet));border:none;border-radius:14px;color:#fff;font-size:13px;font-weight:700;font-family:inherit;cursor:pointer;transition:transform .15s,box-shadow .15s;box-shadow:0 6px 24px rgba(119,0,255,.3);text-decoration:none;text-align:center;letter-spacing:.5px;}
-.modal-cta:hover{transform:translateY(-2px);box-shadow:0 12px 36px rgba(119,0,255,.45);}
-/* Card reveal animation */
-.card{opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease;}
-.card.visible{opacity:1;transform:none;}
-</style>
+<!-- PayPal SDK — replace YOUR_CLIENT_ID with your PayPal Business Client ID -->
+<script src="https://www.paypal.com/sdk/js?client-id=sb&currency=HKD&locale=zh_HK" data-sdk-integration-source="integrationbuilder_sc"></script>
 </head>
 <body>
+
+<!-- NAV -->
 <nav>
-  <div class="nav-logo">CosPATS</div>
-  <ul class="nav-links">
-    <li><a href="#catalog">コレクション</a></li>
-    <li><a href="#catalog">ブランド</a></li>
-    <li><a href="#catalog">素材ガイド</a></li>
-    <li><a href="#about">サイトについて</a></li>
-  </ul>
-  <button class="nav-cta" onclick="document.getElementById('catalog').scrollIntoView({behavior:'smooth'})">商品を見る ↓</button>
+  <div class="nav-logo">Yuki<span>雪</span> Gift</div>
+  <div class="nav-right">
+    <div class="lang-sw">
+      <button class="lang-btn active" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" onclick="setLang('zh')">繁</button>
+      <button class="lang-btn" onclick="setLang('ja')">日</button>
+    </div>
+    <div class="cart-btn" onclick="openCart()">
+      <span class="cart-icon">🛍</span>
+      <span class="cart-count" id="cartCount">0</span>
+    </div>
+  </div>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
   <div class="hero-bg">
-    <div class="orb o1"></div>
-    <div class="orb o2"></div>
-    <div class="orb o3"></div>
-    <div class="hero-grid-bg"></div>
+    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&h=900&fit=crop&auto=format&q=90" alt="Hokkaido winter">
   </div>
   <div class="hero-content">
-    <div class="hero-row">
-      <div class="hero-left">
-        <div class="hero-eyebrow">Cosplay Spats Specialist</div>
-        <h1 class="hero-title">
-          <span class="ht1">COSPLAY</span>
-          <span class="ht2">SPATS</span>
-          <span class="ht3">GUIDE</span>
-        </h1>
-        <p class="hero-sub">ニッチブランドのコスプレ用スパッツ&amp;タイツを徹底比較。<br>素材・光沢・コス適性で第一の一個を見つけよう。</p>
-        <div class="hero-stats">
-          <div class="hstat"><div class="hstat-n">25+</div><div class="hstat-l">品揃え</div></div>
-          <div class="hstat"><div class="hstat-n">11</div><div class="hstat-l">ブランド</div></div>
-          <div class="hstat"><div class="hstat-n">22</div><div class="hstat-l">スタイル</div></div>
-        </div>
-        <div class="hero-search">
-          <input type="text" id="searchInput" placeholder="ブランド・素材・スタイルで検索…" oninput="render()">
-          <button class="hs-btn">↗</button>
-        </div>
-      </div>
-      <div class="hero-right">
-        <div class="hero-tags" id="heroTags"></div>
-        <div class="scroll-down" onclick="document.getElementById('catalog').scrollIntoView({behavior:'smooth'})">scroll</div>
-      </div>
+    <div class="hero-eyebrow" data-i="hero_eyebrow">Direct from Sapporo, Hokkaido</div>
+    <h1 class="hero-title" data-i="hero_title">Taste of<br>Hokkaido</h1>
+    <p class="hero-sub" data-i="hero_sub">Hand-picked specialties from Sapporo's finest shops. Delivered to your door in Hong Kong.</p>
+    <button class="hero-cta" onclick="document.getElementById('shop').scrollIntoView({behavior:'smooth'})" data-i="hero_cta">Shop Now →</button>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item"><span class="trust-icon">✈</span><span data-i="trust_ship">International Shipping to HK</span></div>
+  <div class="trust-item"><span class="trust-icon">🎌</span><span data-i="trust_auth">100% Authentic Japanese Products</span></div>
+  <div class="trust-item"><span class="trust-icon">💳</span><span data-i="trust_pay">Secure PayPal Payment</span></div>
+  <div class="trust-item"><span class="trust-icon">📦</span><span data-i="trust_pack">Gift Packaging Available</span></div>
+</div>
+
+<!-- SHOP -->
+<section class="section" id="shop">
+  <div class="section-header">
+    <div class="section-eyebrow" data-i="shop_eyebrow">Hokkaido Selection</div>
+    <h2 class="section-title" data-i="shop_title">Popular in Sapporo</h2>
+    <p class="section-sub" data-i="shop_sub">All items are carefully selected and can be shipped internationally by air cargo.</p>
+  </div>
+  <div class="cat-tabs" id="catTabs">
+    <button class="cat-tab active" data-cat="all" onclick="filterCat('all',this)" data-i="cat_all">All</button>
+    <button class="cat-tab" data-cat="sweets" onclick="filterCat('sweets',this)" data-i="cat_sweets">Sweets &amp; Snacks</button>
+    <button class="cat-tab" data-cat="beauty" onclick="filterCat('beauty',this)" data-i="cat_beauty">Beauty &amp; Wellness</button>
+    <button class="cat-tab" data-cat="craft" onclick="filterCat('craft',this)" data-i="cat_craft">Crafts &amp; Gifts</button>
+  </div>
+  <div class="products">
+    <div class="pgrid" id="pgrid"></div>
+  </div>
+</section>
+
+<!-- SHIPPING INFO -->
+<section class="shipping-section">
+  <div class="section-header">
+    <div class="section-eyebrow" data-i="ship_eyebrow">Shipping Information</div>
+    <h2 class="section-title" data-i="ship_title">Delivered to Hong Kong</h2>
+  </div>
+  <div class="ship-grid">
+    <div class="ship-card">
+      <div class="ship-card-icon">✈</div>
+      <div class="ship-card-title" data-i="ship1_title">Air Express</div>
+      <div class="ship-card-text" data-i="ship1_text">Shipped by EMS or air cargo from Sapporo. Estimated 5–8 business days to Hong Kong.</div>
+    </div>
+    <div class="ship-card">
+      <div class="ship-card-icon">📋</div>
+      <div class="ship-card-title" data-i="ship2_title">Customs &amp; Duties</div>
+      <div class="ship-card-text" data-i="ship2_text">All food items comply with Hong Kong import regulations. Declare at customs on arrival.</div>
+    </div>
+    <div class="ship-card">
+      <div class="ship-card-icon">❄</div>
+      <div class="ship-card-title" data-i="ship3_title">Freshness Guaranteed</div>
+      <div class="ship-card-text" data-i="ship3_text">Temperature-sensitive items packed with insulation. Freshness seal on all confectionery.</div>
     </div>
   </div>
 </section>
 
-<!-- AdSense: Top Banner -->
-<div class="ad-slot">
-  <div class="ad-slot-inner">
-    <span class="ad-slot-label">Advertisement · 728×90</span>
-    <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins> -->
-  </div>
-</div>
-
-<div class="style-section" id="styleSection">
-  <div class="ss-label">スタイルで絞り込む</div>
-  <div class="style-scroll" id="styleScroll"></div>
-</div>
-
-<div style="max-width:1440px;margin:0 auto;">
-<div class="catalog" id="catalog">
-  <div class="filter-bar">
-    <span class="fl">ブランド</span>
-    <div class="fscroll" id="brandFilter"></div>
-    <div class="fdiv"></div>
-    <div class="sort-wrap">
-      <select id="sortSel" onchange="render()">
-        <option value="default">おすすめ順</option>
-        <option value="price-asc">価格 安い順</option>
-        <option value="price-desc">価格 高い順</option>
-        <option value="rating">評価 高順</option>
-        <option value="cos">コス度 高順</option>
-      </select>
-    </div>
-  </div>
-  <div class="rmeta">
-    <div class="rcount"><b id="cnt">0</b> アイテム</div>
-    <div class="achips" id="achips"></div>
-  </div>
-  <div class="grid" id="grid"></div>
-</div>
-</div>
-
-<!-- AdSense: Bottom Rectangle -->
-<div class="ad-slot" style="margin-top:0;">
-  <div class="ad-slot-inner" style="min-height:250px;">
-    <span class="ad-slot-label">Advertisement · 336×280</span>
-  </div>
-</div>
-
-<footer id="about">
+<!-- FOOTER -->
+<footer>
   <div class="foot-inner">
     <div>
-      <div class="foot-brand">CosPATS</div>
-      <div class="foot-tag">コスプレスパッツ · ニッチブランド比較ガイド</div>
+      <div class="foot-logo">Yuki雪 Gift</div>
+      <div class="foot-tagline" data-i="foot_tagline">Authentic Hokkaido products for Hong Kong.<br>Sapporo → Hong Kong with love.</div>
+      <div class="paypal-badge">💳 <span data-i="foot_paypal">Secured by PayPal</span></div>
     </div>
-    <div class="foot-links">
-      <a href="#catalog">コレクション</a>
-      <a href="#catalog">ブランド一覧</a>
-      <a href="#catalog">素材ガイド</a>
-      <a href="#about">サイトについて</a>
-      <a href="#about">プライバシーポリシー</a>
-      <a href="#about">お問い合わせ</a>
+    <div>
+      <div class="foot-links">
+        <a href="#shop" data-i="foot_shop">Shop</a>
+        <a href="#" data-i="foot_shipping">Shipping Policy</a>
+        <a href="#" data-i="foot_refund">Refund Policy</a>
+        <a href="#" data-i="foot_contact">Contact Us</a>
+        <a href="#" data-i="foot_privacy">Privacy Policy</a>
+      </div>
     </div>
   </div>
-  <p class="foot-copy">© 2026 CosPATS — 各ブランドの価格・在庫は公式サイトでお確かめください。当サイトはアフィリエイト広告を沿用しています。<br>各ブランドおよび商品の画像および情報の著作権は各社に帰属します。</p>
+  <p class="foot-copy" data-i="foot_copy">© 2026 Yuki Gift. All prices shown in HKD. Products sourced from Sapporo, Hokkaido, Japan.</p>
 </footer>
 
-<div class="overlay" id="ov" onclick="if(event.target===this)closeM()">
-  <div class="modal" id="modal"></div>
+<!-- CART DRAWER -->
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-head">
+    <div class="cart-title" data-i="cart_title">Your Cart</div>
+    <button class="cart-close" onclick="closeCart()">✕</button>
+  </div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-foot" id="cartFoot" style="display:none;">
+    <div class="cart-total-row">
+      <span class="cart-total-label" data-i="cart_total">Total</span>
+      <span class="cart-total-val"><span id="cartTotalVal">HK$0</span><small data-i="cart_incl">incl. shipping</small></span>
+    </div>
+    <div id="paypal-button-container"></div>
+    <p class="checkout-note" data-i="checkout_note">Pay securely with PayPal. You'll be redirected to PayPal to complete your purchase.</p>
+  </div>
 </div>
 
 <script>
-const PRODUCTS = [{"id": 1, "brand": "Wolford", "name": "Fatal Seamless Tight", "price": "¥45,000", "tag": "seamless", "badgeType": "premium", "img": "https://images.unsplash.com/photo-1530549387789-4c1017266635?w=600&h=800&fit=crop&auto=format&q=85", "cats": ["seaming", "lycra"], "desc": "40デニールのシームレスニットが肌に溶け込む。ウルフォードの象徴的ライン。", "features": ["マイクロファイバー40den", "フラットシーム構造", "ウエスト幅広ロールバンド"], "fit": "S～XL", "origin": "Austria", "link": "https://www.wolfordshop.com/"}, {"id": 2, "brand": "Wolford", "name": "Velvet de Luxe", "price": "¥52,000", "tag": "velvet", "badgeType": "premium", "img": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=800&fit=crop&auto=format&q=85", "cats": ["velvet", "lycra"], "desc": "クリーミーなベルベット地。光の当たり方で見せる表情が変わる上質な一枚。", "features": ["ベルベット素材", "ウエストリブ", "フルフット仕様"], "fit": "XS～L", "origin": "Austria", "link": "https://www.wolfordshop.com/"}, {"id": 3, "brand": "Freed of London", "name": "Studio Shimmer Tight", "price": "¥6,800", "tag": "shimmer", "badgeType": "new", "img": "https://images.unsplash.com/photo-1516567727046-69ee5ea57040?w=600&h=800&fit=crop&auto=format&q=85", "cats": ["shimmer", "lycra"], "desc": "英国ロイヤルバレエのサプライヤーが作るきらめきタイツ。舞台映えするラメ感。", "features": ["ラメ糸混紡", "バレエ仕様フット", "UV耐性"], "fit": "S～XL", "origin": "UK", "link": "https://freedoflondon.com/"}, {"id": 4, "brand": "Freed of London", "name": "RAD Uniform Tight", "price": "¥5,200", "tag": "standard", "badgeType": null, "img": "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=600&h=800&fit=crop&auto=format&q=85", "cats": ["matte", "lycra"], "desc": "RAD認定ユニフォーム規格。バレエ教室でも使える定番ピンクタイツ。", "features": ["RAD認定", "ピンク/ブラック選択", "耐気強化"], "fit": "XS～XL", "origin": "UK", "link": "https://freedoflondon.com/"}, {"id": 5, "brand": "Arena", "name": "Powerskin Carbon Ultra", "price": "¥78,000", "tag": "racing", "badgeType": "premium", "img": "https://images.unsplash.com/photo-1530549387789-4c1017266635?w=600&h=800&fit=crop&auto=format&q=85", "cats": ["carbon", "racing"], "desc": "カーボン繊維混紡の競泳スパッツ。0.01秒を削り出すために設計。", "features": ["Carbon繊維配合", "超撥水加工", "腰部コンプレッション"], "fit": "XS～L", "origin": "Italy", "link": "https://www.arenawaterinstinct.com/"}, {"id": 6, "brand": "Arena", "name": "Powerskin R-EVO ONE", "price": "¥48,000", "tag": "racing", "badgeType": null, "img": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=800&fit=crop&auto=format&q=85", "cats": ["carbon", "racing"], "desc": "FINA承認の競泳用。締め付けの強さとフィット精度で定評あるモデル。", "features": ["FINA承認", "R-EVOボンディング", "極限圧縮設計"], "fit": "XS～XL", "origin": "Italy", "link": "https://www.arenawaterinstinct.com/"}, {"id": 7, "brand": "Leohex", "name": "UV Glossy Tight", "price": "¥2,980", "tag": "glossy", "badgeType": "popular", "img": "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=600&h=800&fit=crop&auto=format&q=85", "cats": ["glossy", "spandex"], "desc": "鏡面反射する超光沢スパンデックス。全身タイツ系コスプレに最適。", "features": ["超光沢加工", "UPF50+", "サイズ展開豊富"], "fit": "S～2XL", "origin": "China", "link": "https://www.aliexpress.com/store/1102167284"}, {"id": 8, "brand": "Leohex", "name": "Opaque Sheer Panel", "price": "¥3,280", "tag": "sheer", "badgeType": null, "img": "https://images.unsplash.com/photo-1520367445093-50dc08a59d9d?w=600&h=800&fit=crop&auto=format&q=85", "cats": ["sheer", "spandex"], "desc": "シアーパネルの透け感と不透明部のコントラストが作るドラマチックなライン。", "features": ["シアーパネル", "交差設計", "速乾素材"], "fit": "S～XL", "origin": "China", "link": "https://www.aliexpress.com/store/1102167284"}, {"id": 9, "brand": "REALISE", "name": "Glossy Full Spats", "price": "¥4,500", "tag": "glossy", "badgeType": "popular", "img": "https://images.unsplash.com/photo-1539874754764-5a96559165b0?w=600&h=800&fit=crop&auto=format&q=85", "cats": ["glossy", "spandex"], "desc": "コスプレ界で圧倒的支持。ピタピタのグロッシー素材でキャラクターの輪郭を完全再現。", "features": ["光沢スパンデックス", "フルレングス", "コスプレ最適"], "fit": "S～XL", "origin": "Japan", "link": "https://hirose1117.ocnk.net/product-list/6"}, {"id": 10, "brand": "REALISE", "name": "T-031 Matte Spats", "price": "¥3,800", "tag": "matte", "badgeType": null, "img": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&h=800&fit=crop&auto=format&q=85", "cats": ["matte", "spandex"], "desc": "マット素材でナチュラルな質感。普段使いからステージまで使えるベーシックモデル。", "features": ["マット仕上げ", "ベーシックカット", "洗濯耐久度UP"], "fit": "S～XL", "origin": "Japan", "link": "https://hirose1117.ocnk.net/product-list/6"}, {"id": 11, "brand": "Mondor", "name": "Adult Footed Tight 3300", "price": "¥4,200", "tag": "standard", "badgeType": null, "img": "https://images.unsplash.com/photo-1516567727046-69ee5ea57040?w=600&h=800&fit=crop&auto=format&q=85", "cats": ["matte", "nylon"], "desc": "カナダの老舗タイツブランド。フット付きでバレエ・ダンスの定番。", "features": ["Supplex素材", "フット付き", "背面シーム"], "fit": "XS～XXL", "origin": "Canada", "link": "https://www.mondor.com/"}, {"id": 12, "brand": "Capezio", "name": "Professional Mesh Transition Tight", "price": "¥5,600", "tag": "mesh", "badgeType": "new", "img": "https://cdn.shopify.com/s/files/1/0840/3150/4659/files/capezio_professional_mesh_transition_tight_w_seams_black_9_1_2_aebfb46e-cb41-48aa-baee-5ca8a1dec534.jpg?v=1771263863", "cats": ["mesh", "nylon"], "desc": "転換タイツのプロ仕様。シームラインが美しく、スタジオでもステージでも映える。", "features": ["プロフェッショナルメッシュ", "シームライン", "履き後のシルエット美"], "fit": "S～XL", "origin": "USA", "link": "https://www.capezio.com/"}, {"id": 13, "brand": "Mondor", "name": "Glitter Fantasy Tight 3339", "price": "¥6,800", "tag": "glitter", "badgeType": "new", "img": "https://cdn.shopify.com/s/files/1/0766/3465/2916/files/12945-6N_Front.jpg?v=1780686463", "cats": ["shimmer", "nylon"], "desc": "キラキラグリッターが全面に散らばるステージ映え抜群のタイツ。発表会に最適。", "features": ["全面グリッター加工", "ホログラム感", "UPF対応"], "fit": "XS～XXL", "origin": "Canada", "link": "https://www.mondor.com/"}, {"id": 14, "brand": "Wolford", "name": "Satin Touch 20 Tight", "price": "¥38,000", "tag": "sheer", "badgeType": null, "img": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&h=800&fit=crop&auto=format&q=85", "cats": ["sheer", "lycra"], "desc": "20デニールのサテンタッチ。光の通り方で上品な透け感と艶が両立。", "features": ["サテン感20den", "UVプロテクション", "強化つま先"], "fit": "XS～XL", "origin": "Austria", "link": "https://www.wolfordshop.com/"}, {"id": 15, "brand": "Mondor", "name": "Velvet Tight 3354", "price": "¥5,400", "tag": "velvet", "badgeType": null, "img": "https://cdn.shopify.com/s/files/1/0766/3465/2916/files/12943-A5_Front.jpg?v=1780685330", "cats": ["velvet", "nylon"], "desc": "秋冬に最適なベルベット地。タッチが柔らかく見た目の豪華さも抜群。", "features": ["ベルベット地", "保温性あり", "調節ウエスト"], "fit": "XS～XXL", "origin": "Canada", "link": "https://www.mondor.com/"}, {"id": 16, "brand": "Capezio", "name": "Stride Square Neck Leotard Flamingo", "price": "¥7,200", "tag": "leotard", "badgeType": "popular", "img": "https://cdn.shopify.com/s/files/1/0840/3150/4659/files/Capezio_Studio_Collection_Stride_Square_Neck_Leotard_Flamingo_SE2028W_1.jpg?v=1772123134", "cats": ["lycra", "leotard"], "desc": "スクエアネックが首元をエレガントに演出。フラミンゴカラーがアクセントに。", "features": ["スクエアネック", "Studio Collection", "フラミンゴカラー"], "fit": "XS～XL", "origin": "USA", "link": "https://www.capezio.com/"}, {"id": 17, "brand": "Leohex", "name": "Metallic Sheen Spats", "price": "¥3,580", "tag": "metallic", "badgeType": null, "img": "https://images.unsplash.com/photo-1539874754764-5a96559165b0?w=600&h=800&fit=crop&auto=format&q=85", "cats": ["metallic", "spandex"], "desc": "メタリック加工でロボット系・SF系コスプレに最適。動いても光沢が持続。", "features": ["メタリック素材", "4wayストレッチ", "洗い時は折りたたみ洗い"], "fit": "S～2XL", "origin": "China", "link": "https://www.aliexpress.com/store/1102167284"}, {"id": 18, "brand": "Arena", "name": "Women Carbon Flex VX", "price": "¥68,000", "tag": "racing", "badgeType": null, "img": "https://images.unsplash.com/photo-1530549387789-4c1017266635?w=600&h=800&fit=crop&auto=format&q=85", "cats": ["carbon", "racing"], "desc": "アリーナ最高峰の競泳モデル。流体力学テストを重ねた極薄ハイテクスパッツ。", "features": ["Carbon Flex素材", "FINA承認", "第3世代VX技術"], "fit": "XS～L", "origin": "Italy", "link": "https://www.arenawaterinstinct.com/"}, {"id": 19, "brand": "Mondor", "name": "Midnight Foil Tight 3340", "price": "¥6,200", "tag": "foil", "badgeType": "popular", "img": "https://cdn.shopify.com/s/files/1/0766/3465/2916/files/7851-N1_Front.jpg?v=1781107770", "cats": ["shimmer", "nylon"], "desc": "夜空を閉じ込めたようなフォイル加工。照明に当たると息をのむほど輝く。", "features": ["フォイル加工", "ミッドナイトブルー", "耐スナッグ繊維"], "fit": "XS～XXL", "origin": "Canada", "link": "https://www.mondor.com/"}, {"id": 20, "brand": "Capezio", "name": "Everyday Sculpt Tank Leotard", "price": "¥6,400", "tag": "leotard", "badgeType": null, "img": "https://cdn.shopify.com/s/files/1/0840/3150/4659/files/Capezio_Studio_Collection_Everyday_Sculpt_Tank_Leotard_Black_SE2027W_1.jpg?v=1772122584", "cats": ["lycra", "leotard"], "desc": "タンクトップ型の毎日使いレオタード。スカルプト設計でウエストラインが美しい。", "features": ["スカルプトデザイン", "タンクスタイル", "バッキングなし"], "fit": "XS～XL", "origin": "USA", "link": "https://www.capezio.com/"}, {"id": 21, "brand": "Morphsuits", "name": "Metallic Silver Full Body Suit", "price": "¥6,500", "tag": "zentai", "badgeType": "popular", "img": "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=600&h=800&fit=crop&auto=format&q=85", "cats": ["metallic", "spandex"], "desc": "英国発のモーフスーツ。メタリックシルバーが360度どこからでも輝く全身スーツ。コス映え抜群。", "features": ["全身伸縮素材", "目・口元シースルー", "洗濯機可"], "fit": "S～XL", "origin": "UK", "link": "https://morphsuits.com/"}, {"id": 22, "brand": "Speerise", "name": "Holographic Dance Tight", "price": "¥2,480", "tag": "holographic", "badgeType": "new", "img": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&h=800&fit=crop&auto=format&q=85", "cats": ["shimmer", "spandex"], "desc": "ホログラフィック加工が光の角度で無限に色変化。ダンスもコスプレも最高映えする次世代タイツ。", "features": ["ホログラフィック加工", "UPF50+", "4wayストレッチ"], "fit": "XS～2XL", "origin": "China", "link": "https://www.aliexpress.com/store/speerise"}, {"id": 23, "brand": "BodyZone", "name": "Pro Compression Full Tight", "price": "¥4,800", "tag": "compression", "badgeType": null, "img": "https://images.unsplash.com/photo-1517487881594-2787fef5ebf7?w=600&h=800&fit=crop&auto=format&q=85", "cats": ["matte", "spandex"], "desc": "米国発コンプレッションブランド。筋肉サポートと美脚効果を両立したプロ仕様のフルタイツ。", "features": ["グラデーションコンプレッション", "抗菌防臭加工", "UPF50+"], "fit": "XS～XXL", "origin": "USA", "link": "https://www.bodyzone.com/"}, {"id": 24, "brand": "Zentai Zone", "name": "Shiny Footed Zentai Suit", "price": "¥3,980", "tag": "zentai", "badgeType": "popular", "img": "https://images.unsplash.com/photo-1523362628745-0c100150b504?w=600&h=800&fit=crop&auto=format&q=85", "cats": ["glossy", "spandex"], "desc": "全身ツルツルのシャイニー素材。頭からつま先まで完全カバーのコスプレ用ゼンタイスーツ。", "features": ["全身タイプ", "スパンデックス高光沢", "カスタムカラー可"], "fit": "S～3XL", "origin": "China", "link": "https://www.zentaizone.com/"}, {"id": 25, "brand": "CatsuitOnly", "name": "Premium Mirror Gloss Catsuit", "price": "¥5,200", "tag": "catsuit", "badgeType": "new", "img": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=800&fit=crop&auto=format&q=85", "cats": ["glossy", "spandex"], "desc": "鏡面加工のプレミアムキャットスーツ。コスプレ用途に特化した完成度の高い一着。", "features": ["ミラー光沢加工", "フロントジッパー", "背面ファスナーなし設計"], "fit": "XS～XL", "origin": "China", "link": "https://www.catsuitonly.com/"}];
+const PRODUCTS = [{"id": 1, "cat": "sweets", "badge": "hot", "img": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=450&fit=crop&auto=format&q=85", "nameJp": "白い恋人 36枚入", "hkd": 168, "jpy": 3240, "name": {"en": "Shiroi Koibito 36pcs", "zh": "白色戀人朱古力夾心餅 36枚", "ja": "白い恋人 36枚入"}, "desc": {"en": "Hokkaido's most iconic souvenir. Buttery langue de chat cookies sandwiching white or dark chocolate.", "zh": "北海道最具代表性的手信。酥脆法式薄餅夾白朱古力，香濃幼滑。", "ja": "北海道を代表するお土産。バター薫るラングドシャに濃厚チョコレートをサンド。"}}, {"id": 2, "cat": "sweets", "badge": "hot", "img": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&h=450&fit=crop&auto=format&q=85", "nameJp": "じゃがポックル 2袋セット", "hkd": 88, "jpy": 1620, "name": {"en": "Jaga Pokkuru 2-bag Set", "zh": "薯片棒棒 2袋組合", "ja": "じゃがポックル 2袋セット"}, "desc": {"en": "Addictive Hokkaido potato sticks seasoned with Shiretoko sea salt. A fan-favourite across Asia.", "zh": "北海道粟米薯條，用知床海鹽調味，香脆不膩，是亞洲遊客必買的爆款手信。", "ja": "北海道産じゃがいもと知床の塩だけで作るシンプルで絶品のスティックポテト。"}}, {"id": 3, "cat": "sweets", "badge": "hot", "img": "https://images.unsplash.com/photo-1587314168485-3236d6710814?w=600&h=450&fit=crop&auto=format&q=85", "nameJp": "マルセイバターサンド 10個入", "hkd": 128, "jpy": 2376, "name": {"en": "Marusei Butter Sand 10pcs", "zh": "牛油忌廉三文治餅 10件", "ja": "マルセイバターサンド 10個入"}, "desc": {"en": "Rokkatei's legendary butter cream sandwich cookie. Raisins, white chocolate and Hokkaido butter in a crispy biscuit.", "zh": "六花亭招牌產品。酥脆餅乾夾入提子乾、白朱古力及北海道牛油忌廉，層次豐富。", "ja": "六花亭の定番。サクサクビスケットに北海道産バタークリームとレーズンをサンド。"}}, {"id": 4, "cat": "sweets", "badge": "new", "img": "https://images.unsplash.com/photo-1541599468348-e96984315921?w=600&h=450&fit=crop&auto=format&q=85", "nameJp": "ロイズ ポテトチップチョコレート", "hkd": 148, "jpy": 2700, "name": {"en": "Royce' Potato Chip Chocolate 2pcs", "zh": "Royce 薯片朱古力 2盒", "ja": "ロイズ ポテトチップチョコレート 2個"}, "desc": {"en": "Royce's genius creation — thin, salty potato chips coated in rich Hokkaido milk chocolate. Perfect sweet-salty balance.", "zh": "Royce招牌產品，鹹香薯片配上濃郁朱古力，甜鹹平衡，令人一口接一口。", "ja": "ロイズが生み出した傑作。薄いポテトチップスに濃厚ミルクチョコレートをコーティング。"}}, {"id": 5, "cat": "sweets", "badge": null, "img": "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=600&h=450&fit=crop&auto=format&q=85", "nameJp": "雪宿 24枚入", "hkd": 85, "jpy": 1566, "name": {"en": "Yuki no Yado 24pcs", "zh": "雪宿薄餅 24枚", "ja": "雪宿 24枚入"}, "desc": {"en": "Sapporo Seika's classic crispy rice crackers with a gentle sweetness. Light, delicate and moreish.", "zh": "札幌製果出品的經典雪白薄餅，清甜可口，口感輕盈，是北海道必試零食。", "ja": "サッポロ製菓の定番。しっとりとした甘さのある雪のような白いおせんべい。"}}, {"id": 6, "cat": "sweets", "badge": null, "img": "https://images.unsplash.com/photo-1607344645866-009c320b63e0?w=600&h=450&fit=crop&auto=format&q=85", "nameJp": "北海道ミルクキャラメル", "hkd": 68, "jpy": 1242, "name": {"en": "Hokkaido Milk Caramel", "zh": "北海道牛奶軟糖", "ja": "北海道ミルクキャラメル"}, "desc": {"en": "Creamy caramel made from pure Hokkaido fresh milk. Melt-in-your-mouth softness with a rich dairy flavour.", "zh": "採用北海道純正鮮牛奶製作的軟糖，奶味濃郁，入口即化，老少咸宜。", "ja": "北海道産生乳をたっぷり使ったなめらかなキャラメル。濃厚な乳の甘みが口に広がる。"}}, {"id": 7, "cat": "beauty", "badge": "local", "img": "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=600&h=450&fit=crop&auto=format&q=85", "nameJp": "富良野ラベンダーソープ", "hkd": 128, "jpy": 2376, "name": {"en": "Furano Lavender Soap", "zh": "富良野薰衣草香皂", "ja": "富良野ラベンダーソープ"}, "desc": {"en": "Handcrafted soap infused with pure lavender essential oil from Furano's famous fields. Gentle on all skin types.", "zh": "以富良野著名薰衣草田出產的純天然精油製成，溫和護膚，芳香宜人。", "ja": "富良野産ラベンダー精油をたっぷり使ったハンドメイドソープ。肌に優しく香りも上品。"}}, {"id": 8, "cat": "beauty", "badge": null, "img": "https://images.unsplash.com/photo-1499002238440-d264edd596ec?w=600&h=450&fit=crop&auto=format&q=85", "nameJp": "ラベンダーサシェ 3個セット", "hkd": 98, "jpy": 1836, "name": {"en": "Lavender Sachet Set (3pcs)", "zh": "薰衣草香包套裝 3件", "ja": "ラベンダーサシェ 3個セット"}, "desc": {"en": "Three linen sachets filled with dried Furano lavender. Place in drawers or beside your pillow for a calming scent.", "zh": "以富良野薰衣草乾花製成的香包，放置抽屜或枕邊，帶來舒緩放鬆的芬芳。", "ja": "富良野のドライラベンダーを詰めたリネン生地のサシェ3個セット。引き出しや枕元に。"}}, {"id": 9, "cat": "beauty", "badge": null, "img": "https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=600&h=450&fit=crop&auto=format&q=85", "nameJp": "北海道温泉入浴剤セット", "hkd": 188, "jpy": 3456, "name": {"en": "Hokkaido Onsen Bath Salt Set", "zh": "北海道溫泉浴鹽套裝", "ja": "北海道温泉入浴剤セット"}, "desc": {"en": "Recreate a Hokkaido onsen experience at home. Contains mineral salts from 3 famous Hokkaido hot spring areas.", "zh": "在家重現北海道溫泉體驗！含有3個著名北海道溫泉勝地的礦物鹽，舒緩疲勞。", "ja": "北海道の有名温泉地の成分を再現した入浴剤3種セット。自宅で温泉気分を味わえる。"}}, {"id": 10, "cat": "craft", "badge": "local", "img": "https://images.unsplash.com/photo-1586348943529-beaae6c28db9?w=600&h=450&fit=crop&auto=format&q=85", "nameJp": "北海道昆布だしパック 30袋", "hkd": 148, "jpy": 2700, "name": {"en": "Hokkaido Kombu Dashi 30 bags", "zh": "北海道昆布高湯包 30袋", "ja": "北海道昆布だしパック 30袋"}, "desc": {"en": "Premium grade Rishiri konbu from northern Hokkaido. One bag makes 1L of rich, umami-packed dashi stock.", "zh": "採用北海道利尻最頂級昆布製作的高湯包，一包輕鬆煮出1L鮮甜清澈高湯。", "ja": "利尻昆布100%のだしパック。1袋で約1Lのうま味豊かな黄金だしが取れる。"}}, {"id": 11, "cat": "craft", "badge": "local", "img": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600&h=450&fit=crop&auto=format&q=85", "nameJp": "木彫り熊（アイヌ工芸）", "hkd": 488, "jpy": 8856, "name": {"en": "Ainu Carved Bear Figurine", "zh": "愛奴族手工木雕熊", "ja": "木彫り熊（アイヌ工芸品）"}, "desc": {"en": "A traditional Hokkaido Ainu wood carving of a bear catching salmon. Each piece is unique, hand-carved by local artisans.", "zh": "北海道愛奴族傳統手工木雕熊，每件均獨一無二，由當地工匠親手雕刻，是珍貴紀念品。", "ja": "北海道アイヌ伝統工芸の鮭をくわえた木彫り熊。職人の手による一点物。お土産の王様。"}}, {"id": 12, "cat": "craft", "badge": "hot", "img": "https://images.unsplash.com/photo-1607344645866-009c320b63e0?w=600&h=450&fit=crop&auto=format&q=85", "nameJp": "北海道厳選ギフトボックス", "hkd": 388, "jpy": 7128, "name": {"en": "Hokkaido Premium Gift Box", "zh": "北海道精選禮品盒", "ja": "北海道厳選ギフトボックス"}, "desc": {"en": "Curated gift box with 5 Hokkaido best-sellers: Shiroi Koibito, Jaga Pokkuru, Marusei, Royce and Yuki no Yado.", "zh": "精選禮盒包含5款北海道人氣手信：白色戀人、薯片棒、牛油餅、Royce薯片朱古力及雪宿。", "ja": "白い恋人・じゃがポックル・マルセイ・ロイズ・雪宿の5大人気商品を詰め合わせたギフトボックス。"}}];
 
-const BADGES = {premium:"PREMIUM",new:"NEW",popular:"POPULAR"};
-const BADGE_CLR = {premium:"badge-premium",new:"badge-new",popular:"badge-popular"};
-
-let activeFilters = {brand:"all", cat:"all"};
-let searchQ = "";
-
-function renderCards(){
-  const grid = document.getElementById("grid");
-  const filtered = PRODUCTS.filter(p=>{
-    const bOk = activeFilters.brand==="all" || p.brand===activeFilters.brand;
-    const cOk = activeFilters.cat==="all" || p.cats.includes(activeFilters.cat);
-    const sOk = !searchQ || p.name.toLowerCase().includes(searchQ) || p.brand.toLowerCase().includes(searchQ) || p.desc.includes(searchQ);
-    return bOk && cOk && sOk;
-  });
-  grid.innerHTML = filtered.length ? "" : `<p style="color:#666;grid-column:1/-1;text-align:center;padding:4rem 0">該当商品が見つかりません</p>`;
-  filtered.forEach(p=>{
-    const bdg = p.badgeType ? `<span class="badge ${BADGE_CLR[p.badgeType]}">${BADGES[p.badgeType]}</span>` : "";
-    grid.innerHTML += `
-    <article class="card" onclick="openModal(${p.id})">
-      <div class="card-img"><img src="${p.img}" alt="${p.brand} ${p.name}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1530549387789-4c1017266635?w=600&h=800&fit=crop'">
-        <div class="card-overlay">
-          <div class="card-tag">${p.tag.toUpperCase()}</div>
-          <div class="card-name">${p.name}</div>
-          <div class="card-price">${p.price}</div>
-        </div>
-        ${bdg}
-      </div>
-      <div class="card-foot">
-        <span class="card-brand">${p.brand}</span>
-        <span class="card-origin">${p.origin}</span>
-      </div>
-    </article>`;
-  });
-  observeCards();
+const LANG = {
+en: {
+  hero_eyebrow:"Direct from Sapporo, Hokkaido",
+  hero_title:"Taste of<br>Hokkaido",
+  hero_sub:"Hand-picked specialties from Sapporo's finest shops. Delivered to your door in Hong Kong.",
+  hero_cta:"Shop Now →",
+  trust_ship:"International Shipping to HK",
+  trust_auth:"100% Authentic Japanese Products",
+  trust_pay:"Secure PayPal Payment",
+  trust_pack:"Gift Packaging Available",
+  shop_eyebrow:"Hokkaido Selection",
+  shop_title:"Popular in Sapporo",
+  shop_sub:"All items are carefully selected and can be shipped internationally by air cargo.",
+  cat_all:"All",cat_sweets:"Sweets & Snacks",cat_beauty:"Beauty & Wellness",cat_craft:"Crafts & Gifts",
+  ship_eyebrow:"Shipping Information",ship_title:"Delivered to Hong Kong",
+  ship1_title:"Air Express",ship1_text:"Shipped by EMS or air cargo from Sapporo. Estimated 5–8 business days to Hong Kong.",
+  ship2_title:"Customs & Duties",ship2_text:"All food items comply with Hong Kong import regulations. Declare at customs on arrival.",
+  ship3_title:"Freshness Guaranteed",ship3_text:"Temperature-sensitive items packed with insulation. Freshness seal on all confectionery.",
+  foot_tagline:"Authentic Hokkaido products for Hong Kong.\nSapporo → Hong Kong with love.",
+  foot_paypal:"Secured by PayPal",foot_shop:"Shop",foot_shipping:"Shipping Policy",
+  foot_refund:"Refund Policy",foot_contact:"Contact Us",foot_privacy:"Privacy Policy",
+  foot_copy:"© 2026 Yuki Gift. All prices shown in HKD. Products sourced from Sapporo, Hokkaido, Japan.",
+  cart_title:"Your Cart",cart_total:"Total",cart_incl:"incl. est. shipping",
+  checkout_note:"Pay securely with PayPal. You'll be redirected to PayPal to complete your purchase.",
+  badge_hot:"POPULAR",badge_new:"NEW",badge_local:"LOCAL",
+  add:"Add to Cart",ship_ok:"Ships to HK",cart_empty:"Your cart is empty",
+},
+zh: {
+  hero_eyebrow:"直送自北海道札幌",
+  hero_title:"北海道<br>手信精選",
+  hero_sub:"精選札幌人氣名物，專門送遞至香港，讓您足不出戶品嚐道地北海道風味。",
+  hero_cta:"立即選購 →",
+  trust_ship:"國際航空直送香港",
+  trust_auth:"100% 正宗日本商品",
+  trust_pay:"PayPal 安全付款",
+  trust_pack:"精美禮品包裝",
+  shop_eyebrow:"北海道精選",
+  shop_title:"札幌人氣手信",
+  shop_sub:"所有商品精心挑選，均可以航空貨運方式寄送至香港。",
+  cat_all:"全部",cat_sweets:"糕點零食",cat_beauty:"美妝護膚",cat_craft:"工藝禮品",
+  ship_eyebrow:"送貨資訊",ship_title:"直送香港",
+  ship1_title:"航空快遞",ship1_text:"由札幌以EMS或航空貨運寄出，預計5至8個工作天到達香港。",
+  ship2_title:"關稅及報關",ship2_text:"所有食品符合香港入口規定，到港後請按規定向海關申報。",
+  ship3_title:"新鮮保證",ship3_text:"對溫度敏感的商品均附隔熱包裝，所有糕點均貼有新鮮封條。",
+  foot_tagline:"專門為香港人送上正宗北海道手信。\n札幌 → 香港，用心送遞。",
+  foot_paypal:"PayPal 安全支付",foot_shop:"選購",foot_shipping:"送貨政策",
+  foot_refund:"退款政策",foot_contact:"聯絡我們",foot_privacy:"私隱政策",
+  foot_copy:"© 2026 Yuki Gift。所有價格以港幣顯示。商品來自日本北海道札幌。",
+  cart_title:"購物車",cart_total:"合計",cart_incl:"含預計運費",
+  checkout_note:"以PayPal安全付款，您將被導至PayPal頁面完成購買。",
+  badge_hot:"熱門",badge_new:"新品",badge_local:"當地限定",
+  add:"加入購物車",ship_ok:"可寄香港",cart_empty:"購物車暫時是空的",
+},
+ja: {
+  hero_eyebrow:"北海道札幌から直送",
+  hero_title:"北海道の<br>味わいを",
+  hero_sub:"札幌の名店から厳選したお土産を、香港のご自宅まで直接お届けします。",
+  hero_cta:"ショッピングへ →",
+  trust_ship:"香港への国際配送",
+  trust_auth:"100% 本物の日本製品",
+  trust_pay:"PayPalで安全決済",
+  trust_pack:"ギフトラッピング対応",
+  shop_eyebrow:"北海道セレクション",
+  shop_title:"札幌人気商品",
+  shop_sub:"全商品は厳選され、航空便で国際発送が可能です。",
+  cat_all:"すべて",cat_sweets:"スイーツ＆スナック",cat_beauty:"ビューティー＆ウェルネス",cat_craft:"クラフト＆ギフト",
+  ship_eyebrow:"配送について",ship_title:"香港へお届け",
+  ship1_title:"航空便（エクスプレス）",ship1_text:"札幌よりEMSまたは航空便で発送。香港まで約5〜8営業日の見込みです。",
+  ship2_title:"関税・通関",ship2_text:"全食品は香港の輸入規制に準拠。到着時に税関申告が必要な場合があります。",
+  ship3_title:"鮮度保証",ship3_text:"温度管理が必要な商品は断熱梱包でお届け。全菓子類に鮮度シール付き。",
+  foot_tagline:"香港のみなさんに、本物の北海道をお届けします。\n札幌 → 香港、心を込めて。",
+  foot_paypal:"PayPalで安全に決済",foot_shop:"ショップ",foot_shipping:"配送ポリシー",
+  foot_refund:"返金ポリシー",foot_contact:"お問い合わせ",foot_privacy:"プライバシーポリシー",
+  foot_copy:"© 2026 Yuki Gift。価格はすべてHKD表示。商品は日本・北海道札幌より調達。",
+  cart_title:"カート",cart_total:"合計",cart_incl:"送料概算含む",
+  checkout_note:"PayPalで安全にお支払い。PayPalページへ移動して購入完了となります。",
+  badge_hot:"人気",badge_new:"新着",badge_local:"限定",
+  add:"カートに追加",ship_ok:"香港発送可",cart_empty:"カートはまだ空です",
 }
+};
 
-function openModal(id){
-  const p = PRODUCTS.find(x=>x.id===id);
-  if(!p) return;
-  const bdg = p.badgeType ? `<span class="badge ${BADGE_CLR[p.badgeType]}">${BADGES[p.badgeType]}</span>` : "";
-  const feats = p.features.map(f=>`<li>${f}</li>`).join("");
-  const cats = p.cats.map(c=>`<span class="cat-pill">${c}</span>`).join("");
-  document.getElementById("modal").innerHTML = `
-    <button class="modal-close" onclick="closeM()">✕</button>
-    <div class="modal-img"><img src="${p.img}" alt="${p.brand} ${p.name}" onerror="this.src='https://images.unsplash.com/photo-1530549387789-4c1017266635?w=600&h=800&fit=crop'"></div>
-    <div class="modal-body">
-      <div class="modal-header">
-        <div class="modal-brand">${p.brand}</div>
-        ${bdg}
-        <h2 class="modal-title">${p.name}</h2>
-        <div class="modal-price">${p.price}</div>
-        <div class="modal-cats">${cats}</div>
-      </div>
-      <p class="modal-desc">${p.desc}</p>
-      <div class="modal-section"><div class="modal-section-label">特徴</div><ul class="modal-features">${feats}</ul></div>
-      <div class="modal-section"><div class="modal-section-label">サイズ</div><p>${p.fit}</p></div>
-      <div class="modal-section"><div class="modal-section-label">原産国</div><p>${p.origin}</p></div>
-      <a class="modal-cta" href="${p.link}" target="_blank" rel="noopener">公式サイトで見る →</a>
-    </div>`;
-  document.getElementById("ov").style.display="flex";
-  document.body.style.overflow="hidden";
-}
-
-function closeM(){
-  document.getElementById("ov").style.display="none";
-  document.body.style.overflow="";
-}
-
-document.addEventListener("keydown",e=>{ if(e.key==="Escape") closeM(); });
-
-function setFilter(type, val, el){
-  activeFilters[type] = val;
-  document.querySelectorAll(`.pill[data-type="${type}"]`).forEach(p=>p.classList.remove("active"));
-  el.classList.add("active");
-  renderCards();
-}
-
-document.getElementById("searchInput").addEventListener("input", e=>{
-  searchQ = e.target.value.toLowerCase().trim();
-  renderCards();
-});
-
-function observeCards(){
-  const io = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("visible"); io.unobserve(e.target); }});
-  },{threshold:0.1});
-  document.querySelectorAll(".card:not(.visible)").forEach(c=>io.observe(c));
-}
-
-// Nav active highlight on scroll
-const sections = document.querySelectorAll("section[id]");
-const navLinks = document.querySelectorAll(".nav-links a");
-const sio = new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){
-      navLinks.forEach(a=>a.classList.remove("active"));
-      const active = document.querySelector(`.nav a[href="#${e.target.id}"]`);
-      if(active) active.classList.add("active");
+let currentLang = "en";
+function setLang(l){
+  currentLang = l;
+  document.documentElement.lang = l;
+  document.querySelectorAll(".lang-btn").forEach(b=>b.classList.remove("active"));
+  document.querySelector(`.lang-btn[onclick="setLang('${l}')"]`).classList.add("active");
+  document.querySelectorAll("[data-i]").forEach(el=>{
+    const key = el.getAttribute("data-i");
+    if(LANG[l] && LANG[l][key]!==undefined){
+      if(key==="hero_title"||key==="hero_sub") el.innerHTML = LANG[l][key];
+      else el.textContent = LANG[l][key];
     }
   });
-},{threshold:0.4});
-sections.forEach(s=>sio.observe(s));
+  renderProducts();
+}
+function t(key){ return LANG[currentLang]?.[key] || LANG.en[key] || key; }
 
-// Hero parallax on scroll
-window.addEventListener("scroll",()=>{
-  const hero = document.querySelector(".hero");
-  if(hero){ const y = window.scrollY; hero.style.backgroundPositionY = `calc(50% + ${y*0.3}px)`; }
-},{ passive:true });
+// ===== CART =====
+let cart = JSON.parse(localStorage.getItem("yukigift_cart") || "[]");
 
-// Init: build brand filters
-const brands = ["all",...new Set(PRODUCTS.map(p=>p.brand))];
-const brandF = document.getElementById("brandFilter");
-if(brandF){
-  brands.forEach(b=>{
-    const btn = document.createElement("button");
-    btn.className = "pill" + (b==="all"?" active":"");
-    btn.setAttribute("data-type","brand");
-    btn.textContent = b==="all"?"すべて":b;
-    btn.onclick = ()=>setFilter("brand",b,btn);
-    brandF.appendChild(btn);
-  });
+function saveCart(){ localStorage.setItem("yukigift_cart", JSON.stringify(cart)); }
+
+function addToCart(id){
+  const p = PRODUCTS.find(x=>x.id===id);
+  if(!p) return;
+  const ex = cart.find(c=>c.id===id);
+  if(ex){ ex.qty++; } else { cart.push({id:p.id,qty:1}); }
+  saveCart();
+  updateCartUI();
+  openCart();
 }
 
-// Init: build cat filters
-const cats = ["all","glossy","shimmer","velvet","matte","sheer","mesh","metallic","racing","lycra","spandex","nylon","leotard","zentai","holographic","compression","catsuit"];
-const catLabels = {all:"すべて",glossy:"光沢",shimmer:"きらめき",velvet:"ベルベット",matte:"マット",sheer:"シアー",mesh:"メッシュ",metallic:"メタリック",racing:"競泳",lycra:"ライクラ",spandex:"スパンデックス",nylon:"ナイロン",leotard:"レオタード",zentai:"ゼンタイ",holographic:"ホログラム",compression:"コンプレッション",catsuit:"キャットスーツ"};
-const styleEl = document.getElementById("styleScroll");
-if(styleEl){
-  cats.forEach(c=>{
-    const btn = document.createElement("button");
-    btn.className = "spill" + (c==="all"?" on":"");
-    btn.setAttribute("data-type","cat");
-    btn.textContent = catLabels[c]||c;
-    btn.onclick = ()=>{
-      activeFilters.cat = c;
-      document.querySelectorAll(".spill").forEach(b=>b.classList.remove("on"));
-      btn.classList.add("on");
-      renderCards();
-    };
-    styleEl.appendChild(btn);
-  });
+function removeFromCart(id){
+  cart = cart.filter(c=>c.id!==id);
+  saveCart();
+  updateCartUI();
 }
 
-renderCards();
+function changeQty(id, delta){
+  const item = cart.find(c=>c.id===id);
+  if(!item) return;
+  item.qty = Math.max(1, item.qty + delta);
+  saveCart();
+  updateCartUI();
+}
+
+function cartTotal(){
+  return cart.reduce((sum,c)=>{
+    const p = PRODUCTS.find(x=>x.id===c.id);
+    return sum + (p ? p.hkd * c.qty : 0);
+  }, 0);
+}
+
+function updateCartUI(){
+  const count = cart.reduce((s,c)=>s+c.qty,0);
+  const countEl = document.getElementById("cartCount");
+  countEl.textContent = count;
+  count > 0 ? countEl.classList.add("show") : countEl.classList.remove("show");
+  renderCartItems();
+}
+
+function renderCartItems(){
+  const el = document.getElementById("cartItems");
+  const foot = document.getElementById("cartFoot");
+  if(cart.length === 0){
+    el.innerHTML = `<div class="cart-empty"><div class="cart-empty-icon">🛍</div><span>${t("cart_empty")}</span></div>`;
+    foot.style.display = "none";
+    return;
+  }
+  foot.style.display = "block";
+  el.innerHTML = cart.map(c=>{
+    const p = PRODUCTS.find(x=>x.id===c.id);
+    if(!p) return "";
+    const name = p.name[currentLang] || p.name.en;
+    return `<div class="cart-item">
+      <div class="ci-img"><img src="${p.img}" alt="${name}" loading="lazy"></div>
+      <div class="ci-body">
+        <div class="ci-name">${name}</div>
+        <div class="ci-price">HK$${p.hkd * c.qty}</div>
+        <div class="ci-qty">
+          <button class="qty-btn" onclick="changeQty(${p.id},-1)">−</button>
+          <span class="qty-n">${c.qty}</span>
+          <button class="qty-btn" onclick="changeQty(${p.id},1)">+</button>
+          <button class="ci-del" onclick="removeFromCart(${p.id})">✕</button>
+        </div>
+      </div>
+    </div>`;
+  }).join("");
+  document.getElementById("cartTotalVal").textContent = `HK$${cartTotal()}`;
+  initPayPal();
+}
+
+// ===== PAYPAL =====
+let ppRendered = false;
+function initPayPal(){
+  if(ppRendered) return;
+  if(!window.paypal) return;
+  const container = document.getElementById("paypal-button-container");
+  if(!container || cart.length===0) return;
+  container.innerHTML = "";
+  ppRendered = false;
+  paypal.Buttons({
+    style:{layout:"vertical",color:"gold",shape:"rect",label:"pay",height:44},
+    createOrder: (data, actions) => {
+      const items = cart.map(c=>{
+        const p = PRODUCTS.find(x=>x.id===c.id);
+        return {name: p.name.en, unit_amount:{currency_code:"HKD",value: p.hkd.toFixed(2)}, quantity: c.qty};
+      });
+      return actions.order.create({
+        purchase_units:[{
+          description:"Yuki Gift - Hokkaido Specialties",
+          amount:{currency_code:"HKD",value: cartTotal().toFixed(2),breakdown:{item_total:{currency_code:"HKD",value: cartTotal().toFixed(2)}}},
+          items
+        }]
+      });
+    },
+    onApprove: (data, actions) => actions.order.capture().then(details=>{
+      cart = []; saveCart(); ppRendered = false;
+      updateCartUI();
+      closeCart();
+      alert("✅ Order confirmed! Thank you, " + (details.payer.name.given_name) + ".\nYour Hokkaido goodies are on the way!");
+    }),
+    onError: err=>{ console.error(err); alert("Payment error. Please try again."); }
+  }).render("#paypal-button-container").then(()=>{ ppRendered = true; }).catch(()=>{});
+}
+
+// ===== CART DRAWER =====
+function openCart(){ 
+  document.getElementById("cartOverlay").classList.add("open");
+  document.getElementById("cartDrawer").classList.add("open");
+  document.body.style.overflow = "hidden";
+  renderCartItems();
+}
+function closeCart(){
+  document.getElementById("cartOverlay").classList.remove("open");
+  document.getElementById("cartDrawer").classList.remove("open");
+  document.body.style.overflow = "";
+}
+document.addEventListener("keydown",e=>{ if(e.key==="Escape") closeCart(); });
+
+// ===== PRODUCT RENDER =====
+let activeCat = "all";
+function filterCat(cat, el){
+  activeCat = cat;
+  document.querySelectorAll(".cat-tab").forEach(b=>b.classList.remove("active"));
+  el.classList.add("active");
+  renderProducts();
+}
+
+function renderProducts(){
+  const grid = document.getElementById("pgrid");
+  const filtered = PRODUCTS.filter(p=> activeCat==="all" || p.cat===activeCat);
+  const badgeCls = {hot:"badge-hot",new:"badge-new",local:"badge-local"};
+  grid.innerHTML = filtered.map(p=>{
+    const name = p.name[currentLang] || p.name.en;
+    const desc = p.desc[currentLang] || p.desc.en;
+    const bdg = p.badge ? `<span class="card-badge ${badgeCls[p.badge]}">${t("badge_"+p.badge)}</span>` : "";
+    const catLabel = {sweets:"cat_sweets",beauty:"cat_beauty",craft:"cat_craft"}[p.cat];
+    return `<div class="card" onclick="addToCart(${p.id})">
+      <div class="card-img">
+        <img src="${p.img}" alt="${name}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1607344645866-009c320b63e0?w=600&h=450&fit=crop'">
+        ${bdg}
+      </div>
+      <div class="card-body">
+        <div class="card-cat" data-cat-key="${catLabel}">${t(catLabel)}</div>
+        <div class="card-name">${name}</div>
+        <div class="card-name-jp">${p.nameJp}</div>
+        <div class="ship-tag">✈ ${t("ship_ok")}</div>
+        <div class="card-desc">${desc}</div>
+        <div class="card-foot">
+          <div class="card-price">
+            <span class="price-hkd">HK$${p.hkd}</span>
+            <span class="price-jpy">≈ ¥${p.jpy.toLocaleString()}</span>
+          </div>
+          <button class="add-btn" onclick="event.stopPropagation();addToCart(${p.id})" title="${t('add')}">+</button>
+        </div>
+      </div>
+    </div>`;
+  }).join("");
+}
+
+// ===== INIT =====
+renderProducts();
+updateCartUI();
+setLang("en");
 </script>
 </body>
 </html>
