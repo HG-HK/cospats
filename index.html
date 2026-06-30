@@ -571,14 +571,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.7);padding:40px 40px 24px;}
     <div class="contact-info">
       <h3 class="contact-info-title" data-i="contact_info_title">We're here to help</h3>
       <p class="contact-info-sub" data-i="contact_info_sub">Whether you have a question about a product, need help tracking your order, or want to arrange a bulk gift order — just get in touch and we'll take care of you.</p>
-      <div class="contact-detail">
-        <div class="contact-detail-icon">✉</div>
-        <div class="contact-detail-body">
-          <div class="contact-detail-label" data-i="contact_email_label">Email</div>
-          <div class="contact-detail-val">hello@yukigift.hk</div>
-          <div class="contact-detail-note" data-i="contact_email_note">Reply within 24 hours</div>
-        </div>
-      </div>
+
       <div class="contact-detail">
         <div class="contact-detail-icon">🕐</div>
         <div class="contact-detail-body">
@@ -597,31 +590,30 @@ footer{background:var(--ink);color:rgba(255,255,255,.7);padding:40px 40px 24px;}
       </div>
     </div>
     <div class="contact-form">
-      <form id="contactForm" onsubmit="submitContact(event)">
-        <div class="form-row-2">
+      <form id="contactForm" onsubmit="submitContact(event)">        <div class="form-row-2">
           <div class="form-row">
             <label class="form-label" data-i="form_name_label">Your Name</label>
-            <input class="form-input" type="text" id="cName" placeholder="Chan Tai Man" required>
+            <input class="form-input" type="text" id="cName" name="name" placeholder="Chan Tai Man" required>
           </div>
           <div class="form-row">
             <label class="form-label" data-i="form_email_label">Email Address</label>
-            <input class="form-input" type="email" id="cEmail" placeholder="you@email.com" required>
+            <input class="form-input" type="email" id="cEmail" name="email" placeholder="you@email.com" required>
           </div>
         </div>
         <div class="form-row">
           <label class="form-label" data-i="form_topic_label">Topic</label>
-          <select class="form-select" id="cTopic">
-            <option value="order" data-i="form_topic_order">Order / Shipping enquiry</option>
-            <option value="product" data-i="form_topic_product">Product question</option>
-            <option value="bulk" data-i="form_topic_bulk">Bulk / Gift order</option>
-            <option value="other" data-i="form_topic_other">Other</option>
+          <select class="form-select" id="cTopic" name="topic">
+            <option value="Order / Shipping enquiry" data-i="form_topic_order">Order / Shipping enquiry</option>
+            <option value="Product question" data-i="form_topic_product">Product question</option>
+            <option value="Bulk / Gift order" data-i="form_topic_bulk">Bulk / Gift order</option>
+            <option value="Other" data-i="form_topic_other">Other</option>
           </select>
         </div>
         <div class="form-row">
           <label class="form-label" data-i="form_msg_label">Message</label>
-          <textarea class="form-textarea" id="cMsg" placeholder="Please describe your enquiry..." required></textarea>
+          <textarea class="form-textarea" id="cMsg" name="message" placeholder="Please describe your enquiry..." required></textarea>
         </div>
-        <button class="form-submit" type="submit" data-i="form_submit">Send Message →</button>
+        <button class="form-submit" type="submit" id="contactSubmitBtn" data-i="form_submit">Send Message →</button>
       </form>
       <div class="form-success" id="formSuccess" data-i="form_success">✓ Message sent! We'll reply to your email within 24 hours.</div>
     </div>
@@ -1085,11 +1077,11 @@ function submitContact(e){
   const msg   = document.getElementById('cMsg').value;
   const subject = encodeURIComponent('[Yuki Gift] ' + topic + ' — ' + name);
   const body    = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\nTopic: ' + topic + '\n\n' + msg);
-  window.location.href = 'mailto:hello@yukigift.hk?subject=' + subject + '&body=' + body;
+  window.open('mailto:reimiyata90@gmail.com?subject=' + subject + '&body=' + body);
   document.getElementById('contactForm').reset();
   const s = document.getElementById('formSuccess');
   s.classList.add('show');
-  setTimeout(()=>s.classList.remove('show'), 5000);
+  setTimeout(()=>s.classList.remove('show'), 6000);
 }
 
 // ===== FAQ =====
