@@ -195,8 +195,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.7);padding:40px 40px 24px;}
 .om-close:hover{background:var(--red);}
 
 </style>
-<!-- PayPal SDK — replace YOUR_CLIENT_ID with your PayPal Business Client ID -->
-<script src="https://www.paypal.com/sdk/js?client-id=ASHcXSZS69R3cNzeOBj3nuKfUVD5jLEVhzFvuCsv4gfMdVKiYVCQZQBCOe7NK7mO5kC4be94KiLvWVlc&currency=HKD&locale=zh_HK" data-sdk-integration-source="integrationbuilder_sc"></script>
+<!-- PayPal SDK loaded dynamically based on language -->
 </head>
 <body>
 
@@ -404,6 +403,26 @@ ja: {
 };
 
 let currentLang = "en";
+
+// ===== PAYPAL DYNAMIC LOAD =====
+const PP_CLIENT_ID = "ASHcXSZS69R3cNzeOBj3nuKfUVD5jLEVhzFvuCsv4gfMdVKiYVCQZQBCOe7NK7mO5kC4be94KiLvWVlc";
+const PP_LOCALE = {en:"en_HK", zh:"zh_HK", ja:"ja_JP"};
+let ppLoading = false;
+
+function loadPayPalSDK(lang, callback){
+  // Remove existing PayPal script & instance
+  const old = document.getElementById("paypal-sdk");
+  if(old) old.remove();
+  delete window.paypal;
+  ppRendered = false;
+
+  const s = document.createElement("script");
+  s.id = "paypal-sdk";
+  s.src = `https://www.paypal.com/sdk/js?client-id=${PP_CLIENT_ID}&currency=HKD&locale=${PP_LOCALE[lang]||"en_HK"}`;
+  s.onload = ()=>{ if(callback) callback(); };
+  document.head.appendChild(s);
+}
+
 function setLang(l){
   currentLang = l;
   document.documentElement.lang = l;
@@ -417,6 +436,9 @@ function setLang(l){
     }
   });
   renderProducts();
+  // Reload PayPal SDK with new locale
+  const cartOpen = document.getElementById("cartDrawer").classList.contains("open");
+  loadPayPalSDK(l, ()=>{ if(cartOpen) initPayPal(); });
 }
 function t(key){ return LANG[currentLang]?.[key] || LANG.en[key] || key; }
 
@@ -620,7 +642,18 @@ function renderProducts(){
 // ===== INIT =====
 renderProducts();
 updateCartUI();
-setLang("en");
+// Apply language without reloading PayPal (will be loaded by loadPayPalSDK below)
+currentLang = "en";
+document.documentElement.lang = "en";
+document.querySelectorAll("[data-i]").forEach(el=>{
+  const key = el.getAttribute("data-i");
+  if(LANG.en[key]!==undefined){
+    if(key==="hero_title"||key==="hero_sub") el.innerHTML = LANG.en[key];
+    else el.textContent = LANG.en[key];
+  }
+});
+document.querySelector('.lang-btn[onclick="setLang('en')"]').classList.add("active");
+loadPayPalSDK("en");
 </script>
 
 <!-- ORDER CONFIRM MODAL -->
