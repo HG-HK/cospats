@@ -870,7 +870,7 @@ function setLang(l){
   document.querySelectorAll("[data-i]").forEach(el=>{
     const key = el.getAttribute("data-i");
     if(LANG[l] && LANG[l][key]!==undefined){
-      if(key==="hero_title"||key==="hero_sub") el.innerHTML = LANG[l][key];
+      if(["hero_title","hero_sub","story_title"].includes(key)) el.innerHTML = LANG[l][key];
       else el.textContent = LANG[l][key];
     }
   });
@@ -1126,7 +1126,7 @@ document.documentElement.lang = "en";
 document.querySelectorAll("[data-i]").forEach(el=>{
   const key = el.getAttribute("data-i");
   if(LANG.en[key]!==undefined){
-    if(key==="hero_title"||key==="hero_sub") el.innerHTML = LANG.en[key];
+    if(["hero_title","hero_sub","story_title"].includes(key)) el.innerHTML = LANG.en[key];
     else el.textContent = LANG.en[key];
   }
 });
