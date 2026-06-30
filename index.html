@@ -194,6 +194,89 @@ footer{background:var(--ink);color:rgba(255,255,255,.7);padding:40px 40px 24px;}
 .om-close{width:100%;margin-top:20px;padding:14px;background:var(--ink);color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;transition:background .18s;}
 .om-close:hover{background:var(--red);}
 
+
+/* ===== STORY ===== */
+.story-section{background:var(--ink);color:#fff;padding:88px 40px;text-align:center;}
+.story-inner{max-width:720px;margin:0 auto;}
+.story-eyebrow{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:20px;}
+.story-title{font-family:"Playfair Display",serif;font-size:clamp(28px,4vw,44px);font-weight:600;line-height:1.2;margin-bottom:24px;color:#fff;}
+.story-body{font-size:15px;line-height:1.9;color:rgba(255,255,255,.72);font-weight:300;margin-bottom:36px;}
+.story-stats{display:flex;justify-content:center;gap:56px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.12);padding-top:36px;}
+.stat-item{text-align:center;}
+.stat-num{font-family:"Playfair Display",serif;font-size:36px;font-weight:600;color:var(--gold);line-height:1;}
+.stat-label{font-size:11px;color:rgba(255,255,255,.55);margin-top:6px;letter-spacing:.5px;}
+
+/* ===== BRANDS ===== */
+.brands-section{padding:80px 40px;background:var(--bg);}
+.brands-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;max-width:1200px;margin:0 auto;}
+.brand-card{background:#fff;border:1px solid var(--border);border-radius:10px;padding:32px 24px;text-align:center;transition:box-shadow .22s,transform .22s;}
+.brand-card:hover{box-shadow:0 8px 32px rgba(0,0,0,.09);transform:translateY(-3px);}
+.brand-initial{width:72px;height:72px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:"Playfair Display",serif;font-size:26px;font-weight:600;margin:0 auto 16px;color:#fff;}
+.brand-initial.ishiya{background:linear-gradient(135deg,#C8373A,#a82d30);}
+.brand-initial.calbee{background:linear-gradient(135deg,#E07B00,#c46a00);}
+.brand-initial.rokkatei{background:linear-gradient(135deg,#2E5D87,#244d72);}
+.brand-initial.royce{background:linear-gradient(135deg,#1A1A2E,#2d2d4e);}
+.brand-name{font-family:"Playfair Display",serif;font-size:17px;font-weight:600;margin-bottom:4px;}
+.brand-name-jp{font-size:11px;color:var(--ink3);margin-bottom:12px;}
+.brand-year{display:inline-block;font-size:10px;letter-spacing:2px;color:var(--gold);border:1px solid var(--gold);padding:3px 10px;border-radius:99px;margin-bottom:14px;text-transform:uppercase;}
+.brand-desc{font-size:12px;color:var(--ink2);line-height:1.7;}
+
+/* ===== WHY HOKKAIDO ===== */
+.why-section{background:var(--bg2);padding:80px 40px;}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;max-width:1000px;margin:0 auto;}
+.why-card{background:#fff;border-radius:10px;padding:36px 28px;border:1px solid var(--border);}
+.why-icon{font-size:36px;margin-bottom:16px;}
+.why-title{font-size:16px;font-weight:700;margin-bottom:10px;color:var(--ink);}
+.why-text{font-size:13px;color:var(--ink2);line-height:1.8;}
+
+/* ===== REVIEWS ===== */
+.reviews-section{padding:80px 40px;background:var(--bg);}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1100px;margin:0 auto;}
+.review-card{background:#fff;border:1px solid var(--border);border-radius:10px;padding:28px 24px;}
+.review-stars{color:#F5A623;font-size:14px;letter-spacing:2px;margin-bottom:12px;}
+.review-text{font-size:13px;color:var(--ink2);line-height:1.8;margin-bottom:16px;font-style:italic;}
+.review-author{display:flex;align-items:center;gap:10px;border-top:1px solid var(--border);padding-top:14px;}
+.review-avatar{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#fff;flex-shrink:0;}
+.review-name{font-size:13px;font-weight:600;}
+.review-loc{font-size:11px;color:var(--ink3);}
+
+/* ===== FAQ ===== */
+.faq-section{background:var(--bg2);padding:80px 40px;}
+.faq-inner{max-width:760px;margin:0 auto;}
+.faq-item{border-bottom:1px solid var(--border);overflow:hidden;}
+.faq-item:first-child{border-top:1px solid var(--border);}
+.faq-q{width:100%;background:none;border:none;text-align:left;padding:20px 0;font-size:14px;font-weight:600;color:var(--ink);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;font-family:inherit;}
+.faq-q .faq-chevron{font-size:12px;color:var(--ink3);transition:transform .25s;flex-shrink:0;}
+.faq-item.open .faq-chevron{transform:rotate(180deg);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s ease;}
+.faq-item.open .faq-a{max-height:300px;padding-bottom:20px;}
+.faq-a p{font-size:13px;color:var(--ink2);line-height:1.8;}
+
+/* ===== NEWSLETTER ===== */
+.nl-section{background:var(--ink);padding:72px 40px;text-align:center;}
+.nl-inner{max-width:520px;margin:0 auto;}
+.nl-title{font-family:"Playfair Display",serif;font-size:28px;font-weight:600;color:#fff;margin-bottom:10px;}
+.nl-sub{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:28px;line-height:1.7;}
+.nl-form{display:flex;gap:10px;max-width:420px;margin:0 auto;}
+.nl-input{flex:1;padding:13px 16px;border:1px solid rgba(255,255,255,.2);border-radius:6px;background:rgba(255,255,255,.06);color:#fff;font-size:13px;font-family:inherit;outline:none;}
+.nl-input::placeholder{color:rgba(255,255,255,.35);}
+.nl-input:focus{border-color:rgba(255,255,255,.5);}
+.nl-btn{padding:13px 22px;background:var(--gold);color:#fff;border:none;border-radius:6px;font-size:13px;font-weight:600;cursor:pointer;white-space:nowrap;font-family:inherit;transition:background .18s;}
+.nl-btn:hover{background:#9a6d24;}
+.nl-note{font-size:10px;color:rgba(255,255,255,.3);margin-top:12px;}
+
+/* ===== RESPONSIVE ADDITIONS ===== */
+@media(max-width:1024px){.brands-grid{grid-template-columns:repeat(2,1fr);}.reviews-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:768px){
+  .story-section,.brands-section,.why-section,.reviews-section,.faq-section,.nl-section{padding:56px 20px;}
+  .story-stats{gap:32px;}
+  .why-grid{grid-template-columns:1fr;}
+  .brands-grid{grid-template-columns:repeat(2,1fr);}
+  .reviews-grid{grid-template-columns:1fr;}
+  .nl-form{flex-direction:column;}
+}
+@media(max-width:480px){.brands-grid{grid-template-columns:1fr;}}
+
 </style>
 <!-- PayPal SDK loaded dynamically based on language -->
 </head>
@@ -236,6 +319,62 @@ footer{background:var(--ink);color:rgba(255,255,255,.7);padding:40px 40px 24px;}
   <div class="trust-item"><span class="trust-icon">📦</span><span data-i="trust_pack">Gift Packaging Available</span></div>
 </div>
 
+
+<!-- STORY -->
+<section class="story-section">
+  <div class="story-inner">
+    <div class="story-eyebrow" data-i="story_eyebrow">Our Story</div>
+    <h2 class="story-title" data-i="story_title">From Sapporo's best shops<br>to your doorstep in Hong Kong</h2>
+    <p class="story-body" data-i="story_body">Yuki Gift was born from a simple belief: the finest flavours of Hokkaido deserve to be shared beyond Japan's borders. We hand-pick authentic products from Hokkaido's most beloved confectioners — brands that have spent decades perfecting their craft. Every item we carry is a genuine Sapporo original, shipped directly to Hong Kong with care.</p>
+    <div class="story-stats">
+      <div class="stat-item"><div class="stat-num">4</div><div class="stat-label" data-i="stat_brands">Iconic Brands</div></div>
+      <div class="stat-item"><div class="stat-num">11</div><div class="stat-label" data-i="stat_products">Curated Products</div></div>
+      <div class="stat-item"><div class="stat-num">5–8</div><div class="stat-label" data-i="stat_days">Days to HK</div></div>
+      <div class="stat-item"><div class="stat-num">100%</div><div class="stat-label" data-i="stat_auth">Authentic</div></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- BRANDS -->
+<section class="brands-section">
+  <div class="section-header">
+    <div class="section-eyebrow" data-i="brands_eyebrow">Our Partners</div>
+    <h2 class="section-title" data-i="brands_title">Hokkaido's Finest Brands</h2>
+    <p class="section-sub" data-i="brands_sub">Every brand we carry has decades of heritage and an unwavering commitment to quality.</p>
+  </div>
+  <div class="brands-grid">
+    <div class="brand-card">
+      <div class="brand-initial ishiya">I</div>
+      <div class="brand-name">Ishiya</div>
+      <div class="brand-name-jp">石屋製菓</div>
+      <div class="brand-year">Est. 1947</div>
+      <div class="brand-desc" data-i="brand_ishiya">Sapporo's most celebrated confectioner, creator of Shiroi Koibito — Hokkaido's best-loved souvenir since 1976. A household name across all of Japan.</div>
+    </div>
+    <div class="brand-card">
+      <div class="brand-initial calbee">C</div>
+      <div class="brand-name">Calbee</div>
+      <div class="brand-name-jp">カルビー</div>
+      <div class="brand-year">Est. 1949</div>
+      <div class="brand-desc" data-i="brand_calbee">Japan's leading snack maker, producing Hokkaido-exclusive treats using 100% locally grown potatoes. Jaga Pokkuru remains the most sought-after snack souvenir across Asia.</div>
+    </div>
+    <div class="brand-card">
+      <div class="brand-initial rokkatei">R</div>
+      <div class="brand-name">Rokkatei</div>
+      <div class="brand-name-jp">六花亭</div>
+      <div class="brand-year">Est. 1933</div>
+      <div class="brand-desc" data-i="brand_rokkatei">Obihiro's legendary confectioner with over 90 years of history. Pioneer of white chocolate in Japan. Known for Marusei Butter Sand and a devoted following across generations.</div>
+    </div>
+    <div class="brand-card">
+      <div class="brand-initial royce">R</div>
+      <div class="brand-name">Royce'</div>
+      <div class="brand-name-jp">ロイズ</div>
+      <div class="brand-year">Est. 1983</div>
+      <div class="brand-desc" data-i="brand_royce">Sapporo's world-famous chocolatier, renowned for Nama Chocolate made with fresh Hokkaido cream. Now with boutiques across Asia — but the Hokkaido originals remain unmatched.</div>
+    </div>
+  </div>
+</section>
+
 <!-- SHOP -->
 <section class="section" id="shop">
   <div class="section-header">
@@ -249,6 +388,68 @@ footer{background:var(--ink);color:rgba(255,255,255,.7);padding:40px 40px 24px;}
   </div>
   <div class="products">
     <div class="pgrid" id="pgrid"></div>
+  </div>
+</section>
+
+
+<!-- WHY HOKKAIDO -->
+<section class="why-section">
+  <div class="section-header">
+    <div class="section-eyebrow" data-i="why_eyebrow">Why Hokkaido</div>
+    <h2 class="section-title" data-i="why_title">Japan's Food Paradise</h2>
+    <p class="section-sub" data-i="why_sub">Hokkaido produces over 20% of Japan's agricultural output from just 20% of the land. The result: ingredients and products of unparalleled quality.</p>
+  </div>
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="why-icon">🥛</div>
+      <div class="why-title" data-i="why1_title">World-Class Dairy</div>
+      <div class="why-text" data-i="why1_text">Hokkaido's cool climate and vast pastures produce Japan's richest butter, cream and milk — the foundation of iconic products like Royce Nama Chocolate and Rokkatei's buttery classics.</div>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">🥔</div>
+      <div class="why-title" data-i="why2_title">Premium Potatoes</div>
+      <div class="why-text" data-i="why2_text">The volcanic soil of Hokkaido yields Japan's finest potatoes. Calbee's Hokkaido-exclusive snacks are made from crops harvested just kilometres from their factory — unbeatable freshness.</div>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">🏔</div>
+      <div class="why-title" data-i="why3_title">Artisan Heritage</div>
+      <div class="why-text" data-i="why3_text">Hokkaido's confectionery culture stretches back over a century. Brands like Rokkatei and Ishiya have spent generations refining their craft — producing sweets that are truly irreplaceable.</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- REVIEWS -->
+<section class="reviews-section">
+  <div class="section-header">
+    <div class="section-eyebrow" data-i="rev_eyebrow">Customer Reviews</div>
+    <h2 class="section-title" data-i="rev_title">Loved Across Hong Kong</h2>
+  </div>
+  <div class="reviews-grid">
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text" data-i="rev1_text">"Ordered Shiroi Koibito and Royce for my mum's birthday. Arrived in perfect condition, beautifully packaged. She cried — said it tasted exactly like her trip to Sapporo. Will absolutely order again."</p>
+      <div class="review-author">
+        <div class="review-avatar" style="background:#C8373A;">C</div>
+        <div><div class="review-name">Chan Mei Ling</div><div class="review-loc">Causeway Bay, HK</div></div>
+      </div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text" data-i="rev2_text">"I've been buying Jaga Pokkuru from Yuki Gift for months. Cheaper than the airport shops, faster than I expected, and always fresh. The Hokkaido Butter flavour is dangerously addictive."</p>
+      <div class="review-author">
+        <div class="review-avatar" style="background:#2E5D87;">T</div>
+        <div><div class="review-name">Takahashi Yuki</div><div class="review-loc">Tsim Sha Tsui, HK</div></div>
+      </div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★☆</div>
+      <p class="review-text" data-i="rev3_text">"Finally found a reliable source for Marusei Butter Sand in HK. The packaging was intact and the biscuits were fresh. Shipping took 6 days — very reasonable. Great service overall."</p>
+      <div class="review-author">
+        <div class="review-avatar" style="background:#B07D2C;">L</div>
+        <div><div class="review-name">Lee Ka Wai</div><div class="review-loc">Wan Chai, HK</div></div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -274,6 +475,55 @@ footer{background:var(--ink);color:rgba(255,255,255,.7);padding:40px 40px 24px;}
       <div class="ship-card-title" data-i="ship3_title">Freshness Guaranteed</div>
       <div class="ship-card-text" data-i="ship3_text">Temperature-sensitive items packed with insulation. Freshness seal on all confectionery.</div>
     </div>
+  </div>
+</section>
+
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="section-header">
+    <div class="section-eyebrow" data-i="faq_eyebrow">FAQ</div>
+    <h2 class="section-title" data-i="faq_title">Frequently Asked Questions</h2>
+  </div>
+  <div class="faq-inner" id="faqList">
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)"><span data-i="faq1_q">How long does shipping to Hong Kong take?</span><span class="faq-chevron">▼</span></button>
+      <div class="faq-a"><p data-i="faq1_a">We ship by EMS or air express from Sapporo. Estimated delivery is 5–8 business days to Hong Kong. Tracking information is provided once your order is dispatched.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)"><span data-i="faq2_q">How is Royce Nama Chocolate kept fresh during shipping?</span><span class="faq-chevron">▼</span></button>
+      <div class="faq-a"><p data-i="faq2_a">Royce Nama Chocolate is temperature-sensitive. We pack it with insulated cool packs and ship by the fastest available express service. Delivery within 5–6 days is standard. Please refrigerate immediately upon receipt.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)"><span data-i="faq3_q">What payment methods do you accept?</span><span class="faq-chevron">▼</span></button>
+      <div class="faq-a"><p data-i="faq3_a">We accept all major credit cards and PayPal via our secure PayPal checkout. Your payment details are never stored on our site — all transactions are processed directly by PayPal.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)"><span data-i="faq4_q">Are there customs duties when receiving in Hong Kong?</span><span class="faq-chevron">▼</span></button>
+      <div class="faq-a"><p data-i="faq4_a">Hong Kong does not levy import duties on most food products from Japan. However, you are responsible for any applicable taxes or inspection fees. All items are declared accurately on customs forms.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)"><span data-i="faq5_q">Can I return or exchange products?</span><span class="faq-chevron">▼</span></button>
+      <div class="faq-a"><p data-i="faq5_a">We accept returns for items damaged in transit. Please photograph the damaged packaging and contact us within 48 hours of receipt. Perishable items and opened products cannot be returned.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)"><span data-i="faq6_q">How much is the shipping fee?</span><span class="faq-chevron">▼</span></button>
+      <div class="faq-a"><p data-i="faq6_a">Shipping is calculated based on total order weight and will be communicated after your order is placed. We aim to keep shipping costs as low as possible by combining items into a single shipment.</p></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- NEWSLETTER -->
+<section class="nl-section">
+  <div class="nl-inner">
+    <h2 class="nl-title" data-i="nl_title">Stay in the Loop</h2>
+    <p class="nl-sub" data-i="nl_sub">New arrivals, seasonal specials and exclusive Hokkaido finds — delivered to your inbox first.</p>
+    <form class="nl-form" onsubmit="handleNL(event)">
+      <input class="nl-input" type="email" id="nlEmail" placeholder="your@email.com" required>
+      <button class="nl-btn" type="submit" data-i="nl_btn">Subscribe</button>
+    </form>
+    <p class="nl-note" data-i="nl_note">No spam. Unsubscribe anytime.</p>
   </div>
 </section>
 
@@ -347,6 +597,35 @@ en: {
   checkout_note:"Pay securely with PayPal. You'll be redirected to PayPal to complete your purchase.",
   badge_hot:"POPULAR",badge_new:"NEW",badge_local:"LOCAL",
   add:"Add to Cart",ship_ok:"Ships to HK",cart_empty:"Your cart is empty",
+
+  story_eyebrow:"Our Story",
+  story_title:"From Sapporo's best shops<br>to your doorstep in Hong Kong",
+  story_body:"Yuki Gift was born from a simple belief: the finest flavours of Hokkaido deserve to be shared beyond Japan's borders. We hand-pick authentic products from Hokkaido's most beloved confectioners — brands that have spent decades perfecting their craft.",
+  stat_brands:"Iconic Brands",stat_products:"Curated Products",stat_days:"Days to HK",stat_auth:"Authentic",
+  brands_eyebrow:"Our Partners",brands_title:"Hokkaido's Finest Brands",
+  brands_sub:"Every brand we carry has decades of heritage and an unwavering commitment to quality.",
+  brand_ishiya:"Sapporo's most celebrated confectioner, creator of Shiroi Koibito since 1976. A household name across all of Japan.",
+  brand_calbee:"Japan's leading snack maker. Jaga Pokkuru remains the most sought-after snack souvenir across Asia.",
+  brand_rokkatei:"Obihiro's legendary confectioner with over 90 years of history. Pioneer of white chocolate in Japan.",
+  brand_royce:"Sapporo's world-famous chocolatier. Nama Chocolate made with fresh Hokkaido cream.",
+  why_eyebrow:"Why Hokkaido",why_title:"Japan's Food Paradise",
+  why_sub:"Hokkaido produces over 20% of Japan's agricultural output. The result: ingredients of unparalleled quality.",
+  why1_title:"World-Class Dairy",why1_text:"Hokkaido's cool climate and vast pastures produce Japan's richest butter, cream and milk — the foundation of Royce Nama Chocolate and Rokkatei's buttery classics.",
+  why2_title:"Premium Potatoes",why2_text:"Volcanic soil yields Japan's finest potatoes. Calbee's Hokkaido-exclusive snacks are made from crops harvested just kilometres from their factory.",
+  why3_title:"Artisan Heritage",why3_text:"Hokkaido's confectionery culture stretches back over a century. Brands like Rokkatei and Ishiya have spent generations refining their craft.",
+  rev_eyebrow:"Customer Reviews",rev_title:"Loved Across Hong Kong",
+  rev1_text:"\"Ordered Shiroi Koibito and Royce for my mum's birthday. Arrived in perfect condition. She said it tasted exactly like her trip to Sapporo.\"",
+  rev2_text:"\"I've been buying Jaga Pokkuru from Yuki Gift for months. Always fresh. The Hokkaido Butter flavour is dangerously addictive.\"",
+  rev3_text:"\"Finally found a reliable source for Marusei Butter Sand in HK. Shipping took 6 days — very reasonable. Great service.\"",
+  faq_eyebrow:"FAQ",faq_title:"Frequently Asked Questions",
+  faq1_q:"How long does shipping to Hong Kong take?",faq1_a:"We ship by EMS or air express from Sapporo. Estimated delivery is 5–8 business days. Tracking information is provided once your order is dispatched.",
+  faq2_q:"How is Royce Nama Chocolate kept fresh?",faq2_a:"Packed with insulated cool packs, shipped by fastest express. Please refrigerate immediately upon receipt.",
+  faq3_q:"What payment methods do you accept?",faq3_a:"All major credit cards and PayPal. Transactions are processed securely by PayPal — your payment details are never stored on our site.",
+  faq4_q:"Are there customs duties in Hong Kong?",faq4_a:"Hong Kong does not levy import duties on most food products from Japan. All items are declared accurately on customs forms.",
+  faq5_q:"Can I return or exchange products?",faq5_a:"We accept returns for items damaged in transit within 48 hours of receipt. Perishable items and opened products cannot be returned.",
+  faq6_q:"How much is the shipping fee?",faq6_a:"Shipping is calculated by order weight and communicated after purchase. We combine items into a single shipment to minimise cost.",
+  nl_title:"Stay in the Loop",nl_sub:"New arrivals, seasonal specials and exclusive Hokkaido finds — delivered to your inbox first.",
+  nl_btn:"Subscribe",nl_note:"No spam. Unsubscribe anytime.",
 },
 zh: {
   hero_eyebrow:"直送自北海道札幌",
@@ -399,6 +678,35 @@ ja: {
   checkout_note:"PayPalで安全にお支払い。PayPalページへ移動して購入完了となります。",
   badge_hot:"人気",badge_new:"新着",badge_local:"限定",
   add:"カートに追加",ship_ok:"香港発送可",cart_empty:"カートはまだ空です",
+
+  story_eyebrow:"ショップについて",
+  story_title:"札幌の名店から<br>香港のご自宅へ直送",
+  story_body:"Yuki Giftは、北海道の最高の味を国境を越えて届けたいという思いから生まれました。長年にわたって技術を磨いてきた北海道の名店から、厳選した本物の商品をお届けします。",
+  stat_brands:"人気ブランド",stat_products:"厳選商品数",stat_days:"香港到着日数",stat_auth:"本物保証",
+  brands_eyebrow:"取扱ブランド",brands_title:"北海道を代表する名ブランド",
+  brands_sub:"ご紹介する全てのブランドは、数十年にわたる伝統と品質への揺るぎないこだわりを持っています。",
+  brand_ishiya:"札幌を代表する菓子メーカー。1976年から続く「白い恋人」は北海道みやげの代名詞。",
+  brand_calbee:"日本を代表するスナックメーカー。「じゃがポックル」はアジア全土で最も人気の北海道限定品。",
+  brand_rokkatei:"帯広の老舗菓子店、創業90年以上の歴史。日本のホワイトチョコレートの先駆者。",
+  brand_royce:"札幌発の世界的チョコレートブランド。北海道産生クリームを使った生チョコレートで有名。",
+  why_eyebrow:"なぜ北海道？",why_title:"日本の食の宝庫",
+  why_sub:"北海道は国土の20%で、日本の農業生産量の20%以上を占めます。その結果、素材の品質は他の追随を許しません。",
+  why1_title:"世界水準の乳製品",why1_text:"冷涼な気候と広大な牧場が生む北海道産バター・生クリーム・牛乳は、ロイズの生チョコや六花亭のバター菓子の基盤です。",
+  why2_title:"最高品質のじゃがいも",why2_text:"火山性土壌で育つ北海道産じゃがいもは日本一。カルビーの北海道限定スナックは、工場近くで収穫した新鮮なじゃがいもから作られています。",
+  why3_title:"職人の技の伝承",why3_text:"北海道の菓子文化は100年以上の歴史を持ちます。六花亭や石屋製菓は世代を超えて技を磨き続け、他では味わえない銘菓を生み出しています。",
+  rev_eyebrow:"お客様の声",rev_title:"香港のお客様に愛されています",
+  rev1_text:"\"母の誕生日に白い恋人とロイズを注文しました。完璧な状態で届き、母は札幌旅行の味と同じだと感動していました。\"",
+  rev2_text:"\"毎月じゃがポックルを注文しています。いつも新鮮で空港より安い。北海道バター味がやみつきになります。\"",
+  rev3_text:"\"香港でマルセイバターサンドを買えるお店をずっと探していました。6日で届いて、とても満足しています。\"",
+  faq_eyebrow:"よくある質問",faq_title:"よくある質問",
+  faq1_q:"香港への配送にはどのくらいかかりますか？",faq1_a:"札幌からEMSまたは航空便で発送します。香港への到着まで目安は5〜8営業日です。発送後にトラッキング番号をお知らせします。",
+  faq2_q:"ロイズの生チョコはどのように鮮度を保ちますか？",faq2_a:"断熱材と保冷剤でしっかり梱包し、最速便で発送します。お受け取り後はすぐに冷蔵庫に入れてください。",
+  faq3_q:"支払い方法は何がありますか？",faq3_a:"主要クレジットカードおよびPayPalに対応しています。決済はPayPalが安全に処理し、カード情報は当サイトに保存されません。",
+  faq4_q:"香港で関税はかかりますか？",faq4_a:"香港は日本からの食品のほとんどに輸入関税を課していません。通関書類はすべて正確に記載します。",
+  faq5_q:"返品・交換はできますか？",faq5_a:"輸送中の破損品は受取後48時間以内にご連絡いただければ対応します。生鮮品および開封済み商品は返品不可です。",
+  faq6_q:"送料はいくらですか？",faq6_a:"送料は注文の重量に応じて計算し、ご注文後にお知らせします。できるだけ1梱包にまとめて送料を抑えます。",
+  nl_title:"最新情報をお届け",nl_sub:"新商品・季節限定品・北海道限定アイテムをいち早くメールでお知らせします。",
+  nl_btn:"登録する",nl_note:"迷惑メールは送りません。いつでも配信解除できます。",
 }
 };
 
@@ -637,6 +945,26 @@ function renderProducts(){
       </div>
     </div>`;
   }).join("");
+}
+
+
+// ===== FAQ =====
+function toggleFaq(btn){
+  const item = btn.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));
+  if(!isOpen) item.classList.add('open');
+}
+
+// ===== NEWSLETTER =====
+function handleNL(e){
+  e.preventDefault();
+  const email = document.getElementById('nlEmail').value;
+  const btn = e.target.querySelector('.nl-btn');
+  btn.textContent = '✓ Subscribed!';
+  btn.style.background = '#4CAF50';
+  document.getElementById('nlEmail').value = '';
+  setTimeout(()=>{ btn.textContent = btn.getAttribute('data-i') ? t('nl_btn') : 'Subscribe'; btn.style.background = ''; }, 3000);
 }
 
 // ===== INIT =====
