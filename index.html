@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="コスプレスパッツ専門サイト。Leohex・REALISE・Wolfordなどニッチブランドを素材・スタイル・コス度で徹底比較。光沢系・バレエ系・全身タイツなど豊富なカテゴリ。">
+<meta name="keywords" content="コスプレ,スパッツ,タイツ,Leohex,REALISE,リアライズ,光沢,コスプレ衣装,ボディスーツ,全身タイツ">
+<meta property="og:title" content="CosPATS — コスプレスパッツ専門比較サイト">
+<meta property="og:description" content="ニッチブランドのコスプレスパッツ・タイツを徹底比較。コス度・素材・スタイルで第一の一個を見つけよう。">
+<meta property="og:type" content="website">
+<title>CosPATS — コスプレスパッツ専門比較サイト</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,600;0,9..40,700;1,9..40,300&family=Space+Mono&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#030208;--bg2:#080614;--bg3:#100e1c;--ink:#f5f0ff;--muted:#6a6390;--dim:#3a3558;--border:rgba(255,255,255,0.07);--pink:#ff0060;--violet:#7700ff;--cyan:#00e5ff;--gold:#f5c400;--teal:#00d4a0;--holo:linear-gradient(135deg,#ff0060 0%,#7700ff 35%,#00e5ff 70%,#f5c400 100%);--holo2:linear-gradient(90deg,#ff0060,#7700ff,#00e5ff);--r:0px;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:"DM Sans","Hiragino Sans",sans-serif;background:var(--bg);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:60px;background:rgba(3,2,8,0.8);backdrop-filter:blur(32px);border-bottom:1px solid var(--border);transition:background .3s;}
+.nav-logo{font-family:"DM Serif Display",serif;font-size:18px;font-style:italic;background:var(--holo);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;background-size:200%;animation:hshift 6s linear infinite;letter-spacing:1px;}
+@keyframes hshift{0%{background-position:0%}100%{background-position:200%}}
+.nav-links{display:flex;gap:32px;list-style:none;}
+.nav-links a{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted);text-decoration:none;font-weight:600;transition:color .2s;}
+.nav-links a:hover{color:var(--ink);}
+.nav-cta{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--pink);border:1px solid rgba(255,0,96,.3);padding:8px 18px;border-radius:99px;cursor:pointer;transition:all .2s;font-weight:700;background:none;font-family:inherit;}
+.nav-cta:hover{background:rgba(255,0,96,.08);border-color:var(--pink);}
+/* HERO */
+.hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;padding:0 48px 80px;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;z-index:0;}
+.orb{position:absolute;border-radius:50%;filter:blur(100px);pointer-events:none;}
+.o1{width:800px;height:800px;background:rgba(119,0,255,.15);top:-200px;right:-100px;animation:pulse1 10s ease-in-out infinite alternate;}
+.o2{width:600px;height:600px;background:rgba(255,0,96,.12);bottom:-100px;left:-150px;animation:pulse2 13s ease-in-out infinite alternate;}
+.o3{width:400px;height:400px;background:rgba(0,229,255,.08);top:40%;left:40%;animation:pulse3 8s ease-in-out infinite alternate;}
+@keyframes pulse1{from{transform:scale(1) translate(0,0)}to{transform:scale(1.2) translate(30px,-20px)}}
+@keyframes pulse2{from{transform:scale(1) translate(0,0)}to{transform:scale(1.15) translate(-20px,30px)}}
+@keyframes pulse3{from{transform:scale(1)}to{transform:scale(1.3)}}
+.hero-grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:80px 80px;opacity:.5;}
+.hero-content{position:relative;z-index:1;width:100%;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:10px;letter-spacing:5px;text-transform:uppercase;color:var(--pink);font-weight:700;margin-bottom:24px;}
+.hero-eyebrow::before{content:"";width:32px;height:1px;background:var(--pink);}
+.hero-title{font-family:"DM Serif Display",serif;font-size:clamp(64px,11vw,160px);line-height:.88;letter-spacing:-4px;margin-bottom:32px;}
+.ht1{display:block;color:rgba(255,255,255,.12);-webkit-text-stroke:1px rgba(255,255,255,.2);}
+.ht2{display:block;color:#fff;}
+.ht3{display:block;font-style:italic;background:var(--holo);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;background-size:300%;animation:hshift 4s linear infinite;}
+.hero-row{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:40px;}
+.hero-left{max-width:480px;}
+.hero-sub{font-size:15px;color:var(--muted);line-height:1.9;margin-bottom:28px;}
+.hero-stats{display:flex;gap:32px;margin-bottom:36px;}
+.hstat{}
+.hstat-n{font-family:"DM Serif Display",serif;font-size:36px;color:#fff;line-height:1;}
+.hstat-l{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-top:3px;}
+.hero-search{position:relative;width:100%;max-width:420px;}
+.hero-search input{width:100%;padding:16px 50px 16px 20px;background:rgba(255,255,255,.04);border:1px solid rgba(255,0,96,.25);border-radius:12px;color:#fff;font-size:14px;font-family:inherit;outline:none;transition:all .3s;}
+.hero-search input::placeholder{color:var(--muted);}
+.hero-search input:focus{border-color:var(--violet);box-shadow:0 0 0 3px rgba(119,0,255,.15),0 0 40px rgba(119,0,255,.1);}
+.hs-btn{position:absolute;right:6px;top:50%;transform:translateY(-50%);width:36px;height:36px;background:linear-gradient(135deg,var(--pink),var(--violet));border:none;border-radius:8px;color:#fff;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;}
+.hero-right{display:flex;flex-direction:column;align-items:flex-end;gap:12px;}
+.hero-tags{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;max-width:340px;}
+.htag{font-size:11px;padding:7px 16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:99px;color:var(--muted);cursor:pointer;transition:all .2s;white-space:nowrap;font-weight:600;}
+.htag:hover,.htag.on{background:var(--pink);border-color:var(--pink);color:#fff;}
+.scroll-down{display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--muted);font-size:9px;letter-spacing:4px;text-transform:uppercase;margin-top:20px;cursor:pointer;}
+.scroll-down::after{content:"";width:1px;height:40px;background:linear-gradient(to bottom,var(--muted),transparent);}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.scroll-down{animation:bounce 3s ease-in-out infinite;}
+/* STYLE PICKER */
+.style-section{position:relative;z-index:1;padding:40px 48px;background:var(--bg2);border-bottom:1px solid var(--border);}
+.ss-label{font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--muted);margin-bottom:16px;}
+.style-scroll{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding-bottom:4px;}
+.style-scroll::-webkit-scrollbar{display:none;}
+.spill{padding:10px 20px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:99px;font-size:12px;font-weight:700;color:var(--muted);cursor:pointer;transition:all .2s;white-space:nowrap;letter-spacing:.5px;}
+.spill:hover{border-color:var(--pink);color:var(--ink);}
+.spill.on{background:linear-gradient(135deg,var(--pink),var(--violet));border-color:transparent;color:#fff;box-shadow:0 4px 20px rgba(119,0,255,.3);}
+/* ADS */
+.ad-slot{margin:0;padding:20px 48px;background:var(--bg2);border-bottom:1px solid var(--border);}
+.ad-slot-inner{max-width:1400px;margin:0 auto;min-height:90px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.02);border:1px dashed rgba(255,255,255,.07);border-radius:8px;}
+.ad-slot-label{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--dim);}
+/* CATALOG */
+.catalog{position:relative;z-index:1;padding:0 48px 80px;max-width:1440px;margin:0 auto;}
+.filter-bar{display:flex;align-items:center;gap:14px;padding:20px 0;border-bottom:1px solid var(--border);margin-bottom:32px;position:sticky;top:60px;z-index:100;background:rgba(3,2,8,.95);backdrop-filter:blur(24px);}
+.fl{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);flex-shrink:0;}
+.fscroll{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;flex:1;}
+.fscroll::-webkit-scrollbar{display:none;}
+.fbtn{padding:6px 16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:99px;font-size:11px;font-weight:700;color:var(--muted);cursor:pointer;transition:all .18s;white-space:nowrap;font-family:inherit;letter-spacing:.5px;}
+.fbtn:hover{color:var(--ink);border-color:rgba(255,255,255,.2);}
+.fbtn.on{background:linear-gradient(135deg,var(--pink),var(--violet));border-color:transparent;color:#fff;box-shadow:0 2px 12px rgba(255,0,96,.3);}
+.fdiv{width:1px;height:24px;background:var(--border);flex-shrink:0;}
+.sort-wrap{display:flex;align-items:center;gap:8px;flex-shrink:0;}
+.sort-wrap select{background:rgba(255,255,255,.04);border:1px solid var(--border);color:var(--ink);font-size:11px;font-weight:700;padding:6px 12px;border-radius:8px;font-family:inherit;outline:none;cursor:pointer;}
+.rmeta{display:flex;align-items:center;gap:14px;margin-bottom:24px;}
+.rcount{font-size:13px;color:var(--muted);flex-shrink:0;}
+.rcount b{color:var(--ink);font-size:17px;}
+.achips{display:flex;gap:6px;flex-wrap:wrap;}
+.achip{font-size:11px;padding:5px 12px 5px 14px;background:rgba(255,0,96,.08);border:1px solid rgba(255,0,96,.25);border-radius:99px;color:var(--pink);cursor:pointer;display:flex;align-items:center;gap:6px;font-weight:700;}
+.achip:after{content:"×";font-size:13px;}
+/* GRID */
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;}
+.card{position:relative;overflow:hidden;cursor:pointer;background:var(--bg3);}
+.card.feat{grid-column:span 2;grid-row:span 2;}
+.cimg-wrap{position:relative;width:100%;height:100%;min-height:320px;overflow:hidden;}
+.card.feat .cimg-wrap{min-height:640px;}
+.cimg-wrap img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.25,.46,.45,.94);display:block;}
+.card:hover .cimg-wrap img{transform:scale(1.06);}
+.cinfo{position:absolute;bottom:0;left:0;right:0;padding:24px 18px 18px;background:linear-gradient(to top,rgba(3,2,8,.98) 0%,rgba(3,2,8,.75) 50%,transparent 100%);transform:translateY(35%);transition:transform .35s cubic-bezier(.25,.46,.45,.94);}
+.card:hover .cinfo{transform:translateY(0);}
+.c-brand{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--pink);font-weight:700;margin-bottom:5px;}
+.c-name{font-size:14px;font-weight:700;line-height:1.3;margin-bottom:0;color:#fff;}
+.card.feat .c-name{font-size:18px;}
+.c-reveal{margin-top:12px;}
+.c-styles{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:10px;}
+.c-style-tag{font-size:10px;padding:2px 8px;background:rgba(119,0,255,.2);border:1px solid rgba(119,0,255,.3);border-radius:4px;color:#b088ff;}
+.c-price-row{display:flex;align-items:center;justify-content:space-between;}
+.c-price{font-family:"Space Mono",monospace;font-size:16px;color:#fff;}
+.card.feat .c-price{font-size:18px;}
+.c-stars{font-size:11px;color:var(--gold);}
+.cos-track{height:2px;background:rgba(255,255,255,.08);border-radius:2px;margin-top:8px;overflow:hidden;}
+.cos-fill{height:100%;background:linear-gradient(90deg,var(--teal),var(--cyan));border-radius:2px;transition:width .5s ease;}
+.cbadge{position:absolute;top:14px;left:14px;display:flex;flex-direction:column;gap:5px;z-index:2;}
+.badge-tag{font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:5px;font-weight:700;line-height:1;}
+.badge-tag.hot{background:var(--pink);color:#fff;box-shadow:0 2px 12px rgba(255,0,96,.4);}
+.badge-tag.cos{background:rgba(0,229,255,.1);border:1px solid rgba(0,229,255,.3);color:var(--cyan);}
+/* IN-GRID AD */
+.grid-ad{background:rgba(255,255,255,.02);border:1px dashed rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;min-height:320px;}
+.grid-ad span{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--dim);}
+/* MODAL */
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:500;display:none;align-items:center;justify-content:center;padding:24px;backdrop-filter:blur(12px);}
+.overlay.open{display:flex;}
+.modal{background:var(--bg2);border:1px solid rgba(255,255,255,.08);border-radius:20px;max-width:860px;width:100%;max-height:92vh;overflow:hidden;display:flex;box-shadow:0 60px 160px rgba(0,0,0,.9),0 0 0 1px rgba(119,0,255,.08);}
+.modal-img{width:42%;flex-shrink:0;position:relative;overflow:hidden;}
+.modal-img img{width:100%;height:100%;object-fit:cover;}
+.modal-img-ov{position:absolute;inset:0;background:linear-gradient(135deg,rgba(119,0,255,.15),rgba(255,0,96,.1));}
+.modal-body{flex:1;overflow-y:auto;padding:32px;scrollbar-width:thin;scrollbar-color:var(--dim) transparent;}
+.modal-close{position:absolute;top:14px;right:14px;width:34px;height:34px;background:rgba(0,0,0,.6);border:1px solid rgba(255,255,255,.1);border-radius:99px;color:#fff;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10;transition:background .2s;}
+.modal-close:hover{background:rgba(255,0,96,.2);}
+.m-brand{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--pink);font-weight:700;margin-bottom:8px;}
+.m-name{font-family:"DM Serif Display",serif;font-size:22px;font-style:italic;margin-bottom:18px;line-height:1.2;}
+.m-row{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:20px;}
+.m-cell{}
+.m-cell-l{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:2px;}
+.m-cell-v{font-size:15px;font-weight:700;}
+.m-cell-v.price{font-family:"Space Mono",monospace;color:var(--pink);}
+.m-cos{margin-bottom:22px;padding:16px;background:rgba(0,229,255,.04);border:1px solid rgba(0,229,255,.1);border-radius:12px;}
+.m-cos-lbl{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--cyan);margin-bottom:8px;}
+.m-cos-score{font-family:"DM Serif Display",serif;font-size:40px;color:#fff;line-height:1;margin-bottom:8px;}
+.m-cos-bar{height:5px;background:rgba(255,255,255,.06);border-radius:4px;overflow:hidden;}
+.m-cos-bar-fill{height:100%;background:linear-gradient(90deg,var(--teal),var(--cyan));border-radius:4px;}
+.m-desc{font-size:14px;line-height:1.9;color:rgba(255,255,255,.6);margin-bottom:20px;}
+.m-specs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:20px;}
+.m-spec{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:10px;padding:12px 14px;}
+.ms-l{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:3px;}
+.ms-v{font-size:13px;font-weight:600;}
+.m-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px;}
+.m-tag{font-size:11px;padding:5px 12px;border-radius:6px;background:rgba(119,0,255,.1);border:1px solid rgba(119,0,255,.2);color:#b088ff;}
+.m-tag.st{background:rgba(255,0,96,.1);border-color:rgba(255,0,96,.2);color:#ff88aa;}
+.m-affnote{font-size:11px;color:var(--muted);margin-bottom:20px;padding:10px 14px;background:rgba(245,196,0,.04);border:1px solid rgba(245,196,0,.1);border-radius:8px;line-height:1.7;}
+.m-affnote b{color:var(--gold);}
+.m-actions{display:flex;gap:10px;flex-wrap:wrap;}
+.btn-primary{flex:1;min-width:130px;padding:14px 20px;background:linear-gradient(135deg,var(--pink),var(--violet));border:none;border-radius:12px;color:#fff;font-size:13px;font-weight:700;font-family:inherit;cursor:pointer;transition:transform .15s,box-shadow .15s;box-shadow:0 6px 24px rgba(119,0,255,.3);}
+.btn-primary:hover{transform:translateY(-1px);box-shadow:0 10px 32px rgba(119,0,255,.4);}
+.btn-ghost{padding:14px 18px;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:12px;color:var(--muted);font-size:13px;font-family:inherit;cursor:pointer;transition:all .2s;}
+.btn-ghost:hover{color:#fff;border-color:rgba(255,255,255,.2);}
+/* FOOTER */
+footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:48px 48px 32px;margin-top:80px;}
+.foot-inner{max-width:1440px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:28px;margin-bottom:24px;}
+.foot-brand{font-family:"DM Serif Display",serif;font-size:15px;font-style:italic;background:var(--holo);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;background-size:200%;animation:hshift 6s linear infinite;margin-bottom:6px;}
+.foot-tag{font-size:12px;color:var(--muted);}
+.foot-links{display:flex;gap:24px;flex-wrap:wrap;}
+.foot-links a{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s;}
+.foot-links a:hover{color:#fff;}
+.foot-copy{font-size:10px;color:var(--dim);text-align:center;border-top:1px solid var(--border);padding-top:20px;line-height:1.8;}
+/* RESPONSIVE */
+@media(max-width:1100px){.grid{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:900px){nav{padding:0 24px;}.nav-links{display:none;}.hero{padding:0 24px 60px;}.hero-title{font-size:clamp(48px,10vw,100px);letter-spacing:-2px;}.style-section,.ad-slot,.catalog{padding-left:16px;padding-right:16px;}.grid{grid-template-columns:repeat(2,1fr);}.card.feat{grid-column:span 2;grid-row:span 1;}.card.feat .cimg-wrap{min-height:360px;}.modal{flex-direction:column;max-height:95vh;}.modal-img{width:100%;height:220px;}footer{padding:32px 24px;}}
+@media(max-width:500px){.grid{grid-template-columns:repeat(2,1fr);gap:1px;}.m-specs{grid-template-columns:1fr;}.hero-stats{gap:20px;}.hero-row{flex-direction:column;align-items:flex-start;}}
+</style>
+<!-- Google AdSense -->
+<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+<style>
+/* --- Extra: JS-generated card & modal classes --- */
+.card-img{position:relative;width:100%;overflow:hidden;aspect-ratio:2/3;}
+.card-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s cubic-bezier(.25,.46,.45,.94);}
+.card:hover .card-img img{transform:scale(1.07);}
+.card-overlay{position:absolute;bottom:0;left:0;right:0;padding:20px 14px 14px;background:linear-gradient(to top,rgba(3,2,8,.98),rgba(3,2,8,.7) 60%,transparent);transform:translateY(40%);transition:transform .35s cubic-bezier(.25,.46,.45,.94);}
+.card:hover .card-overlay{transform:translateY(0);}
+.card-tag{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--pink);font-weight:700;margin-bottom:4px;}
+.card-name{font-size:13px;font-weight:700;color:#fff;line-height:1.3;margin-bottom:2px;}
+.card-price{font-family:"Space Mono",monospace;font-size:14px;color:rgba(255,255,255,.7);}
+.badge{position:absolute;top:12px;left:12px;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;border-radius:5px;font-weight:700;z-index:2;}
+.badge-premium{background:linear-gradient(135deg,#f5c400,#ff8800);color:#000;box-shadow:0 2px 10px rgba(245,196,0,.4);}
+.badge-new{background:linear-gradient(135deg,var(--cyan),var(--teal));color:#000;box-shadow:0 2px 10px rgba(0,229,255,.3);}
+.badge-popular{background:var(--pink);color:#fff;box-shadow:0 2px 10px rgba(255,0,96,.4);}
+.card-foot{display:flex;justify-content:space-between;align-items:center;padding:10px 12px 12px;background:var(--bg3);}
+.card-brand{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--pink);font-weight:700;}
+.card-origin{font-size:10px;color:var(--muted);font-family:"Space Mono",monospace;}
+/* Pill filters in filter bar */
+.pill{padding:6px 16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:99px;font-size:11px;font-weight:700;color:var(--muted);cursor:pointer;transition:all .18s;white-space:nowrap;font-family:inherit;letter-spacing:.5px;}
+.pill:hover{color:var(--ink);border-color:rgba(255,255,255,.2);}
+.pill.active{background:linear-gradient(135deg,var(--pink),var(--violet));border-color:transparent;color:#fff;box-shadow:0 2px 12px rgba(255,0,96,.3);}
+/* Nav active link */
+.nav-links a.active{color:var(--ink);}
+/* Modal inner - extra */
+.modal-header{margin-bottom:20px;}
+.modal-brand{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--pink);font-weight:700;margin-bottom:6px;}
+.modal-title{font-family:"DM Serif Display",serif;font-size:22px;font-style:italic;line-height:1.2;margin:8px 0;}
+.modal-price{font-family:"Space Mono",monospace;font-size:20px;color:#fff;margin-bottom:12px;}
+.modal-cats{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px;}
+.cat-pill{font-size:11px;padding:4px 12px;border-radius:6px;background:rgba(119,0,255,.1);border:1px solid rgba(119,0,255,.25);color:#b088ff;font-weight:600;}
+.modal-desc{font-size:14px;line-height:1.9;color:rgba(255,255,255,.6);margin-bottom:22px;}
+.modal-section{margin-bottom:16px;padding:14px;background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:10px;}
+.modal-section-label{font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted);margin-bottom:8px;font-weight:700;}
+.modal-section p{font-size:13px;color:rgba(255,255,255,.7);}
+.modal-features{list-style:none;display:flex;flex-direction:column;gap:6px;}
+.modal-features li{font-size:13px;color:rgba(255,255,255,.75);padding-left:16px;position:relative;line-height:1.6;}
+.modal-features li::before{content:"›";position:absolute;left:0;color:var(--cyan);font-weight:700;}
+.modal-cta{display:block;margin-top:24px;padding:15px 24px;background:linear-gradient(135deg,var(--pink),var(--violet));border:none;border-radius:14px;color:#fff;font-size:13px;font-weight:700;font-family:inherit;cursor:pointer;transition:transform .15s,box-shadow .15s;box-shadow:0 6px 24px rgba(119,0,255,.3);text-decoration:none;text-align:center;letter-spacing:.5px;}
+.modal-cta:hover{transform:translateY(-2px);box-shadow:0 12px 36px rgba(119,0,255,.45);}
+/* Card reveal animation */
+.card{opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease;}
+.card.visible{opacity:1;transform:none;}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-logo">CosPATS</div>
+  <ul class="nav-links">
+    <li><a href="#catalog">コレクション</a></li>
+    <li><a href="#catalog">ブランド</a></li>
+    <li><a href="#catalog">素材ガイド</a></li>
+    <li><a href="#about">サイトについて</a></li>
+  </ul>
+  <button class="nav-cta" onclick="document.getElementById('catalog').scrollIntoView({behavior:'smooth'})">商品を見る ↓</button>
+</nav>
+
+<section class="hero">
+  <div class="hero-bg">
+    <div class="orb o1"></div>
+    <div class="orb o2"></div>
+    <div class="orb o3"></div>
+    <div class="hero-grid-bg"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-row">
+      <div class="hero-left">
+        <div class="hero-eyebrow">Cosplay Spats Specialist</div>
+        <h1 class="hero-title">
+          <span class="ht1">COSPLAY</span>
+          <span class="ht2">SPATS</span>
+          <span class="ht3">GUIDE</span>
+        </h1>
+        <p class="hero-sub">ニッチブランドのコスプレ用スパッツ&amp;タイツを徹底比較。<br>素材・光沢・コス適性で第一の一個を見つけよう。</p>
+        <div class="hero-stats">
+          <div class="hstat"><div class="hstat-n">25+</div><div class="hstat-l">品揃え</div></div>
+          <div class="hstat"><div class="hstat-n">11</div><div class="hstat-l">ブランド</div></div>
+          <div class="hstat"><div class="hstat-n">22</div><div class="hstat-l">スタイル</div></div>
+        </div>
+        <div class="hero-search">
+          <input type="text" id="searchInput" placeholder="ブランド・素材・スタイルで検索…" oninput="render()">
+          <button class="hs-btn">↗</button>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="hero-tags" id="heroTags"></div>
+        <div class="scroll-down" onclick="document.getElementById('catalog').scrollIntoView({behavior:'smooth'})">scroll</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AdSense: Top Banner -->
+<div class="ad-slot">
+  <div class="ad-slot-inner">
+    <span class="ad-slot-label">Advertisement · 728×90</span>
+    <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins> -->
+  </div>
+</div>
+
+<div class="style-section" id="styleSection">
+  <div class="ss-label">スタイルで絞り込む</div>
+  <div class="style-scroll" id="styleScroll"></div>
+</div>
+
+<div style="max-width:1440px;margin:0 auto;">
+<div class="catalog" id="catalog">
+  <div class="filter-bar">
+    <span class="fl">ブランド</span>
+    <div class="fscroll" id="brandFilter"></div>
+    <div class="fdiv"></div>
+    <div class="sort-wrap">
+      <select id="sortSel" onchange="render()">
+        <option value="default">おすすめ順</option>
+        <option value="price-asc">価格 安い順</option>
+        <option value="price-desc">価格 高い順</option>
+        <option value="rating">評価 高順</option>
+        <option value="cos">コス度 高順</option>
+      </select>
+    </div>
+  </div>
+  <div class="rmeta">
+    <div class="rcount"><b id="cnt">0</b> アイテム</div>
+    <div class="achips" id="achips"></div>
+  </div>
+  <div class="grid" id="grid"></div>
+</div>
+</div>
+
+<!-- AdSense: Bottom Rectangle -->
+<div class="ad-slot" style="margin-top:0;">
+  <div class="ad-slot-inner" style="min-height:250px;">
+    <span class="ad-slot-label">Advertisement · 336×280</span>
+  </div>
+</div>
+
+<footer id="about">
+  <div class="foot-inner">
+    <div>
+      <div class="foot-brand">CosPATS</div>
+      <div class="foot-tag">コスプレスパッツ · ニッチブランド比較ガイド</div>
+    </div>
+    <div class="foot-links">
+      <a href="#catalog">コレクション</a>
+      <a href="#catalog">ブランド一覧</a>
+      <a href="#catalog">素材ガイド</a>
+      <a href="#about">サイトについて</a>
+      <a href="#about">プライバシーポリシー</a>
+      <a href="#about">お問い合わせ</a>
+    </div>
+  </div>
+  <p class="foot-copy">© 2026 CosPATS — 各ブランドの価格・在庫は公式サイトでお確かめください。当サイトはアフィリエイト広告を沿用しています。<br>各ブランドおよび商品の画像および情報の著作権は各社に帰属します。</p>
+</footer>
+
+<div class="overlay" id="ov" onclick="if(event.target===this)closeM()">
+  <div class="modal" id="modal"></div>
+</div>
+
+<script>
+const PRODUCTS = [{"id": 1, "brand": "Wolford", "name": "Fatal Seamless Tight", "price": "¥45,000", "tag": "seamless", "badgeType": "premium", "img": "https://images.unsplash.com/photo-1530549387789-4c1017266635?w=600&h=800&fit=crop&auto=format&q=85", "cats": ["seaming", "lycra"], "desc": "40デニールのシームレスニットが肌に溶け込む。ウルフォードの象徴的ライン。", "features": ["マイクロファイバー40den", "フラットシーム構造", "ウエスト幅広ロールバンド"], "fit": "S～XL", "origin": "Austria", "link": "https://www.wolfordshop.com/"}, {"id": 2, "brand": "Wolford", "name": "Velvet de Luxe", "price": "¥52,000", "tag": "velvet", "badgeType": "premium", "img": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=800&fit=crop&auto=format&q=85", "cats": ["velvet", "lycra"], "desc": "クリーミーなベルベット地。光の当たり方で見せる表情が変わる上質な一枚。", "features": ["ベルベット素材", "ウエストリブ", "フルフット仕様"], "fit": "XS～L", "origin": "Austria", "link": "https://www.wolfordshop.com/"}, {"id": 3, "brand": "Freed of London", "name": "Studio Shimmer Tight", "price": "¥6,800", "tag": "shimmer", "badgeType": "new", "img": "https://images.unsplash.com/photo-1516567727046-69ee5ea57040?w=600&h=800&fit=crop&auto=format&q=85", "cats": ["shimmer", "lycra"], "desc": "英国ロイヤルバレエのサプライヤーが作るきらめきタイツ。舞台映えするラメ感。", "features": ["ラメ糸混紡", "バレエ仕様フット", "UV耐性"], "fit": "S～XL", "origin": "UK", "link": "https://freedoflondon.com/"}, {"id": 4, "brand": "Freed of London", "name": "RAD Uniform Tight", "price": "¥5,200", "tag": "standard", "badgeType": null, "img": "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=600&h=800&fit=crop&auto=format&q=85", "cats": ["matte", "lycra"], "desc": "RAD認定ユニフォーム規格。バレエ教室でも使える定番ピンクタイツ。", "features": ["RAD認定", "ピンク/ブラック選択", "耐気強化"], "fit": "XS～XL", "origin": "UK", "link": "https://freedoflondon.com/"}, {"id": 5, "brand": "Arena", "name": "Powerskin Carbon Ultra", "price": "¥78,000", "tag": "racing", "badgeType": "premium", "img": "https://images.unsplash.com/photo-1530549387789-4c1017266635?w=600&h=800&fit=crop&auto=format&q=85", "cats": ["carbon", "racing"], "desc": "カーボン繊維混紡の競泳スパッツ。0.01秒を削り出すために設計。", "features": ["Carbon繊維配合", "超撥水加工", "腰部コンプレッション"], "fit": "XS～L", "origin": "Italy", "link": "https://www.arenawaterinstinct.com/"}, {"id": 6, "brand": "Arena", "name": "Powerskin R-EVO ONE", "price": "¥48,000", "tag": "racing", "badgeType": null, "img": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=800&fit=crop&auto=format&q=85", "cats": ["carbon", "racing"], "desc": "FINA承認の競泳用。締め付けの強さとフィット精度で定評あるモデル。", "features": ["FINA承認", "R-EVOボンディング", "極限圧縮設計"], "fit": "XS～XL", "origin": "Italy", "link": "https://www.arenawaterinstinct.com/"}, {"id": 7, "brand": "Leohex", "name": "UV Glossy Tight", "price": "¥2,980", "tag": "glossy", "badgeType": "popular", "img": "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=600&h=800&fit=crop&auto=format&q=85", "cats": ["glossy", "spandex"], "desc": "鏡面反射する超光沢スパンデックス。全身タイツ系コスプレに最適。", "features": ["超光沢加工", "UPF50+", "サイズ展開豊富"], "fit": "S～2XL", "origin": "China", "link": "https://www.aliexpress.com/store/1102167284"}, {"id": 8, "brand": "Leohex", "name": "Opaque Sheer Panel", "price": "¥3,280", "tag": "sheer", "badgeType": null, "img": "https://images.unsplash.com/photo-1520367445093-50dc08a59d9d?w=600&h=800&fit=crop&auto=format&q=85", "cats": ["sheer", "spandex"], "desc": "シアーパネルの透け感と不透明部のコントラストが作るドラマチックなライン。", "features": ["シアーパネル", "交差設計", "速乾素材"], "fit": "S～XL", "origin": "China", "link": "https://www.aliexpress.com/store/1102167284"}, {"id": 9, "brand": "REALISE", "name": "Glossy Full Spats", "price": "¥4,500", "tag": "glossy", "badgeType": "popular", "img": "https://images.unsplash.com/photo-1539874754764-5a96559165b0?w=600&h=800&fit=crop&auto=format&q=85", "cats": ["glossy", "spandex"], "desc": "コスプレ界で圧倒的支持。ピタピタのグロッシー素材でキャラクターの輪郭を完全再現。", "features": ["光沢スパンデックス", "フルレングス", "コスプレ最適"], "fit": "S～XL", "origin": "Japan", "link": "https://hirose1117.ocnk.net/product-list/6"}, {"id": 10, "brand": "REALISE", "name": "T-031 Matte Spats", "price": "¥3,800", "tag": "matte", "badgeType": null, "img": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&h=800&fit=crop&auto=format&q=85", "cats": ["matte", "spandex"], "desc": "マット素材でナチュラルな質感。普段使いからステージまで使えるベーシックモデル。", "features": ["マット仕上げ", "ベーシックカット", "洗濯耐久度UP"], "fit": "S～XL", "origin": "Japan", "link": "https://hirose1117.ocnk.net/product-list/6"}, {"id": 11, "brand": "Mondor", "name": "Adult Footed Tight 3300", "price": "¥4,200", "tag": "standard", "badgeType": null, "img": "https://images.unsplash.com/photo-1516567727046-69ee5ea57040?w=600&h=800&fit=crop&auto=format&q=85", "cats": ["matte", "nylon"], "desc": "カナダの老舗タイツブランド。フット付きでバレエ・ダンスの定番。", "features": ["Supplex素材", "フット付き", "背面シーム"], "fit": "XS～XXL", "origin": "Canada", "link": "https://www.mondor.com/"}, {"id": 12, "brand": "Capezio", "name": "Professional Mesh Transition Tight", "price": "¥5,600", "tag": "mesh", "badgeType": "new", "img": "https://cdn.shopify.com/s/files/1/0840/3150/4659/files/capezio_professional_mesh_transition_tight_w_seams_black_9_1_2_aebfb46e-cb41-48aa-baee-5ca8a1dec534.jpg?v=1771263863", "cats": ["mesh", "nylon"], "desc": "転換タイツのプロ仕様。シームラインが美しく、スタジオでもステージでも映える。", "features": ["プロフェッショナルメッシュ", "シームライン", "履き後のシルエット美"], "fit": "S～XL", "origin": "USA", "link": "https://www.capezio.com/"}, {"id": 13, "brand": "Mondor", "name": "Glitter Fantasy Tight 3339", "price": "¥6,800", "tag": "glitter", "badgeType": "new", "img": "https://cdn.shopify.com/s/files/1/0766/3465/2916/files/12945-6N_Front.jpg?v=1780686463", "cats": ["shimmer", "nylon"], "desc": "キラキラグリッターが全面に散らばるステージ映え抜群のタイツ。発表会に最適。", "features": ["全面グリッター加工", "ホログラム感", "UPF対応"], "fit": "XS～XXL", "origin": "Canada", "link": "https://www.mondor.com/"}, {"id": 14, "brand": "Wolford", "name": "Satin Touch 20 Tight", "price": "¥38,000", "tag": "sheer", "badgeType": null, "img": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&h=800&fit=crop&auto=format&q=85", "cats": ["sheer", "lycra"], "desc": "20デニールのサテンタッチ。光の通り方で上品な透け感と艶が両立。", "features": ["サテン感20den", "UVプロテクション", "強化つま先"], "fit": "XS～XL", "origin": "Austria", "link": "https://www.wolfordshop.com/"}, {"id": 15, "brand": "Mondor", "name": "Velvet Tight 3354", "price": "¥5,400", "tag": "velvet", "badgeType": null, "img": "https://cdn.shopify.com/s/files/1/0766/3465/2916/files/12943-A5_Front.jpg?v=1780685330", "cats": ["velvet", "nylon"], "desc": "秋冬に最適なベルベット地。タッチが柔らかく見た目の豪華さも抜群。", "features": ["ベルベット地", "保温性あり", "調節ウエスト"], "fit": "XS～XXL", "origin": "Canada", "link": "https://www.mondor.com/"}, {"id": 16, "brand": "Capezio", "name": "Stride Square Neck Leotard Flamingo", "price": "¥7,200", "tag": "leotard", "badgeType": "popular", "img": "https://cdn.shopify.com/s/files/1/0840/3150/4659/files/Capezio_Studio_Collection_Stride_Square_Neck_Leotard_Flamingo_SE2028W_1.jpg?v=1772123134", "cats": ["lycra", "leotard"], "desc": "スクエアネックが首元をエレガントに演出。フラミンゴカラーがアクセントに。", "features": ["スクエアネック", "Studio Collection", "フラミンゴカラー"], "fit": "XS～XL", "origin": "USA", "link": "https://www.capezio.com/"}, {"id": 17, "brand": "Leohex", "name": "Metallic Sheen Spats", "price": "¥3,580", "tag": "metallic", "badgeType": null, "img": "https://images.unsplash.com/photo-1539874754764-5a96559165b0?w=600&h=800&fit=crop&auto=format&q=85", "cats": ["metallic", "spandex"], "desc": "メタリック加工でロボット系・SF系コスプレに最適。動いても光沢が持続。", "features": ["メタリック素材", "4wayストレッチ", "洗い時は折りたたみ洗い"], "fit": "S～2XL", "origin": "China", "link": "https://www.aliexpress.com/store/1102167284"}, {"id": 18, "brand": "Arena", "name": "Women Carbon Flex VX", "price": "¥68,000", "tag": "racing", "badgeType": null, "img": "https://images.unsplash.com/photo-1530549387789-4c1017266635?w=600&h=800&fit=crop&auto=format&q=85", "cats": ["carbon", "racing"], "desc": "アリーナ最高峰の競泳モデル。流体力学テストを重ねた極薄ハイテクスパッツ。", "features": ["Carbon Flex素材", "FINA承認", "第3世代VX技術"], "fit": "XS～L", "origin": "Italy", "link": "https://www.arenawaterinstinct.com/"}, {"id": 19, "brand": "Mondor", "name": "Midnight Foil Tight 3340", "price": "¥6,200", "tag": "foil", "badgeType": "popular", "img": "https://cdn.shopify.com/s/files/1/0766/3465/2916/files/7851-N1_Front.jpg?v=1781107770", "cats": ["shimmer", "nylon"], "desc": "夜空を閉じ込めたようなフォイル加工。照明に当たると息をのむほど輝く。", "features": ["フォイル加工", "ミッドナイトブルー", "耐スナッグ繊維"], "fit": "XS～XXL", "origin": "Canada", "link": "https://www.mondor.com/"}, {"id": 20, "brand": "Capezio", "name": "Everyday Sculpt Tank Leotard", "price": "¥6,400", "tag": "leotard", "badgeType": null, "img": "https://cdn.shopify.com/s/files/1/0840/3150/4659/files/Capezio_Studio_Collection_Everyday_Sculpt_Tank_Leotard_Black_SE2027W_1.jpg?v=1772122584", "cats": ["lycra", "leotard"], "desc": "タンクトップ型の毎日使いレオタード。スカルプト設計でウエストラインが美しい。", "features": ["スカルプトデザイン", "タンクスタイル", "バッキングなし"], "fit": "XS～XL", "origin": "USA", "link": "https://www.capezio.com/"}, {"id": 21, "brand": "Morphsuits", "name": "Metallic Silver Full Body Suit", "price": "¥6,500", "tag": "zentai", "badgeType": "popular", "img": "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=600&h=800&fit=crop&auto=format&q=85", "cats": ["metallic", "spandex"], "desc": "英国発のモーフスーツ。メタリックシルバーが360度どこからでも輝く全身スーツ。コス映え抜群。", "features": ["全身伸縮素材", "目・口元シースルー", "洗濯機可"], "fit": "S～XL", "origin": "UK", "link": "https://morphsuits.com/"}, {"id": 22, "brand": "Speerise", "name": "Holographic Dance Tight", "price": "¥2,480", "tag": "holographic", "badgeType": "new", "img": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&h=800&fit=crop&auto=format&q=85", "cats": ["shimmer", "spandex"], "desc": "ホログラフィック加工が光の角度で無限に色変化。ダンスもコスプレも最高映えする次世代タイツ。", "features": ["ホログラフィック加工", "UPF50+", "4wayストレッチ"], "fit": "XS～2XL", "origin": "China", "link": "https://www.aliexpress.com/store/speerise"}, {"id": 23, "brand": "BodyZone", "name": "Pro Compression Full Tight", "price": "¥4,800", "tag": "compression", "badgeType": null, "img": "https://images.unsplash.com/photo-1517487881594-2787fef5ebf7?w=600&h=800&fit=crop&auto=format&q=85", "cats": ["matte", "spandex"], "desc": "米国発コンプレッションブランド。筋肉サポートと美脚効果を両立したプロ仕様のフルタイツ。", "features": ["グラデーションコンプレッション", "抗菌防臭加工", "UPF50+"], "fit": "XS～XXL", "origin": "USA", "link": "https://www.bodyzone.com/"}, {"id": 24, "brand": "Zentai Zone", "name": "Shiny Footed Zentai Suit", "price": "¥3,980", "tag": "zentai", "badgeType": "popular", "img": "https://images.unsplash.com/photo-1523362628745-0c100150b504?w=600&h=800&fit=crop&auto=format&q=85", "cats": ["glossy", "spandex"], "desc": "全身ツルツルのシャイニー素材。頭からつま先まで完全カバーのコスプレ用ゼンタイスーツ。", "features": ["全身タイプ", "スパンデックス高光沢", "カスタムカラー可"], "fit": "S～3XL", "origin": "China", "link": "https://www.zentaizone.com/"}, {"id": 25, "brand": "CatsuitOnly", "name": "Premium Mirror Gloss Catsuit", "price": "¥5,200", "tag": "catsuit", "badgeType": "new", "img": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=800&fit=crop&auto=format&q=85", "cats": ["glossy", "spandex"], "desc": "鏡面加工のプレミアムキャットスーツ。コスプレ用途に特化した完成度の高い一着。", "features": ["ミラー光沢加工", "フロントジッパー", "背面ファスナーなし設計"], "fit": "XS～XL", "origin": "China", "link": "https://www.catsuitonly.com/"}];
+
+const BADGES = {premium:"PREMIUM",new:"NEW",popular:"POPULAR"};
+const BADGE_CLR = {premium:"badge-premium",new:"badge-new",popular:"badge-popular"};
+
+let activeFilters = {brand:"all", cat:"all"};
+let searchQ = "";
+
+function renderCards(){
+  const grid = document.getElementById("grid");
+  const filtered = PRODUCTS.filter(p=>{
+    const bOk = activeFilters.brand==="all" || p.brand===activeFilters.brand;
+    const cOk = activeFilters.cat==="all" || p.cats.includes(activeFilters.cat);
+    const sOk = !searchQ || p.name.toLowerCase().includes(searchQ) || p.brand.toLowerCase().includes(searchQ) || p.desc.includes(searchQ);
+    return bOk && cOk && sOk;
+  });
+  grid.innerHTML = filtered.length ? "" : `<p style="color:#666;grid-column:1/-1;text-align:center;padding:4rem 0">該当商品が見つかりません</p>`;
+  filtered.forEach(p=>{
+    const bdg = p.badgeType ? `<span class="badge ${BADGE_CLR[p.badgeType]}">${BADGES[p.badgeType]}</span>` : "";
+    grid.innerHTML += `
+    <article class="card" onclick="openModal(${p.id})">
+      <div class="card-img"><img src="${p.img}" alt="${p.brand} ${p.name}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1530549387789-4c1017266635?w=600&h=800&fit=crop'">
+        <div class="card-overlay">
+          <div class="card-tag">${p.tag.toUpperCase()}</div>
+          <div class="card-name">${p.name}</div>
+          <div class="card-price">${p.price}</div>
+        </div>
+        ${bdg}
+      </div>
+      <div class="card-foot">
+        <span class="card-brand">${p.brand}</span>
+        <span class="card-origin">${p.origin}</span>
+      </div>
+    </article>`;
+  });
+  observeCards();
+}
+
+function openModal(id){
+  const p = PRODUCTS.find(x=>x.id===id);
+  if(!p) return;
+  const bdg = p.badgeType ? `<span class="badge ${BADGE_CLR[p.badgeType]}">${BADGES[p.badgeType]}</span>` : "";
+  const feats = p.features.map(f=>`<li>${f}</li>`).join("");
+  const cats = p.cats.map(c=>`<span class="cat-pill">${c}</span>`).join("");
+  document.getElementById("modal").innerHTML = `
+    <button class="modal-close" onclick="closeM()">✕</button>
+    <div class="modal-img"><img src="${p.img}" alt="${p.brand} ${p.name}" onerror="this.src='https://images.unsplash.com/photo-1530549387789-4c1017266635?w=600&h=800&fit=crop'"></div>
+    <div class="modal-body">
+      <div class="modal-header">
+        <div class="modal-brand">${p.brand}</div>
+        ${bdg}
+        <h2 class="modal-title">${p.name}</h2>
+        <div class="modal-price">${p.price}</div>
+        <div class="modal-cats">${cats}</div>
+      </div>
+      <p class="modal-desc">${p.desc}</p>
+      <div class="modal-section"><div class="modal-section-label">特徴</div><ul class="modal-features">${feats}</ul></div>
+      <div class="modal-section"><div class="modal-section-label">サイズ</div><p>${p.fit}</p></div>
+      <div class="modal-section"><div class="modal-section-label">原産国</div><p>${p.origin}</p></div>
+      <a class="modal-cta" href="${p.link}" target="_blank" rel="noopener">公式サイトで見る →</a>
+    </div>`;
+  document.getElementById("ov").style.display="flex";
+  document.body.style.overflow="hidden";
+}
+
+function closeM(){
+  document.getElementById("ov").style.display="none";
+  document.body.style.overflow="";
+}
+
+document.addEventListener("keydown",e=>{ if(e.key==="Escape") closeM(); });
+
+function setFilter(type, val, el){
+  activeFilters[type] = val;
+  document.querySelectorAll(`.pill[data-type="${type}"]`).forEach(p=>p.classList.remove("active"));
+  el.classList.add("active");
+  renderCards();
+}
+
+document.getElementById("searchInput").addEventListener("input", e=>{
+  searchQ = e.target.value.toLowerCase().trim();
+  renderCards();
+});
+
+function observeCards(){
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("visible"); io.unobserve(e.target); }});
+  },{threshold:0.1});
+  document.querySelectorAll(".card:not(.visible)").forEach(c=>io.observe(c));
+}
+
+// Nav active highlight on scroll
+const sections = document.querySelectorAll("section[id]");
+const navLinks = document.querySelectorAll(".nav-links a");
+const sio = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      navLinks.forEach(a=>a.classList.remove("active"));
+      const active = document.querySelector(`.nav a[href="#${e.target.id}"]`);
+      if(active) active.classList.add("active");
+    }
+  });
+},{threshold:0.4});
+sections.forEach(s=>sio.observe(s));
+
+// Hero parallax on scroll
+window.addEventListener("scroll",()=>{
+  const hero = document.querySelector(".hero");
+  if(hero){ const y = window.scrollY; hero.style.backgroundPositionY = `calc(50% + ${y*0.3}px)`; }
+},{ passive:true });
+
+// Init: build brand filters
+const brands = ["all",...new Set(PRODUCTS.map(p=>p.brand))];
+const brandF = document.getElementById("brandFilter");
+if(brandF){
+  brands.forEach(b=>{
+    const btn = document.createElement("button");
+    btn.className = "pill" + (b==="all"?" active":"");
+    btn.setAttribute("data-type","brand");
+    btn.textContent = b==="all"?"すべて":b;
+    btn.onclick = ()=>setFilter("brand",b,btn);
+    brandF.appendChild(btn);
+  });
+}
+
+// Init: build cat filters
+const cats = ["all","glossy","shimmer","velvet","matte","sheer","mesh","metallic","racing","lycra","spandex","nylon","leotard","zentai","holographic","compression","catsuit"];
+const catLabels = {all:"すべて",glossy:"光沢",shimmer:"きらめき",velvet:"ベルベット",matte:"マット",sheer:"シアー",mesh:"メッシュ",metallic:"メタリック",racing:"競泳",lycra:"ライクラ",spandex:"スパンデックス",nylon:"ナイロン",leotard:"レオタード",zentai:"ゼンタイ",holographic:"ホログラム",compression:"コンプレッション",catsuit:"キャットスーツ"};
+const styleEl = document.getElementById("styleScroll");
+if(styleEl){
+  cats.forEach(c=>{
+    const btn = document.createElement("button");
+    btn.className = "spill" + (c==="all"?" on":"");
+    btn.setAttribute("data-type","cat");
+    btn.textContent = catLabels[c]||c;
+    btn.onclick = ()=>{
+      activeFilters.cat = c;
+      document.querySelectorAll(".spill").forEach(b=>b.classList.remove("on"));
+      btn.classList.add("on");
+      renderCards();
+    };
+    styleEl.appendChild(btn);
+  });
+}
+
+renderCards();
+</script>
+</body>
+</html>
