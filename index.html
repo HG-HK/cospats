@@ -1069,6 +1069,8 @@ function renderProducts(){
 
 
 // ===== CONTACT FORM =====
+const _em = [114,101,105,109,105,121,97,116,97,57,48,64,103,109,97,105,108,46,99,111,109];
+function _getEM(){ return _em.map(c=>String.fromCharCode(c)).join(''); }
 function submitContact(e){
   e.preventDefault();
   const name  = document.getElementById('cName').value;
@@ -1077,7 +1079,7 @@ function submitContact(e){
   const msg   = document.getElementById('cMsg').value;
   const subject = encodeURIComponent('[Yuki Gift] ' + topic + ' — ' + name);
   const body    = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\nTopic: ' + topic + '\n\n' + msg);
-  window.open('mailto:reimiyata90@gmail.com?subject=' + subject + '&body=' + body);
+  window.open('mailto:' + _getEM() + '?subject=' + subject + '&body=' + body);
   document.getElementById('contactForm').reset();
   const s = document.getElementById('formSuccess');
   s.classList.add('show');
