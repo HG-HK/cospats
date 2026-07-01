@@ -1029,7 +1029,7 @@ function loadPayPalSDK(lang, callback){
 
   const s = document.createElement("script");
   s.id = "paypal-sdk";
-  s.src = `https://www.paypal.com/sdk/js?client-id=${PP_CLIENT_ID}&currency=HKD&locale=${PP_LOCALE[lang]||"en_HK"}`;
+  s.src = `https://www.paypal.com/sdk/js?client-id=${PP_CLIENT_ID}&currency=HKD&locale=${PP_LOCALE[lang]||"en_HK"}&intent=capture&components=buttons`;
   s.onload = ()=>{ if(callback) callback(); };
   document.head.appendChild(s);
 }
@@ -1144,19 +1144,19 @@ function initPayPal(){
   paypal.Buttons({
     style:{layout:"vertical",color:"gold",shape:"rect",label:"pay",height:44},
     createOrder: (data, actions) => {
-      const ppItems = cart.map(c=>{
-        const p = PRODUCTS.find(x=>x.id===c.id);
-        const unitPrice = (c.hkd != null) ? c.hkd : p.hkd;
-        const label = c.variantLabel ? p.name.en + " (" + c.variantLabel + ")" : p.name.en;
-        return {name: label.substring(0,127), unit_amount:{currency_code:"HKD",value: unitPrice.toFixed(2)}, quantity: String(c.qty)};
-      });
-      // Recalculate total from items to guarantee exact match (avoids PayPal INVALID_REQUEST)
-      const itemsTotal = ppItems.reduce((s,i)=>s + parseFloat(i.unit_amount.value)*parseInt(i.quantity), 0);
+      const total = cart.reduce((sum, ci) => {
+        const p = PRODUCTS.find(x => x.id === ci.id);
+        const price = (ci.hkd != null) ? ci.hkd : (p ? p.hkd : 0);
+        return sum + price * ci.qty;
+      }, 0);
+      const desc = cart.map(ci => {
+        const p = PRODUCTS.find(x => x.id === ci.id);
+        return (p ? p.nameJp : "?") + (ci.variantLabel ? " " + ci.variantLabel : "") + " x" + ci.qty;
+      }).join(", ").substring(0, 127);
       return actions.order.create({
-        purchase_units:[{
-          description:"Yuki Gift - Hokkaido Specialties",
-          amount:{currency_code:"HKD",value: itemsTotal.toFixed(2),breakdown:{item_total:{currency_code:"HKD",value: itemsTotal.toFixed(2)}}},
-          items: ppItems
+        purchase_units: [{
+          description: desc,
+          amount: { currency_code: "HKD", value: total.toFixed(2) }
         }]
       });
     },
@@ -1201,7 +1201,15 @@ function initPayPal(){
       updateCartUI();
       closeCart();
     }),
-    onError: err=>{ console.error(err); alert("Payment error. Please try again."); }
+    onError: err=>{
+      console.error("PayPal error:", err);
+      const msg = (typeof err === "string") ? err : (err.message || JSON.stringify(err));
+      document.getElementById("paypal-button-container").innerHTML =
+        `<div style="color:#c00;font-size:12px;padding:10px;border:1px solid #fcc;border-radius:8px;line-height:1.5">
+          ⚠️ Payment error: ${msg}<br><small>Please refresh and try again.</small>
+        </div>`;
+      ppRendered = false;
+    }
   }).render("#paypal-button-container").then(()=>{ ppRendered = true; }).catch(()=>{});
 }
 
@@ -1210,6 +1218,7 @@ function openCart(){
   document.getElementById("cartOverlay").classList.add("open");
   document.getElementById("cartDrawer").classList.add("open");
   document.body.style.overflow = "hidden";
+  ppRendered = false;
   renderCartItems();
 }
 function closeCart(){
