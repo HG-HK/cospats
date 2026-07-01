@@ -336,6 +336,8 @@ footer{background:#080810;color:rgba(255,255,255,.6);padding:48px 48px 28px;bord
 .pm-body p{font-size:13px;color:var(--ink2);line-height:1.85;margin-bottom:10px;}
 .pm-body ul{margin:0 0 12px 18px;}
 .pm-body ul li{font-size:13px;color:var(--ink2);line-height:1.8;margin-bottom:4px;}
+
+.ci-variant{font-size:11px;color:var(--ink3);margin:-2px 0 2px;}
 .pm-updated{font-size:11px;color:var(--ink3);margin-top:20px;padding-top:16px;border-top:1px solid var(--border);}
 @media(max-width:680px){.pm-head{padding:20px 20px 16px;}.pm-body{padding:20px;}}
 
@@ -1083,7 +1085,8 @@ function changeQty(id, delta){
 function cartTotal(){
   return cart.reduce((sum,c)=>{
     const p = PRODUCTS.find(x=>x.id===c.id);
-    return sum + (p ? p.hkd * c.qty : 0);
+    const unitPrice = (c.hkd != null) ? c.hkd : (p ? p.hkd : 0);
+    return sum + unitPrice * c.qty;
   }, 0);
 }
 
@@ -1108,11 +1111,14 @@ function renderCartItems(){
     const p = PRODUCTS.find(x=>x.id===c.id);
     if(!p) return "";
     const name = p.name[currentLang] || p.name.en;
+    const unitPrice = (c.hkd != null) ? c.hkd : p.hkd;
+    const varLabel = c.variantLabel ? `<div class="ci-variant">${c.variantLabel}</div>` : "";
     return `<div class="cart-item">
       <div class="ci-img"><img src="${p.img}" alt="${name}" loading="lazy"></div>
       <div class="ci-body">
         <div class="ci-name">${name}</div>
-        <div class="ci-price">HK$${p.hkd * c.qty}</div>
+        ${varLabel}
+        <div class="ci-price">HK$${unitPrice * c.qty}</div>
         <div class="ci-qty">
           <button class="qty-btn" onclick="changeQty(${p.id},-1)">−</button>
           <span class="qty-n">${c.qty}</span>
@@ -1138,15 +1144,19 @@ function initPayPal(){
   paypal.Buttons({
     style:{layout:"vertical",color:"gold",shape:"rect",label:"pay",height:44},
     createOrder: (data, actions) => {
-      const items = cart.map(c=>{
+      const ppItems = cart.map(c=>{
         const p = PRODUCTS.find(x=>x.id===c.id);
-        return {name: p.name.en, unit_amount:{currency_code:"HKD",value: p.hkd.toFixed(2)}, quantity: c.qty};
+        const unitPrice = (c.hkd != null) ? c.hkd : p.hkd;
+        const label = c.variantLabel ? p.name.en + " (" + c.variantLabel + ")" : p.name.en;
+        return {name: label.substring(0,127), unit_amount:{currency_code:"HKD",value: unitPrice.toFixed(2)}, quantity: String(c.qty)};
       });
+      // Recalculate total from items to guarantee exact match (avoids PayPal INVALID_REQUEST)
+      const itemsTotal = ppItems.reduce((s,i)=>s + parseFloat(i.unit_amount.value)*parseInt(i.quantity), 0);
       return actions.order.create({
         purchase_units:[{
           description:"Yuki Gift - Hokkaido Specialties",
-          amount:{currency_code:"HKD",value: cartTotal().toFixed(2),breakdown:{item_total:{currency_code:"HKD",value: cartTotal().toFixed(2)}}},
-          items
+          amount:{currency_code:"HKD",value: itemsTotal.toFixed(2),breakdown:{item_total:{currency_code:"HKD",value: itemsTotal.toFixed(2)}}},
+          items: ppItems
         }]
       });
     },
@@ -1159,7 +1169,9 @@ function initPayPal(){
         total: cartTotal().toFixed(2),
         items: cart.map(c=>{
           const p = PRODUCTS.find(x=>x.id===c.id);
-          return { name: p.name.en, nameJp: p.nameJp, qty: c.qty, price: p.hkd, link: p.link };
+          const unitPrice = (c.hkd != null) ? c.hkd : p.hkd;
+          const label = c.variantLabel ? p.name.en + " (" + c.variantLabel + ")" : p.name.en;
+          return { name: label, nameJp: p.nameJp + (c.variantLabel?" "+c.variantLabel:""), qty: c.qty, price: unitPrice, link: p.link };
         })
       };
       fetch(NOTIFY_URL, {
